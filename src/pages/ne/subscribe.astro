@@ -1,0 +1,28 @@
+---
+import Page from '../../layouts/Page.astro';
+import { t } from '../../i18n/utils';
+
+const lang = 'ne' as const;
+---
+
+<Page title={t(lang, 'nav.subscribe')}>
+  <div class="max-w-xl mx-auto text-center py-12">
+    <h1 class="text-3xl font-bold text-teal mb-4">{t(lang, 'subscribe.heading')}</h1>
+    <p class="text-gray-mid mb-8 leading-relaxed">
+      {t(lang, 'subscribe.description')}
+    </p>
+
+    <div class="bg-teal-light rounded-lg p-8">
+      <p class="text-sm text-gray-mid mb-4">
+        नेपाल स्वास्थ्य नीति डाइजेस्ट सिधै तपाईंको इमेलमा प्राप्त गर्न हाम्रो Substack मा सदस्यता लिनुहोस्।
+      </p>
+      <a
+        href="#"
+        class="inline-block bg-teal text-white px-6 py-3 rounded font-medium hover:bg-teal-dark transition-colors"
+      >
+        Substack मा सदस्यता लिनुहोस्
+      </a>
+      <p class="text-xs text-gray-mid mt-3">Substack लिंक छिट्टै आउँदैछ।</p>
+    </div>
+  </div>
+</Page>

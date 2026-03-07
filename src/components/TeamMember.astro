@@ -1,0 +1,15 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  bio: string;
+}
+
+const { name, role, bio } = Astro.props;
+---
+
+<div class="border border-gray-light rounded-lg p-5">
+  <h3 class="font-bold text-gray-dark">{name}</h3>
+  <p class="text-sm text-teal font-medium mt-1">{role}</p>
+  <p class="text-sm text-gray-mid mt-2 leading-relaxed">{bio}</p>
+</div>

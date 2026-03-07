@@ -1,0 +1,29 @@
+---
+import Page from '../../layouts/Page.astro';
+import { t } from '../../i18n/utils';
+
+const lang = 'en' as const;
+---
+
+<Page title={t(lang, 'nav.subscribe')}>
+  <div class="max-w-xl mx-auto text-center py-12">
+    <h1 class="text-3xl font-bold text-teal mb-4">{t(lang, 'subscribe.heading')}</h1>
+    <p class="text-gray-mid mb-8 leading-relaxed">
+      {t(lang, 'subscribe.description')}
+    </p>
+
+    <!-- Substack embed placeholder -- replace with actual Substack URL when available -->
+    <div class="bg-teal-light rounded-lg p-8">
+      <p class="text-sm text-gray-mid mb-4">
+        Subscribe via our Substack to receive the Nepal Health Policy Digest directly in your inbox.
+      </p>
+      <a
+        href="#"
+        class="inline-block bg-teal text-white px-6 py-3 rounded font-medium hover:bg-teal-dark transition-colors"
+      >
+        Subscribe on Substack
+      </a>
+      <p class="text-xs text-gray-mid mt-3">Substack link coming soon.</p>
+    </div>
+  </div>
+</Page>

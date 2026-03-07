@@ -1,0 +1,35 @@
+---
+import { getLangFromUrl, t, getLocalePath } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  author: string;
+  date: Date;
+  slug: string;
+  tags?: string[];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const { title, author, date, slug, tags } = Astro.props;
+const formattedDate = date.toLocaleDateString(lang === 'ne' ? 'ne-NP' : 'en-GB', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<a href={getLocalePath(lang, `/blog/${slug}`)} class="block border border-gray-light rounded-lg p-5 hover:border-teal transition-colors group">
+  <h3 class="font-bold text-gray-dark group-hover:text-teal transition-colors">{title}</h3>
+  <div class="text-xs text-gray-mid mt-2">
+    {t(lang, 'blog.by')} <span class="font-medium">{author}</span>
+    <span class="mx-1">&middot;</span>
+    <time datetime={date.toISOString()}>{formattedDate}</time>
+  </div>
+  {tags && tags.length > 0 && (
+    <div class="flex gap-1.5 mt-2">
+      {tags.map((tag) => (
+        <span class="text-xs bg-teal-light text-teal px-1.5 py-0.5 rounded">{tag}</span>
+      ))}
+    </div>
+  )}
+</a>

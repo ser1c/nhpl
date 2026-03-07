@@ -1,0 +1,36 @@
+---
+import Page from '../../layouts/Page.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { t } from '../../i18n/utils';
+
+const lang = 'ne' as const;
+---
+
+<Page>
+  <section class="text-center py-12">
+    <h1 class="text-4xl font-bold text-teal mb-4">{t(lang, 'site.name')}</h1>
+    <p class="text-lg text-gray-mid max-w-2xl mx-auto leading-relaxed">
+      {t(lang, 'site.tagline')}।
+      हामी विश्वव्यापी स्वास्थ्य अनुसन्धानलाई नेपालका नीति निर्माताहरू, अभ्यासकर्ताहरू र जनताको लागि पहुँचयोग्य र कार्ययोग्य बनाउँछौं।
+    </p>
+  </section>
+
+  <section class="grid md:grid-cols-3 gap-6 py-8">
+    <div class="bg-teal-light rounded-lg p-5">
+      <h2 class="font-bold text-teal mb-2">{t(lang, 'nav.evidence')}</h2>
+      <p class="text-sm text-gray-mid">नेपालको लागि क्युरेट र सान्दर्भिक बनाइएको विश्वव्यापी स्वास्थ्य नीति अनुसन्धानको खोजयोग्य डाटाबेस।</p>
+    </div>
+    <div class="bg-teal-light rounded-lg p-5">
+      <h2 class="font-bold text-teal mb-2">{t(lang, 'nav.digest')}</h2>
+      <p class="text-sm text-gray-mid">नेपालका नीति निर्माताहरूको लागि सबैभन्दा सान्दर्भिक नयाँ विश्वव्यापी स्वास्थ्य अनुसन्धानको मासिक सारांश।</p>
+    </div>
+    <div class="bg-teal-light rounded-lg p-5">
+      <h2 class="font-bold text-teal mb-2">{t(lang, 'nav.blog')}</h2>
+      <p class="text-sm text-gray-mid">हाम्रो अनुसन्धानबाट मौलिक अन्तर्दृष्टि र निष्कर्षहरू, पहुँचयोग्य भाषामा लेखिएका।</p>
+    </div>
+  </section>
+
+  <div class="py-8">
+    <NewsletterSignup />
+  </div>
+</Page>

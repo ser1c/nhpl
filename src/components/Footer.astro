@@ -1,0 +1,15 @@
+---
+import { getLangFromUrl, t } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-gray-light bg-teal-light">
+  <div class="max-w-5xl mx-auto px-4 py-8 text-center">
+    <p class="text-sm text-gray-mid">{t(lang, 'footer.tagline')}</p>
+    <p class="text-xs text-gray-mid mt-2">
+      &copy; {year} {t(lang, 'footer.copyright')}
+    </p>
+  </div>
+</footer>

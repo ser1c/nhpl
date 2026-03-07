@@ -1,0 +1,48 @@
+---
+import Page from '../../layouts/Page.astro';
+import TeamMember from '../../components/TeamMember.astro';
+---
+
+<Page title="About">
+  <h1 class="text-3xl font-bold text-teal mb-6">About</h1>
+
+  <div class="prose max-w-none mb-10">
+    <p>
+      The <strong>Nepal Health Policy Lab</strong> is a health policy research initiative dedicated
+      to making rigorous evidence accessible and actionable for Nepal's health policymakers,
+      practitioners, and public.
+    </p>
+    <p>
+      We focus exclusively on health. By going deep rather than broad, we aim to become the
+      definitive resource for health policy evidence in Nepal. Our core work is
+      <strong>translation</strong>: synthesising, contextualising, and making accessible the
+      thousands of high-quality health economics studies published every year that never
+      reach Nepali policymakers.
+    </p>
+  </div>
+
+  <h2 class="text-xl font-bold text-gray-dark mb-4">Team</h2>
+
+  <div class="grid md:grid-cols-2 gap-4">
+    <TeamMember
+      name="Sabin Subedi"
+      role="Co-founder"
+      bio="PhD candidate in Economics at the University of Strathclyde, specialising in health economics and causal inference. Leads the technical research agenda and the AI-assisted database build."
+    />
+    <TeamMember
+      name="Mukesh Adhikari"
+      role="Co-founder"
+      bio="PhD student in Health Policy and Management at UNC Gillings School of Global Public Health. Co-leads the evidence synthesis and content strategy."
+    />
+    <TeamMember
+      name="Prajjwal Dhungana"
+      role="Field Coordinator"
+      bio="Based in Kathmandu, responsible for government liaison, consultation attendance, and on-the-ground institutional relationship management."
+    />
+    <TeamMember
+      name="Suresh Tinkari"
+      role="Advisor"
+      bio="IT Manager at the Health Insurance Board of Nepal. Provides institutional knowledge of Nepal's health insurance system and bridges the initiative with the HIB."
+    />
+  </div>
+</Page>

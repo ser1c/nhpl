@@ -1,0 +1,16 @@
+---
+import { getLangFromUrl, t, getLocalePath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<section class="bg-teal-light rounded-lg p-6 text-center">
+  <h2 class="text-xl font-bold text-teal mb-2">{t(lang, 'subscribe.heading')}</h2>
+  <p class="text-sm text-gray-mid mb-4 max-w-md mx-auto">{t(lang, 'subscribe.description')}</p>
+  <a
+    href={getLocalePath(lang, '/subscribe')}
+    class="inline-block bg-teal text-white px-5 py-2 rounded text-sm font-medium hover:bg-teal-dark transition-colors"
+  >
+    {t(lang, 'nav.subscribe')}
+  </a>
+</section>

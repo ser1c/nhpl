@@ -1,0 +1,35 @@
+---
+import Page from '../../../layouts/Page.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../../i18n/utils';
+
+const lang = 'en' as const;
+
+let issues: any[] = [];
+try {
+  issues = (await getCollection('digest', ({ data }) => data.lang === lang && !data.draft))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+} catch {
+  // Collection may be empty
+}
+---
+
+<Page title={t(lang, 'nav.digest')}>
+  <h1 class="text-3xl font-bold text-teal mb-2">{t(lang, 'nav.digest')}</h1>
+  <p class="text-gray-mid mb-6">A monthly summary of the most relevant new global health research for Nepal.</p>
+
+  {issues.length === 0 ? (
+    <p class="text-gray-mid">{t(lang, 'digest.noIssues')}</p>
+  ) : (
+    <div class="grid gap-4">
+      {issues.map((issue) => (
+        <div class="border border-gray-light rounded-lg p-5">
+          <h3 class="font-bold text-gray-dark">Issue #{issue.data.issue}: {issue.data.title}</h3>
+          <p class="text-xs text-gray-mid mt-1">
+            {issue.data.date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}
+          </p>
+        </div>
+      ))}
+    </div>
+  )}
+</Page>

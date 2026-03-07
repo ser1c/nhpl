@@ -1,0 +1,59 @@
+---
+import { getLangFromUrl, t, getLocalePath, getOtherLang } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const otherLang = getOtherLang(lang);
+
+const navItems = [
+  { key: 'nav.home' as const, path: '/' },
+  { key: 'nav.about' as const, path: '/about' },
+  { key: 'nav.blog' as const, path: '/blog' },
+  { key: 'nav.digest' as const, path: '/digest' },
+  { key: 'nav.subscribe' as const, path: '/subscribe' },
+];
+
+// Build the equivalent path in the other language
+const currentPath = Astro.url.pathname.replace(`/${lang}`, '') || '/';
+const otherLangPath = getLocalePath(otherLang, currentPath);
+---
+
+<header class="border-b border-gray-light bg-white">
+  <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href={getLocalePath(lang, '/')} class="text-teal font-bold text-lg hover:text-teal-dark transition-colors">
+      {t(lang, 'site.name')}
+    </a>
+
+    <div class="flex items-center gap-6">
+      <nav class="hidden md:flex gap-5">
+        {navItems.map((item) => (
+          <a
+            href={getLocalePath(lang, item.path)}
+            class="text-sm text-gray-mid hover:text-teal transition-colors"
+          >
+            {t(lang, item.key)}
+          </a>
+        ))}
+      </nav>
+
+      <a
+        href={otherLangPath}
+        class="text-xs border border-teal text-teal px-2 py-1 rounded hover:bg-teal hover:text-white transition-colors"
+      >
+        {languages[otherLang]}
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav class="md:hidden border-t border-gray-light px-4 py-2 flex gap-4 overflow-x-auto">
+    {navItems.map((item) => (
+      <a
+        href={getLocalePath(lang, item.path)}
+        class="text-sm text-gray-mid hover:text-teal whitespace-nowrap transition-colors"
+      >
+        {t(lang, item.key)}
+      </a>
+    ))}
+  </nav>
+</header>
