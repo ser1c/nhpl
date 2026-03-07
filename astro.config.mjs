@@ -9,6 +9,7 @@ export default defineConfig({
     locales: ['en', 'ne'],
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
     },
   },
   vite: {
