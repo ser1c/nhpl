@@ -1,0 +1,17 @@
+---
+import EvidencePaper from '../../../../layouts/EvidencePaper.astro';
+import { getEvidence } from '../../../../data/evidence-loader';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  const papers = getEvidence();
+  return papers.map((paper) => ({
+    params: { slug: paper.slug },
+    props: { paper },
+  }));
+};
+
+const { paper } = Astro.props;
+---
+
+<EvidencePaper paper={paper} />

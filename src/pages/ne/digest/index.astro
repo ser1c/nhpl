@@ -1,5 +1,6 @@
 ---
 import Page from '../../../layouts/Page.astro';
+import NewsletterSignup from '../../../components/NewsletterSignup.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../../../i18n/utils';
 
@@ -15,21 +16,91 @@ try {
 ---
 
 <Page title={t(lang, 'nav.digest')}>
-  <h1 class="text-3xl font-bold text-teal mb-2">{t(lang, 'nav.digest')}</h1>
-  <p class="text-gray-mid mb-6">नेपालको लागि सबैभन्दा सान्दर्भिक नयाँ विश्वव्यापी स्वास्थ्य अनुसन्धानको मासिक सारांश।</p>
+  <section class="mb-10">
+    <p class="text-xs uppercase tracking-widest text-teal font-semibold mb-3">मासिक न्युजलेटर</p>
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-dark tracking-tight mb-3">नेपाल स्वास्थ्य नीति डाइजेस्ट</h1>
+    <p class="text-lg text-gray-mid">
+      नेपालका नीति निर्माताहरूको लागि सबैभन्दा सान्दर्भिक नयाँ विश्वव्यापी स्वास्थ्य
+      अनुसन्धानको मासिक सारांश, हाम्रो टोलीद्वारा क्युरेट र सान्दर्भिक बनाइएको।
+    </p>
+  </section>
 
-  {issues.length === 0 ? (
-    <p class="text-gray-mid">{t(lang, 'digest.noIssues')}</p>
-  ) : (
-    <div class="grid gap-4">
-      {issues.map((issue) => (
-        <div class="border border-gray-light rounded-lg p-5">
-          <h3 class="font-bold text-gray-dark">अंक #{issue.data.issue}: {issue.data.title}</h3>
-          <p class="text-xs text-gray-mid mt-1">
-            {issue.data.date.toLocaleDateString('ne-NP', { year: 'numeric', month: 'long' })}
-          </p>
+  <!-- What to expect -->
+  <section class="bg-surface-alt rounded-2xl p-8 mb-10">
+    <h2 class="text-xl font-bold text-gray-dark tracking-tight mb-6">प्रत्येक अंकमा के छ?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="flex gap-3">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-teal font-bold text-sm">1</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">क्युरेट गरिएका पत्रहरू</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">नेपालको स्वास्थ्य नीतिसँग सम्बन्धित ३-५ नयाँ प्रकाशित पत्रहरू, सरल भाषामा सारांशित।</p>
         </div>
-      ))}
+      </div>
+      <div class="flex gap-3">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-teal font-bold text-sm">2</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">नेपाल सन्दर्भ</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">प्रत्येक पत्रसँग नेपालको विशिष्ट चुनौती र कार्यक्रमहरूको लागि यसको अर्थको विश्लेषण।</p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-teal font-bold text-sm">3</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">नीति प्रभावहरू</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">नेपालमा काम गर्ने नीति निर्माता, अभ्यासकर्ता र अनुसन्धानकर्ताहरूको लागि कार्ययोग्य निष्कर्ष।</p>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- Issues Archive -->
+  {issues.length === 0 ? (
+    <div class="text-center py-20 bg-surface-alt rounded-2xl mb-10">
+      <p class="text-gray-dark font-semibold text-lg mb-2">पहिलो अंक छिट्टै आउँदैछ</p>
+      <p class="text-sm text-gray-mid max-w-sm mx-auto">
+        नेपाल स्वास्थ्य नीति डाइजेस्ट सुरु हुँदा पहिलो प्राप्तकर्ता बन्न सदस्यता लिनुहोस्।
+      </p>
+    </div>
+  ) : (
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-dark tracking-tight mb-6">अभिलेखालय</h2>
+      <div class="grid gap-4">
+        {issues.map((issue) => (
+          <div class="bg-white border border-border rounded-xl p-6 hover:shadow-md hover:border-teal transition-all">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="text-xs font-bold text-teal bg-teal-light px-2.5 py-1 rounded-md border border-teal/20">
+                  अंक #{issue.data.issue}
+                </span>
+                <h3 class="font-semibold text-gray-dark text-lg mt-3">{issue.data.title}</h3>
+                {issue.data.description && (
+                  <p class="text-sm text-gray-mid mt-1 leading-relaxed">{issue.data.description}</p>
+                )}
+                <div class="flex items-center gap-3 mt-3 text-sm text-gray-tertiary">
+                  <time datetime={issue.data.date.toISOString()}>
+                    {issue.data.date.toLocaleDateString('ne-NP', { year: 'numeric', month: 'long' })}
+                  </time>
+                  {issue.data.papersCount && (
+                    <span>&middot; {issue.data.papersCount} पत्रहरू समीक्षित</span>
+                  )}
+                </div>
+                {issue.data.topics && issue.data.topics.length > 0 && (
+                  <div class="flex gap-1.5 mt-3">
+                    {issue.data.topics.map((topic: string) => (
+                      <span class="text-xs bg-surface-alt text-gray-mid px-2 py-0.5 rounded-md">{topic}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   )}
+
+  <!-- Subscribe CTA -->
+  <section class="bg-amber-light rounded-2xl p-8 md:p-12">
+    <NewsletterSignup />
+  </section>
 </Page>

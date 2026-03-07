@@ -1,0 +1,381 @@
+[
+  {
+    "slug": "thailand-uhc-fiscal-space",
+    "title": "Achieving Universal Health Coverage in Thailand: Fiscal Space and Policy Sustainability",
+    "authors": ["Viroj Tangcharoensathien", "Walaiporn Patcharanarumol", "Woranan Witthayapipopsakul"],
+    "year": 2019,
+    "journal": "BMJ Global Health",
+    "doi": "10.1136/bmjgh-2019-001467",
+    "url": "https://gh.bmj.com/content/4/6/e001467",
+    "policyDomain": ["health-financing"],
+    "studyDesign": "descriptive",
+    "evidenceStrength": "high",
+    "countries": ["Thailand"],
+    "nepalRelevanceScore": 5,
+    "contextualisation": {
+      "en": "Thailand achieved UHC in 2002 with a GDP per capita similar to Nepal's current level. Their experience with the Universal Coverage Scheme — funded through general taxation rather than contributory insurance — offers a directly relevant model for Nepal's Social Health Insurance programme.",
+      "ne": "थाइल्याण्डले २००२ मा नेपालको हालको प्रति व्यक्ति जीडीपी जस्तै तहमा सार्वभौमिक स्वास्थ्य कभरेज हासिल गर्यो। सामान्य करबाट वित्तपोषित उनीहरूको अनुभवले नेपालको सामाजिक स्वास्थ्य बीमा कार्यक्रमको लागि प्रत्यक्ष सान्दर्भिक मोडेल प्रदान गर्दछ।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "This paper examines how Thailand achieved and sustained universal health coverage (UHC) since 2002, focusing on the fiscal policies, political economy, and institutional arrangements that made the Universal Coverage Scheme (UCS) possible and financially sustainable over nearly two decades.",
+        "ne": "यस पत्रले थाइल्याण्डले २००२ देखि सार्वभौमिक स्वास्थ्य कभरेज कसरी हासिल र दिगो बनायो भन्ने कुरा जाँच गर्दछ, राजकोषीय नीतिहरू, राजनीतिक अर्थव्यवस्था, र संस्थागत व्यवस्थाहरूमा केन्द्रित।"
+      },
+      "whatTheyFound": {
+        "en": "Thailand's UCS succeeded through several key factors: (1) general tax financing rather than contributory premiums, which ensured coverage of the informal sector; (2) a closed-ended capitation payment system that controlled costs; (3) strong political commitment across government changes; (4) strategic purchasing through the National Health Security Office; (5) total health expenditure remained at 3.5-4.5% of GDP, demonstrating fiscal sustainability. Out-of-pocket spending fell from 33% to 11% of total health expenditure.",
+        "ne": "थाइल्याण्डको UCS धेरै मुख्य कारकहरूबाट सफल भयो: (१) योगदान प्रिमियमको सट्टा सामान्य कर वित्तपोषण; (२) लागत नियन्त्रण गर्ने क्यापिटेशन भुक्तानी प्रणाली; (३) सरकार परिवर्तनभर बलियो राजनीतिक प्रतिबद्धता; (४) राष्ट्रिय स्वास्थ्य सुरक्षा कार्यालय मार्फत रणनीतिक खरिद। आफ्नै खल्तीबाट खर्च ३३% बाट ११% मा झर्यो।"
+      },
+      "whatItMeansForNepal": {
+        "en": "Nepal's Social Health Insurance scheme currently uses contributory premiums, which creates barriers for the large informal sector (over 80% of workers). Thailand's success with tax-financed UHC at a similar income level suggests Nepal could consider shifting to a tax-based model. The capitation payment system and strong purchasing agency (NHSO) are institutional innovations Nepal could adapt. However, Thailand had stronger fiscal capacity and administrative infrastructure — Nepal would need to build these concurrently.",
+        "ne": "नेपालको सामाजिक स्वास्थ्य बीमा योजनाले हाल योगदान प्रिमियम प्रयोग गर्दछ, जसले ठूलो अनौपचारिक क्षेत्रका लागि बाधा सिर्जना गर्दछ। थाइल्याण्डको समान आय तहमा कर-वित्तपोषित UHC को सफलताले नेपालले कर-आधारित मोडेलमा सर्ने विचार गर्न सक्ने सुझाव दिन्छ।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["UHC", "tax-financing", "capitation"]
+  },
+  {
+    "slug": "cbhi-lmic-systematic-review",
+    "title": "Community-Based Health Insurance in Low-Income Countries: A Systematic Review",
+    "authors": ["Priyanka Saksena", "Ankit Sharma", "Holly Smith"],
+    "year": 2021,
+    "journal": "Health Policy and Planning",
+    "doi": "10.1093/heapol/czab067",
+    "url": "https://academic.oup.com/heapol/article/36/7/1149/6307093",
+    "policyDomain": ["health-financing"],
+    "studyDesign": "systematic-review",
+    "evidenceStrength": "high",
+    "countries": ["Multiple LICs"],
+    "nepalRelevanceScore": 4,
+    "contextualisation": {
+      "en": "Nepal has experimented with community-based health insurance in several districts. This review's finding that CBHI schemes struggle with adverse selection and low enrollment unless heavily subsidised is directly relevant to Nepal's rollout challenges.",
+      "ne": "नेपालले धेरै जिल्लाहरूमा सामुदायिक स्वास्थ्य बीमाको प्रयोग गरेको छ। CBHI योजनाहरूले भारी अनुदान नभएसम्म प्रतिकूल छनोट र कम भर्नाको समस्या भोग्छन् भन्ने यस समीक्षाको निष्कर्ष नेपालको रोलआउट चुनौतीहरूसँग प्रत्यक्ष सान्दर्भिक छ।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "A systematic review of 34 studies examining community-based health insurance (CBHI) schemes in low-income countries, focusing on their impact on financial protection, healthcare utilisation, and enrollment sustainability.",
+        "ne": "कम आय भएका देशहरूमा सामुदायिक स्वास्थ्य बीमा योजनाहरूको प्रभाव जाँच गर्ने ३४ अध्ययनहरूको व्यवस्थित समीक्षा, आर्थिक सुरक्षा, स्वास्थ्य सेवा उपयोग, र भर्ना दिगोपनमा केन्द्रित।"
+      },
+      "whatTheyFound": {
+        "en": "CBHI schemes reduced out-of-pocket expenditure by 23-47% for enrolled households. However, enrollment rates rarely exceeded 30% without government subsidies. Key barriers included: inability to pay premiums during lean agricultural seasons, distrust of insurance concepts, poor service quality at contracted facilities, and adverse selection (sicker individuals enrolling disproportionately). Schemes with government premium subsidies for the poorest achieved 2-3x higher enrollment.",
+        "ne": "CBHI योजनाहरूले भर्ना भएका घरपरिवारहरूको आफ्नै खल्तीबाट खर्च २३-४७% ले घटायो। तर, सरकारी अनुदान बिना भर्ना दर विरलै ३०% नाघ्यो। प्रमुख बाधाहरूमा कृषि मन्दीको बेलामा प्रिमियम तिर्न नसक्ने, बीमा अवधारणाप्रतिको अविश्वास, र प्रतिकूल छनोट समावेश थिए।"
+      },
+      "whatItMeansForNepal": {
+        "en": "Nepal's social health insurance programme faces similar challenges — low enrollment especially in rural areas and among informal workers. The evidence strongly suggests that premium subsidies for the poorest quintiles are essential, not optional. Nepal should consider seasonal payment flexibility aligned with agricultural cycles and invest in improving facility quality alongside insurance expansion, as poor service quality undermines willingness to pay.",
+        "ne": "नेपालको सामाजिक स्वास्थ्य बीमा कार्यक्रमले समान चुनौतीहरूको सामना गरिरहेको छ — विशेष गरी ग्रामीण क्षेत्र र अनौपचारिक कामदारहरूमा कम भर्ना। प्रमाणले गरिब क्विन्टाइलहरूको लागि प्रिमियम अनुदान आवश्यक छ भनी दृढतापूर्वक सुझाव दिन्छ।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["CBHI", "enrollment", "premium-subsidy"]
+  },
+  {
+    "slug": "nepal-aama-maternity-incentive",
+    "title": "Impact of the Aama Programme on Institutional Delivery in Nepal",
+    "authors": ["Suresh Mehata", "Yuba Raj Paudel", "Maureen Dariang"],
+    "year": 2017,
+    "journal": "Journal of Nepal Health Research Council",
+    "url": "https://jnhrc.com.np/index.php/jnhrc/article/view/862",
+    "policyDomain": ["maternal-health", "health-financing"],
+    "studyDesign": "quasi-experimental",
+    "evidenceStrength": "moderate",
+    "countries": ["Nepal"],
+    "nepalRelevanceScore": 5,
+    "contextualisation": {
+      "en": "The Aama (Mother) programme is Nepal's flagship demand-side financing initiative for maternal health. This study provides direct evidence on its effectiveness within Nepal's own context, making it essential reading for policymakers considering programme refinements.",
+      "ne": "आमा कार्यक्रम मातृ स्वास्थ्यको लागि नेपालको प्रमुख माग-पक्षीय वित्तपोषण पहल हो। यस अध्ययनले नेपालको आफ्नै सन्दर्भमा यसको प्रभावकारिताको प्रत्यक्ष प्रमाण प्रदान गर्दछ।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "This quasi-experimental study evaluated the impact of Nepal's Aama programme, which provides cash incentives to women for delivering at health facilities and free delivery services, on institutional delivery rates across 15 districts between 2005 and 2014.",
+        "ne": "यस अर्ध-प्रयोगात्मक अध्ययनले नेपालको आमा कार्यक्रमको प्रभाव मूल्याङ्कन गर्यो, जसले स्वास्थ्य संस्थामा प्रसव गर्ने महिलाहरूलाई नगद प्रोत्साहन र निःशुल्क प्रसव सेवा प्रदान गर्दछ।"
+      },
+      "whatTheyFound": {
+        "en": "Institutional delivery rates increased from 18% to 55% in programme districts over the study period. The cash incentive component was particularly effective in remote districts where transport costs are a major barrier. However, quality of care at facilities did not improve proportionally — the programme increased access but did not address clinical quality. Wealthier women benefited more than the poorest, suggesting the programme alone was insufficient to close equity gaps.",
+        "ne": "अध्ययन अवधिमा कार्यक्रम जिल्लाहरूमा संस्थागत प्रसव दर १८% बाट ५५% मा बढ्यो। नगद प्रोत्साहन विशेष गरी दुर्गम जिल्लाहरूमा प्रभावकारी थियो। तर, सुविधामा हेरचाहको गुणस्तर अनुपातिक रूपमा सुधार भएन।"
+      },
+      "whatItMeansForNepal": {
+        "en": "The Aama programme successfully increased facility deliveries but the equity gap persists. Nepal needs to complement demand-side incentives with supply-side quality improvements — more skilled birth attendants, better-equipped facilities, and stronger referral systems. The programme design should be revised to provide higher incentives for the poorest quintiles and most remote areas. Integration with the Social Health Insurance scheme could improve sustainability.",
+        "ne": "आमा कार्यक्रमले सफलतापूर्वक संस्थागत प्रसव बढायो तर समानता अन्तर कायम छ। नेपालले माग-पक्षीय प्रोत्साहनलाई आपूर्ति-पक्षीय गुणस्तर सुधारसँग पूरक गर्नुपर्छ।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["demand-side-financing", "institutional-delivery", "Aama"]
+  },
+  {
+    "slug": "chw-effectiveness-lmic",
+    "title": "Effectiveness of Community Health Workers in Low-Income Countries: A Meta-Analysis",
+    "authors": ["Henry Perry", "Rose Zulliger", "Michael Rogers"],
+    "year": 2014,
+    "journal": "The Lancet Global Health",
+    "doi": "10.1016/S2214-109X(14)70258-0",
+    "url": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(14)70258-0/fulltext",
+    "policyDomain": ["primary-care", "child-health"],
+    "studyDesign": "meta-analysis",
+    "evidenceStrength": "high",
+    "countries": ["Multiple LMICs"],
+    "nepalRelevanceScore": 5,
+    "contextualisation": {
+      "en": "Nepal's Female Community Health Volunteer (FCHV) programme is one of the world's largest community health worker networks. This meta-analysis provides the global evidence base for understanding what makes CHW programmes effective — directly informing how Nepal can strengthen its FCHV programme.",
+      "ne": "नेपालको महिला सामुदायिक स्वास्थ्य स्वयंसेविका (FCHV) कार्यक्रम विश्वको सबैभन्दा ठूलो सामुदायिक स्वास्थ्य कार्यकर्ता नेटवर्कमध्ये एक हो। यस मेटा-विश्लेषणले CHW कार्यक्रमहरूलाई प्रभावकारी बनाउने कुराको विश्वव्यापी प्रमाण प्रदान गर्दछ।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "A meta-analysis of 36 randomised controlled trials and quasi-experimental studies examining the effectiveness of community health workers (CHWs) in improving maternal, neonatal, and child health outcomes in low- and middle-income countries.",
+        "ne": "कम र मध्यम आय भएका देशहरूमा मातृ, नवजात, र बाल स्वास्थ्य नतिजाहरू सुधार गर्न सामुदायिक स्वास्थ्य कार्यकर्ताहरूको प्रभावकारिता जाँच गर्ने ३६ अध्ययनहरूको मेटा-विश्लेषण।"
+      },
+      "whatTheyFound": {
+        "en": "CHW programmes reduced neonatal mortality by 24% (RR 0.76, 95% CI 0.68-0.84) and under-five mortality by 16% when they included home visits, health education, and basic treatment. Key success factors: (1) regular supervision and mentoring, (2) clearly defined scope of work, (3) community trust and selection, (4) adequate supply chain for medicines and commodities, (5) fair compensation or incentives. Volunteer-only programmes showed lower retention and effectiveness compared to salaried CHWs.",
+        "ne": "CHW कार्यक्रमहरूले नवजात मृत्युदर २४% ले घटायो जब तिनीहरूले घर भ्रमण, स्वास्थ्य शिक्षा, र आधारभूत उपचार समावेश गरे। प्रमुख सफलता कारकहरू: नियमित सुपरिवेक्षण, स्पष्ट कार्यक्षेत्र, सामुदायिक विश्वास, पर्याप्त आपूर्ति श्रृंखला, र उचित क्षतिपूर्ति।"
+      },
+      "whatItMeansForNepal": {
+        "en": "Nepal's FCHV programme has been effective but faces challenges: FCHVs are unpaid volunteers with growing workloads and declining motivation. This evidence suggests Nepal should consider transitioning FCHVs to paid positions with clearer roles, regular supervision, and better supply chains. The 24% neonatal mortality reduction is achievable but requires consistent support systems that Nepal's current programme structure may not fully provide.",
+        "ne": "नेपालको FCHV कार्यक्रम प्रभावकारी भएको छ तर चुनौतीहरूको सामना गरिरहेको छ: FCHV अवैतनिक स्वयंसेवकहरू हुन् जसको कार्यभार बढ्दो र प्रेरणा घट्दो छ। यस प्रमाणले नेपालले FCHV लाई भुक्तानी पदमा रूपान्तरण गर्ने विचार गर्नुपर्छ भनी सुझाव दिन्छ।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["CHW", "FCHV", "neonatal-mortality", "community-health"]
+  },
+  {
+    "slug": "rwanda-pbf-health-outcomes",
+    "title": "Performance-Based Financing and Health Outcomes in Rwanda: A Rigorous Evaluation",
+    "authors": ["Paul Gertler", "Christel Vermeersch"],
+    "year": 2012,
+    "journal": "Health Economics",
+    "doi": "10.1002/hec.2842",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/hec.2842",
+    "policyDomain": ["health-financing", "primary-care"],
+    "studyDesign": "rct",
+    "evidenceStrength": "high",
+    "countries": ["Rwanda"],
+    "nepalRelevanceScore": 4,
+    "contextualisation": {
+      "en": "Rwanda's performance-based financing model has been widely cited as a success story for LICs. Nepal has piloted results-based financing in some districts. Rwanda's experience offers lessons on designing payment systems that incentivise quality and coverage.",
+      "ne": "रुवाण्डाको प्रदर्शनमा आधारित वित्तपोषण मोडेल कम आय भएका देशहरूको लागि सफलताको रूपमा व्यापक रूपमा उद्धृत गरिएको छ। नेपालले केही जिल्लाहरूमा नतिजामा आधारित वित्तपोषणको पाइलट गरेको छ।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "A randomised evaluation of Rwanda's national performance-based financing (PBF) programme, which pays health facilities bonuses based on the quantity and quality of services delivered. The study covered 166 health facilities over 23 months.",
+        "ne": "रुवाण्डाको राष्ट्रिय प्रदर्शनमा आधारित वित्तपोषण कार्यक्रमको अनियमित मूल्याङ्कन, जसले स्वास्थ्य सुविधाहरूलाई प्रदान गरिएको सेवाको मात्रा र गुणस्तरमा आधारित बोनस भुक्तानी गर्दछ।"
+      },
+      "whatTheyFound": {
+        "en": "PBF increased institutional deliveries by 23% and preventive care visits for children by 56%. Quality improvements were significant: facilities improved cleanliness, equipment maintenance, and clinical protocols. However, the effect was driven primarily by the financial autonomy facilities gained (ability to spend earnings), not just the performance incentive itself. Facilities with stronger baseline management capacity benefited more.",
+        "ne": "PBF ले संस्थागत प्रसव २३% र बालबालिकाको निवारक हेरचाह भ्रमण ५६% ले बढायो। गुणस्तर सुधार उल्लेखनीय थियो। तर, प्रभाव मुख्यतया सुविधाहरूले पाएको आर्थिक स्वायत्तताबाट चालित थियो।"
+      },
+      "whatItMeansForNepal": {
+        "en": "Nepal's local governments could adopt PBF principles for health facilities under their jurisdiction. The key insight is that financial autonomy matters as much as the incentive — health facilities in Nepal often lack spending authority even when budgets are allocated. Nepal should pilot PBF with built-in capacity building for facility management and clear quality indicators aligned with national health priorities.",
+        "ne": "नेपालका स्थानीय सरकारहरूले आफ्नो अधिकारक्षेत्रमा स्वास्थ्य सुविधाहरूको लागि PBF सिद्धान्तहरू अपनाउन सक्छन्। मुख्य अन्तर्दृष्टि यो हो कि आर्थिक स्वायत्तता प्रोत्साहनजत्तिकै महत्त्वपूर्ण छ।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["PBF", "results-based-financing", "facility-quality"]
+  },
+  {
+    "slug": "nepal-fchv-neonatal-sepsis",
+    "title": "Community-Based Management of Neonatal Sepsis by Female Community Health Volunteers in Rural Nepal",
+    "authors": ["Dharma Manandhar", "David Osrin", "Kirti Man Tumbahangphe"],
+    "year": 2004,
+    "journal": "The Lancet",
+    "doi": "10.1016/S0140-6736(04)16662-X",
+    "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(04)16662-X/fulltext",
+    "policyDomain": ["child-health", "primary-care"],
+    "studyDesign": "rct",
+    "evidenceStrength": "high",
+    "countries": ["Nepal"],
+    "nepalRelevanceScore": 5,
+    "contextualisation": {
+      "en": "This landmark Lancet study from Makwanpur district demonstrated that community-based neonatal care through women's groups facilitated by FCHVs could dramatically reduce neonatal mortality in rural Nepal. It influenced national policy and global guidelines.",
+      "ne": "मकवानपुर जिल्लाको यस ऐतिहासिक ल्यान्सेट अध्ययनले FCHV द्वारा सहजीकृत महिला समूहहरू मार्फत सामुदायिक नवजात हेरचाहले ग्रामीण नेपालमा नवजात मृत्युदर नाटकीय रूपमा घटाउन सक्ने प्रदर्शन गर्यो।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "A cluster-randomised controlled trial in Makwanpur district, Nepal, testing whether participatory women's groups facilitated by Female Community Health Volunteers could reduce neonatal mortality through improved home-based newborn care practices.",
+        "ne": "मकवानपुर जिल्लामा एक क्लस्टर-अनियमित नियन्त्रित परीक्षण, महिला सामुदायिक स्वास्थ्य स्वयंसेविकाहरूद्वारा सहजीकृत सहभागी महिला समूहहरूले घरमा आधारित नवजात हेरचाह अभ्यासहरू सुधार गरेर नवजात मृत्युदर घटाउन सक्छन् कि भनेर परीक्षण।"
+      },
+      "whatTheyFound": {
+        "en": "Neonatal mortality was reduced by 30% (OR 0.70, 95% CI 0.53-0.94) in intervention clusters compared to controls. The women's groups met monthly to identify and address maternal and neonatal health problems using a participatory action cycle. Key behaviour changes included: increased use of clean delivery kits, improved thermal care, early and exclusive breastfeeding, and faster care-seeking for danger signs. The intervention cost approximately $1.50 per capita per year.",
+        "ne": "नियन्त्रण समूहको तुलनामा हस्तक्षेप क्लस्टरहरूमा नवजात मृत्युदर ३०% ले घटयो। महिला समूहहरू मासिक रूपमा भेला भएर मातृ र नवजात स्वास्थ्य समस्याहरू पहिचान र सम्बोधन गर्ने सहभागी कार्य चक्र प्रयोग गरे। हस्तक्षेपको लागत प्रति व्यक्ति प्रति वर्ष लगभग $१.५० थियो।"
+      },
+      "whatItMeansForNepal": {
+        "en": "This study was conducted in Nepal and directly shaped the national FCHV strategy. The women's group model has since been scaled nationally. The key lesson for current policy is that community-based approaches remain highly cost-effective and should be maintained even as facility-based care expands. As Nepal federalises, local governments should ensure continued support for women's groups and FCHV-facilitated community health activities.",
+        "ne": "यो अध्ययन नेपालमा नै गरिएको थियो र यसले राष्ट्रिय FCHV रणनीतिलाई प्रत्यक्ष आकार दियो। महिला समूह मोडेल पछि राष्ट्रिय रूपमा विस्तार गरिएको छ। हालको नीतिको लागि मुख्य पाठ सामुदायिक दृष्टिकोणहरू अत्यन्त लागत-प्रभावी रहन्छन्।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["neonatal", "women-groups", "FCHV", "Makwanpur"]
+  },
+  {
+    "slug": "ethiopia-hep-primary-care",
+    "title": "Ethiopia's Health Extension Programme: Impact on Universal Primary Care Coverage",
+    "authors": ["Abrha Asefa", "Yibeltal Assefa", "Dessalegn Melaku"],
+    "year": 2019,
+    "journal": "BMJ Global Health",
+    "doi": "10.1136/bmjgh-2019-001936",
+    "url": "https://gh.bmj.com/content/4/Suppl_8/e001936",
+    "policyDomain": ["primary-care", "health-workforce"],
+    "studyDesign": "mixed-methods",
+    "evidenceStrength": "moderate",
+    "countries": ["Ethiopia"],
+    "nepalRelevanceScore": 4,
+    "contextualisation": {
+      "en": "Ethiopia's Health Extension Programme (HEP) deployed over 38,000 salaried Health Extension Workers to rural communities — a model Nepal could learn from as it considers professionalising its FCHV cadre and strengthening primary care under federalism.",
+      "ne": "इथियोपियाको स्वास्थ्य विस्तार कार्यक्रमले ३८,००० भन्दा बढी तलबी स्वास्थ्य विस्तार कार्यकर्ताहरू ग्रामीण समुदायहरूमा तैनात गर्यो — नेपालले यसको FCHV क्याडरलाई व्यावसायीकरण गर्ने विचार गर्दा सिक्न सक्ने मोडेल।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "A mixed-methods evaluation of Ethiopia's Health Extension Programme, which deploys trained, salaried female Health Extension Workers (HEWs) to provide 16 packages of primary care services at community health posts across the country. The study examined coverage, quality, and equity outcomes over 15 years of implementation.",
+        "ne": "इथियोपियाको स्वास्थ्य विस्तार कार्यक्रमको मिश्रित-विधि मूल्याङ्कन, जसले प्रशिक्षित, तलबी महिला स्वास्थ्य विस्तार कार्यकर्ताहरू तैनात गर्दछ। अध्ययनले १५ वर्षको कार्यान्वयनमा कभरेज, गुणस्तर, र समानता नतिजाहरू जाँच गर्यो।"
+      },
+      "whatTheyFound": {
+        "en": "The HEP achieved near-universal primary care coverage: contraceptive prevalence increased from 15% to 36%, immunisation coverage reached 85%, and skilled birth attendance improved significantly in rural areas. Key success factors: (1) standardised one-year training programme; (2) deployment of HEWs in pairs to their home communities; (3) clear service packages with referral protocols; (4) regular salary and career progression pathway. Challenges included high attrition (15% annually), supervision gaps, and limited curative care capacity.",
+        "ne": "HEP ले लगभग सार्वभौमिक प्राथमिक स्वास्थ्य सेवा कभरेज हासिल गर्यो: गर्भनिरोधक प्रचलन १५% बाट ३६% मा बढ्यो, खोप कभरेज ८५% पुग्यो। प्रमुख सफलता कारकहरू: मानकीकृत प्रशिक्षण, जोडीमा तैनाती, स्पष्ट सेवा प्याकेजहरू, र नियमित तलब।"
+      },
+      "whatItMeansForNepal": {
+        "en": "Ethiopia's HEP offers a roadmap for professionalising Nepal's community health workforce. Key takeaways: (1) Salaried positions with career progression dramatically improve retention over volunteer models; (2) Standardised training with clear service packages enables quality at scale; (3) Deploying workers to their home communities builds trust. Nepal's 52,000+ FCHVs could transition to a similar salaried model, but this requires significant fiscal investment that local governments may struggle to fund alone — federal support would be essential.",
+        "ne": "इथियोपियाको HEP ले नेपालको सामुदायिक स्वास्थ्य जनशक्तिलाई व्यावसायीकरण गर्ने मार्गचित्र प्रदान गर्दछ। मुख्य निष्कर्ष: तलबी पदहरूले स्वयंसेवक मोडेलभन्दा धेरै राम्रो रिटेन्सन सुधार गर्दछ।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["HEP", "health-extension-workers", "primary-care-coverage"]
+  },
+  {
+    "slug": "nepal-federalism-health-governance",
+    "title": "Health System Governance Under Federalism in Nepal: Early Experiences and Emerging Challenges",
+    "authors": ["Shophika Regmi", "Sushil Baral", "Krishna Hort"],
+    "year": 2020,
+    "journal": "International Journal of Health Policy and Management",
+    "doi": "10.34172/ijhpm.2020.07",
+    "url": "https://www.ijhpm.com/article_3776.html",
+    "policyDomain": ["health-governance"],
+    "studyDesign": "qualitative",
+    "evidenceStrength": "moderate",
+    "countries": ["Nepal"],
+    "nepalRelevanceScore": 5,
+    "contextualisation": {
+      "en": "This is one of the few rigorous studies examining how Nepal's 2015 federal transition has affected health system governance. Essential reading for understanding the current governance challenges that affect every other health policy domain.",
+      "ne": "नेपालको २०१५ को संघीय परिवर्तनले स्वास्थ्य प्रणाली शासनलाई कसरी प्रभाव पारेको छ भन्ने जाँच गर्ने थोरै कठोर अध्ययनहरूमध्ये यो एक हो।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "A qualitative study using key informant interviews and document analysis to examine how Nepal's transition to federalism has affected health system governance, coordination between government levels, and health service delivery in the early years of implementation (2017-2019).",
+        "ne": "नेपालको संघीयतामा परिवर्तनले स्वास्थ्य प्रणाली शासन, सरकारी तहहरूबीच समन्वय, र स्वास्थ्य सेवा प्रदानलाई कसरी प्रभाव पारेको छ भनेर जाँच गर्ने गुणात्मक अध्ययन।"
+      },
+      "whatTheyFound": {
+        "en": "Three critical challenges emerged: (1) Ambiguity in roles — the constitution devolved health to local governments but implementing legislation lagged, creating confusion about who is responsible for what; (2) Capacity gaps — many local governments lacked health planning and management expertise; (3) Coordination failures — provincial governments struggled to play their intended intermediary role. Positive findings included local governments' enthusiasm and some innovative local health initiatives. Drug procurement was particularly problematic, with supply chain disruptions during the transition.",
+        "ne": "तीन महत्वपूर्ण चुनौतीहरू देखा परे: (१) भूमिकामा अस्पष्टता; (२) क्षमता अन्तरहरू — धेरै स्थानीय सरकारहरूसँग स्वास्थ्य योजना र व्यवस्थापन विशेषज्ञता नथियो; (३) समन्वय असफलताहरू। सकारात्मक निष्कर्षहरूमा स्थानीय सरकारहरूको उत्साह र केही नवीन स्थानीय स्वास्थ्य पहलहरू समावेश थिए।"
+      },
+      "whatItMeansForNepal": {
+        "en": "This study highlights that Nepal's health federalism is a work in progress. Priority actions: (1) Fast-track implementing legislation that clearly delineates health responsibilities across government levels; (2) Invest heavily in local government health management capacity through training and technical support; (3) Establish formal coordination mechanisms between federal, provincial, and local levels; (4) Create a unified drug procurement system to prevent supply chain disruptions. These governance foundations must be strengthened before other health reforms can succeed.",
+        "ne": "यस अध्ययनले नेपालको स्वास्थ्य संघीयता प्रगतिमा रहेको छ भनी हाइलाइट गर्दछ। प्राथमिकता कार्यहरू: कार्यान्वयन कानून छिटो बनाउने, स्थानीय सरकारको क्षमतामा लगानी गर्ने, समन्वय संयन्त्रहरू स्थापना गर्ने।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["federalism", "governance", "decentralisation"]
+  },
+  {
+    "slug": "india-tb-active-case-finding",
+    "title": "Active Case Finding for Tuberculosis in India: A Cost-Effectiveness Analysis",
+    "authors": ["Ranjani Ramachandran", "Pranay Lal", "Sanjay Jha"],
+    "year": 2020,
+    "journal": "PLOS ONE",
+    "doi": "10.1371/journal.pone.0234735",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0234735",
+    "policyDomain": ["infectious-disease"],
+    "studyDesign": "modelling",
+    "evidenceStrength": "moderate",
+    "countries": ["India"],
+    "nepalRelevanceScore": 4,
+    "contextualisation": {
+      "en": "Nepal shares a similar TB burden and epidemiological profile with neighbouring India. Active case finding strategies proven cost-effective in India's high-burden states are directly applicable to Nepal's TB control programme, especially in the Terai region with cross-border population movement.",
+      "ne": "नेपालले छिमेकी भारतसँग समान क्षयरोगको बोझ र महामारीविज्ञान प्रोफाइल साझा गर्दछ। भारतको उच्च बोझ भएका राज्यहरूमा लागत-प्रभावी प्रमाणित सक्रिय केस खोजी रणनीतिहरू नेपालको क्षयरोग नियन्त्रण कार्यक्रममा प्रत्यक्ष लागू हुन्छन्।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "A cost-effectiveness modelling study comparing passive case finding (patients present to health facilities) versus active case finding (health workers screen communities) for tuberculosis in high-burden districts of India, using data from pilot programmes in 4 states.",
+        "ne": "भारतको उच्च बोझ भएका जिल्लाहरूमा क्षयरोगको लागि निष्क्रिय केस खोजी (बिरामीहरू स्वास्थ्य सुविधामा आउने) बनाम सक्रिय केस खोजी (स्वास्थ्य कार्यकर्ताहरूले समुदायमा स्क्रिनिङ गर्ने) तुलना गर्ने लागत-प्रभावकारिता मोडेलिङ अध्ययन।"
+      },
+      "whatTheyFound": {
+        "en": "Active case finding was cost-effective at $340 per DALY averted, well below the WHO threshold. It identified 18% more TB cases than passive detection alone and reduced diagnostic delays from 60 to 21 days. The strategy was most cost-effective when targeted at high-risk populations: urban slums, contacts of known cases, and populations with HIV co-infection. Door-to-door screening was less cost-effective than targeted camp-based screening in high-prevalence areas.",
+        "ne": "सक्रिय केस खोजी प्रति DALY टाळिएको $३४० मा लागत-प्रभावी थियो। यसले निष्क्रिय पत्ता लगाउने भन्दा १८% बढी क्षयरोग केसहरू पहिचान गर्यो र निदान ढिलाइ ६० दिनबाट २१ दिनमा घटायो।"
+      },
+      "whatItMeansForNepal": {
+        "en": "Nepal's National TB Programme could adopt targeted active case finding in high-burden districts, particularly in the Terai where cross-border movement with India creates ongoing transmission. The evidence supports camp-based screening in high-prevalence areas over expensive door-to-door approaches. Nepal's FCHV network could be leveraged for TB symptom screening referrals, making the strategy even more cost-effective by using existing community infrastructure.",
+        "ne": "नेपालको राष्ट्रिय क्षयरोग कार्यक्रमले उच्च बोझ भएका जिल्लाहरूमा लक्षित सक्रिय केस खोजी अपनाउन सक्छ, विशेष गरी तराईमा जहाँ भारतसँगको सीमापारि जनसंख्या आवागमनले निरन्तर प्रसारण सिर्जना गर्दछ।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["tuberculosis", "active-case-finding", "cost-effectiveness"]
+  },
+  {
+    "slug": "bangladesh-stunting-reduction",
+    "title": "Drivers of Stunting Reduction in Bangladesh: A Country Case Study",
+    "authors": ["Purnima Menon", "Derek Headey", "Harold Alderman"],
+    "year": 2018,
+    "journal": "The American Journal of Clinical Nutrition",
+    "doi": "10.1093/ajcn/nqy216",
+    "url": "https://academic.oup.com/ajcn/article/108/6/1189/5153345",
+    "policyDomain": ["nutrition", "child-health"],
+    "studyDesign": "mixed-methods",
+    "evidenceStrength": "high",
+    "countries": ["Bangladesh"],
+    "nepalRelevanceScore": 4,
+    "contextualisation": {
+      "en": "Nepal and Bangladesh share similar stunting challenges in South Asia. Bangladesh reduced stunting from 51% to 28% between 2004-2018. Nepal's stunting rate was 32% in 2022 — Bangladesh's multisectoral approach offers a roadmap for the next phase of reduction.",
+      "ne": "नेपाल र बंगलादेशले दक्षिण एसियामा समान स्टन्टिङ चुनौतीहरू साझा गर्छन्। बंगलादेशले २००४-२०१८ बीच स्टन्टिङ ५१% बाट २८% मा घटायो। नेपालको स्टन्टिङ दर २०२२ मा ३२% थियो।"
+    },
+    "onePager": {
+      "whatWasStudied": {
+        "en": "A comprehensive case study analysing the factors that drove Bangladesh's dramatic reduction in childhood stunting from 51% to 28% over 14 years, using decomposition analysis of nationally representative survey data combined with qualitative policy analysis.",
+        "ne": "१४ वर्षमा बंगलादेशको बाल स्टन्टिङमा ५१% बाट २८% मा भएको नाटकीय कमीलाई चलाउने कारकहरूको विश्लेषण गर्ने व्यापक केस अध्ययन।"
+      },
+      "whatTheyFound": {
+        "en": "The stunting reduction was driven by multiple sectors, not nutrition programmes alone: (1) Economic growth and poverty reduction accounted for 25% of the decline; (2) Improvements in maternal education (19%); (3) Better sanitation and hygiene (WASH) — open defecation fell from 42% to 1% (16%); (4) Improvements in women's decision-making autonomy (12%); (5) Nutrition-specific interventions including micronutrient supplementation and complementary feeding (15%). No single sector accounted for more than a quarter of the progress.",
+        "ne": "स्टन्टिङ कमी बहु क्षेत्रहरूबाट चालित थियो: आर्थिक वृद्धि (२५%), मातृ शिक्षा (१९%), सरसफाइ सुधार (१६%), महिलाको निर्णय स्वायत्तता (१२%), पोषण हस्तक्षेप (१५%)। कुनै एक क्षेत्रले एक चौथाइ भन्दा बढी प्रगतिको हिस्सा लिएन।"
+      },
+      "whatItMeansForNepal": {
+        "en": "Nepal's Multi-Sector Nutrition Plan is on the right track by targeting nutrition through multiple sectors. Bangladesh's experience confirms that nutrition-specific programmes alone are insufficient — Nepal must simultaneously invest in WASH, girls' education, women's empowerment, and poverty reduction. The striking impact of eliminating open defecation is particularly relevant for Nepal, where open defecation remains significant in some provinces. Local governments should integrate nutrition into all health and development planning.",
+        "ne": "नेपालको बहु-क्षेत्रीय पोषण योजना बहु क्षेत्रहरू मार्फत पोषणलाई लक्षित गरेर सही दिशामा छ। बंगलादेशको अनुभवले पोषण-विशिष्ट कार्यक्रमहरू मात्र अपर्याप्त छन् भनी पुष्टि गर्दछ।"
+      }
+    },
+    "status": "verified",
+    "verifiedBy": "Sabin Subedi",
+    "verifiedDate": "2026-03-07",
+    "dateAdded": "2026-03-07",
+    "addedBy": "seed",
+    "tags": ["stunting", "nutrition", "multisectoral", "WASH"]
+  }
+]

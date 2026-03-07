@@ -1,34 +1,160 @@
 ---
 import Page from '../../layouts/Page.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+import { getTopics, getEvidenceByTopic, getEvidence } from '../../data/evidence-loader';
+
+const lang = 'en';
+const topics = getTopics();
+const allPapers = getEvidence();
+const posts = (await getCollection('blog', ({ data }) => data.lang === lang && !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+const countryCount = new Set(allPapers.flatMap(p => p.countries)).size;
 ---
 
 <Page>
-  <section class="text-center py-12">
-    <h1 class="text-4xl font-bold text-teal mb-4">Nepal Health Policy Lab</h1>
-    <p class="text-lg text-gray-mid max-w-2xl mx-auto leading-relaxed">
-      Building the evidence infrastructure for health policy in Nepal.
-      We make rigorous global health research accessible and actionable
-      for Nepal's policymakers, practitioners, and public.
+  <!-- Hero -->
+  <section class="py-16 md:py-24">
+    <p class="text-xs uppercase tracking-widest text-teal font-semibold mb-4">Health Policy Research for Nepal</p>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-dark tracking-tight leading-tight mb-6">
+      Making evidence <br class="hidden md:block" />
+      <span class="text-teal">accessible & actionable</span>
+    </h1>
+    <p class="text-xl text-gray-mid max-w-2xl leading-relaxed mb-8">
+      We curate rigorous global health research, contextualise it for Nepal, and deliver it to the policymakers who need it most.
     </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="/en/evidence" class="bg-teal text-white px-8 py-3 rounded-lg font-medium hover:bg-teal-dark transition-colors shadow-sm">
+        Explore Evidence
+      </a>
+      <a href="/en/evidence/brief" class="border border-teal text-teal px-8 py-3 rounded-lg font-medium hover:bg-teal-light transition-colors">
+        Build a Brief
+      </a>
+    </div>
+
+    <!-- Stats inline -->
+    <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-border">
+      <div>
+        <p class="text-4xl font-bold text-teal tabular-nums">{allPapers.length}</p>
+        <p class="text-sm text-gray-tertiary mt-1">Research Papers</p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold text-teal tabular-nums">{topics.length}</p>
+        <p class="text-sm text-gray-tertiary mt-1">Policy Topics</p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold text-teal tabular-nums">{countryCount}</p>
+        <p class="text-sm text-gray-tertiary mt-1">Countries Covered</p>
+      </div>
+    </div>
   </section>
 
-  <section class="grid md:grid-cols-3 gap-6 py-8">
-    <div class="bg-teal-light rounded-lg p-5">
-      <h2 class="font-bold text-teal mb-2">Evidence Portal</h2>
-      <p class="text-sm text-gray-mid">A searchable database of global health policy research, curated and contextualised for Nepal.</p>
-    </div>
-    <div class="bg-teal-light rounded-lg p-5">
-      <h2 class="font-bold text-teal mb-2">Policy Digest</h2>
-      <p class="text-sm text-gray-mid">A monthly summary of the most relevant new global health research for Nepal's policymakers.</p>
-    </div>
-    <div class="bg-teal-light rounded-lg p-5">
-      <h2 class="font-bold text-teal mb-2">Research Blog</h2>
-      <p class="text-sm text-gray-mid">Original insights and findings from our research, written in accessible language with named authors.</p>
+  <!-- How It Works -->
+  <section class="bg-surface-alt rounded-2xl p-8 md:p-12 mb-14">
+    <h2 class="text-2xl font-bold text-gray-dark tracking-tight mb-8">How It Works</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">We Curate</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">Global health research is screened, selected, and structured into our evidence database.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">We Contextualise</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">Each paper is analysed for its relevance to Nepal's specific health challenges and programmes.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">Policymakers Use It</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">Browse by topic, search, or build custom briefs tailored to your policy questions.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="py-8">
+  <!-- Explore by Topic -->
+  <section class="mb-14">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold text-gray-dark tracking-tight">Explore by Topic</h2>
+      <a href="/en/evidence" class="text-sm text-teal hover:text-teal-dark font-medium">View all &rarr;</a>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {topics.map((topic) => {
+        const count = getEvidenceByTopic(topic.slug).length;
+        return (
+          <a href={`/en/evidence/${topic.slug}`} class="block bg-white border-l-4 border-l-teal border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+            <div class="flex items-start gap-3">
+              <span class="w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-xl flex-shrink-0">{topic.icon}</span>
+              <div>
+                <h3 class="font-semibold text-gray-dark group-hover:text-teal transition-colors">
+                  {topic.title.en}
+                </h3>
+                <p class="text-sm text-gray-mid mt-1 line-clamp-2">{topic.description.en}</p>
+                <p class="text-sm text-teal mt-2 font-medium">{count} papers</p>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- What We Offer -->
+  <section class="grid md:grid-cols-3 gap-6 mb-14">
+    <a href="/en/evidence" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">Evidence Portal</h2>
+      <p class="text-sm text-gray-mid leading-relaxed">Search and filter global health research, curated and contextualised for Nepal. Build custom evidence briefs.</p>
+      <span class="text-sm text-teal mt-4 inline-block font-medium">{allPapers.length} papers &rarr;</span>
+    </a>
+    <a href="/en/digest" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">Policy Digest</h2>
+      <p class="text-sm text-gray-mid leading-relaxed">A monthly summary of the most relevant new global health research for Nepal's policymakers.</p>
+      <span class="text-sm text-teal mt-4 inline-block font-medium">Monthly &rarr;</span>
+    </a>
+    <a href="/en/blog" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">Research Blog</h2>
+      <p class="text-sm text-gray-mid leading-relaxed">Original analysis and commentary from our team, written in accessible language with named authors.</p>
+      <span class="text-sm text-teal mt-4 inline-block font-medium">Read &rarr;</span>
+    </a>
+  </section>
+
+  <!-- Credibility -->
+  <section class="text-center mb-14 py-8 border-t border-b border-border">
+    <p class="text-sm text-gray-tertiary mb-2">Founded by researchers at</p>
+    <p class="text-gray-mid font-medium">University of Strathclyde &middot; UNC Gillings School of Global Public Health</p>
+  </section>
+
+  <!-- Latest from Blog -->
+  {posts.length > 0 && (
+    <section class="mb-14">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-dark tracking-tight">Latest Posts</h2>
+        <a href="/en/blog" class="text-sm text-teal hover:text-teal-dark font-medium">All posts &rarr;</a>
+      </div>
+      <div class="grid gap-4">
+        {posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            author={post.data.author}
+            date={post.data.date}
+            slug={post.id.replace('en/', '')}
+            tags={post.data.tags}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Newsletter -->
+  <section class="bg-amber-light rounded-2xl p-8 md:p-12">
     <NewsletterSignup />
-  </div>
+  </section>
 </Page>

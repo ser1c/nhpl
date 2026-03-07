@@ -4,13 +4,16 @@ import { getLangFromUrl, t, getLocalePath } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<section class="bg-teal-light rounded-lg p-6 text-center">
-  <h2 class="text-xl font-bold text-teal mb-2">{t(lang, 'subscribe.heading')}</h2>
-  <p class="text-sm text-gray-mid mb-4 max-w-md mx-auto">{t(lang, 'subscribe.description')}</p>
+<div class="text-center">
+  <h2 class="text-2xl font-bold text-gray-dark tracking-tight mb-3">{t(lang, 'subscribe.heading')}</h2>
+  <p class="text-sm text-gray-mid mb-6 max-w-md mx-auto leading-relaxed">{t(lang, 'subscribe.description')}</p>
   <a
     href={getLocalePath(lang, '/subscribe')}
-    class="inline-block bg-teal text-white px-5 py-2 rounded text-sm font-medium hover:bg-teal-dark transition-colors"
+    class="inline-block bg-amber text-white px-8 py-3 rounded-lg font-medium hover:bg-amber-dark transition-colors shadow-sm"
   >
     {t(lang, 'nav.subscribe')}
   </a>
-</section>
+  <p class="text-xs text-gray-tertiary mt-3">
+    {lang === 'ne' ? 'निःशुल्क। महिनामा एक पटक भन्दा बढी कहिल्यै छैन।' : 'Free. Never more than once a month.'}
+  </p>
+</div>

@@ -4,14 +4,17 @@
 Establish content infrastructure for blog, digest, and evidence portal.
 
 ## Current Status
-Not started -- infrastructure being built first.
+Blog and digest infrastructure built. Evidence portal data layer complete with 10 seed papers across 5 topics.
 
 ## Priorities (ordered)
 
-1. Blog content collection with schema validation -- not started
-2. Sample blog post to validate pipeline -- not started
-3. Digest content collection -- not started
-4. Evidence portal data structure -- planned (see website.md)
+1. Blog content collection with schema validation -- done
+2. Sample blog post to validate pipeline -- done
+3. Digest content collection -- done (empty, ready for content)
+4. Evidence portal data structure -- done (10 papers, 5 topics, Build a Brief tool)
+5. Multi-agent pipeline for processing new papers -- not started
+6. First real blog post -- not started
+7. First digest issue -- not started
 
 ## Content Products
 

@@ -1,0 +1,21 @@
+---
+interface Props {
+  score: number;
+  showLabel?: boolean;
+  lang?: 'en' | 'ne';
+}
+
+const { score, showLabel = false, lang = 'en' } = Astro.props;
+const label = lang === 'ne' ? 'नेपाल सान्दर्भिकता' : 'Nepal Relevance';
+---
+
+<div class="flex items-center gap-1.5">
+  {showLabel && <span class="text-xs text-gray-mid font-medium mr-1">{label}</span>}
+  {[1, 2, 3, 4, 5].map((i) => (
+    <span
+      class={`w-2.5 h-2.5 rounded-full ${i <= score ? 'bg-teal relevance-dot-filled' : 'bg-gray-light relevance-dot-empty'}`}
+      aria-hidden="true"
+    />
+  ))}
+  <span class="sr-only">{score} out of 5</span>
+</div>

@@ -1,0 +1,55 @@
+---
+import Page from '../../../layouts/Page.astro';
+import TopicCard from '../../../components/TopicCard.astro';
+import { getTopics, getEvidenceByTopic, getEvidence } from '../../../data/evidence-loader';
+import { t } from '../../../i18n/utils';
+
+const lang = 'ne';
+const topics = getTopics();
+const allPapers = getEvidence();
+---
+
+<Page title={t(lang, 'evidence.title')}>
+  <section class="mb-10">
+    <p class="text-xs uppercase tracking-widest text-teal font-semibold mb-3">अनुसन्धान डाटाबेस</p>
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-dark tracking-tight mb-3">{t(lang, 'evidence.title')}</h1>
+    <p class="text-lg text-gray-mid">{t(lang, 'evidence.subtitle')}</p>
+  </section>
+
+  <!-- Topic Grid -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold text-gray-dark tracking-tight mb-6">{t(lang, 'evidence.topics')}</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      {topics.map((topic) => (
+        <TopicCard topic={topic} paperCount={getEvidenceByTopic(topic.slug).length} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Build a Brief -->
+  <section class="mb-12 bg-amber-light rounded-2xl p-8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-bold text-gray-dark tracking-tight">{t(lang, 'evidence.buildBrief')}</h2>
+        <p class="text-sm text-gray-mid mt-1">{t(lang, 'evidence.buildBriefDesc')}</p>
+      </div>
+      <a
+        href={`/${lang}/evidence/brief`}
+        class="inline-flex items-center gap-2 bg-amber text-white px-8 py-3 rounded-lg font-medium hover:bg-amber-dark transition-colors whitespace-nowrap shadow-sm"
+      >
+        {t(lang, 'evidence.buildBrief')} &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- Browse All Link -->
+  <section class="text-center py-8 border-t border-border">
+    <a
+      href={`/${lang}/evidence/browse`}
+      class="inline-flex items-center gap-2 border border-teal text-teal px-8 py-3 rounded-lg font-medium hover:bg-teal hover:text-white transition-colors"
+    >
+      {t(lang, 'evidence.browse')}
+      <span class="text-xs bg-teal-light text-teal px-2 py-0.5 rounded-md">{allPapers.length}</span>
+    </a>
+  </section>
+</Page>

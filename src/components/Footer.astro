@@ -1,15 +1,62 @@
 ---
-import { getLangFromUrl, t } from '../i18n/utils';
+import { getLangFromUrl, t, getLocalePath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const year = new Date().getFullYear();
 ---
 
-<footer class="mt-auto border-t border-gray-light bg-teal-light">
-  <div class="max-w-5xl mx-auto px-4 py-8 text-center">
-    <p class="text-sm text-gray-mid">{t(lang, 'footer.tagline')}</p>
-    <p class="text-xs text-gray-mid mt-2">
-      &copy; {year} {t(lang, 'footer.copyright')}
-    </p>
+<footer class="mt-auto bg-gray-dark text-white">
+  <div class="border-t-4 border-teal"></div>
+  <div class="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-16">
+    <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+      <!-- Organization -->
+      <div>
+        <h3 class="font-bold text-lg mb-3">{t(lang, 'site.name')}</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          {t(lang, 'footer.tagline')}
+        </p>
+        <p class="text-xs text-gray-500 mt-4">
+          {lang === 'ne'
+            ? 'स्ट्र्याथक्लाइड विश्वविद्यालय र UNC गिलिंग्स स्कुल अफ ग्लोबल पब्लिक हेल्थका अनुसन्धानकर्ताहरूद्वारा स्थापित।'
+            : 'Founded by researchers at the University of Strathclyde and UNC Gillings School of Global Public Health.'}
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="font-semibold text-sm uppercase tracking-wider text-gray-400 mb-4">
+          {lang === 'ne' ? 'लिंकहरू' : 'Quick Links'}
+        </h3>
+        <nav class="flex flex-col gap-2.5">
+          <a href={getLocalePath(lang, '/evidence')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.evidence')}</a>
+          <a href={getLocalePath(lang, '/blog')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.blog')}</a>
+          <a href={getLocalePath(lang, '/digest')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.digest')}</a>
+          <a href={getLocalePath(lang, '/about')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.about')}</a>
+          <a href={getLocalePath(lang, '/subscribe')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.subscribe')}</a>
+        </nav>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <h3 class="font-semibold text-sm uppercase tracking-wider text-gray-400 mb-4">
+          {lang === 'ne' ? 'सम्पर्क' : 'Connect'}
+        </h3>
+        <div class="flex flex-col gap-2.5">
+          <a href="https://github.com/ser1c/nhpl" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-300 hover:text-white transition-colors">
+            GitHub
+          </a>
+          <a href={getLocalePath(lang, '/subscribe')} class="text-sm text-gray-300 hover:text-white transition-colors">
+            {lang === 'ne' ? 'न्युजलेटर' : 'Newsletter'}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+      <p class="text-xs text-gray-500">
+        &copy; {year} {t(lang, 'footer.copyright')}
+      </p>
+    </div>
   </div>
 </footer>

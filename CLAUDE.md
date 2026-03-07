@@ -21,7 +21,9 @@ This file governs every Claude Code session on this project. Read it fully befor
 ## Tech Stack
 
 - Astro (static site generator)
-- Tailwind CSS
+- Tailwind CSS v4
+- Preact (lightweight islands for interactive components)
+- Fuse.js (client-side fuzzy search)
 - GitHub Pages (hosting)
 - Markdown content collections with Zod validation
 - TypeScript
@@ -80,6 +82,20 @@ Filename: `YYYY-MM-DD-NNN.md` (NNN = zero-padded sequence number for multiple se
 - Do not over-engineer. This is an early-stage initiative with a small team.
 - Prefer editing existing files over creating new ones
 
+## Evidence Portal
+
+The evidence portal is the flagship feature. Architecture details in `_plans/evidence-portal.md`.
+
+- **Topic-first navigation**: policymakers browse by topic (Health Financing, Maternal & Child Health, etc.), not by paper
+- **Data layer**: Static JSON (`src/data/evidence.json`, `src/data/topics.json`) validated by Zod schemas (`src/data/evidence.schema.ts`)
+- **Interactive search**: Preact island with Fuse.js fuzzy search, filters (policy domain, study design, evidence strength), sorting
+- **Paper 1-pagers**: Structured summaries with "What Was Studied", "What They Found", "What This Means for Nepal"
+- **Build a Brief**: Interactive tool where users select topic + countries to generate a custom evidence report with PDF export
+- **PDF export**: Browser print with custom print styles (branded header/footer, forced colors)
+- **No runtime AI costs**: Everything is static, pre-computed at build time
+- **Verification workflow**: Papers marked as `auto-processed` or `verified` by humans
+- **Multi-agent pipeline**: 4-pass local pipeline (in `scripts/`, not yet built) for processing new papers
+
 ## File Structure
 
 ```
@@ -90,12 +106,31 @@ nhpl_website/
 ├── _sessions/             # Session logs
 ├── _plans/                # Living planning documents
 ├── src/
-│   ├── layouts/           # Astro layouts (Base, Page, BlogPost)
+│   ├── layouts/           # Astro layouts (Base, Page, BlogPost, EvidencePaper)
 │   ├── components/        # Reusable components
+│   │   ├── EvidenceSearch.tsx        # Preact island: search + filter
+│   │   ├── EvidenceBriefBuilder.tsx   # Preact island: build-a-brief tool
+│   │   ├── EvidenceCard.astro        # Paper card for listings
+│   │   ├── EvidenceBadge.astro       # Reusable badge component
+│   │   ├── RelevanceScore.astro      # 1-5 dot Nepal relevance indicator
+│   │   └── TopicCard.astro           # Topic grid card
 │   ├── pages/             # Route pages (en/, ne/)
+│   │   └── [lang]/evidence/
+│   │       ├── index.astro           # Topic grid + Build a Brief CTA
+│   │       ├── browse.astro          # Flat searchable list
+│   │       ├── brief.astro           # Build a Brief tool
+│   │       ├── [topic]/index.astro   # Topic detail page
+│   │       ├── [topic]/[slug].astro  # Paper via topic route
+│   │       └── browse/[slug].astro   # Paper via browse route
+│   ├── data/              # Evidence portal data layer
+│   │   ├── evidence.json             # Paper dataset (10 seed papers)
+│   │   ├── topics.json               # 5 topic definitions
+│   │   ├── evidence.schema.ts        # Zod schemas + TypeScript types
+│   │   ├── taxonomy.ts               # Bilingual display labels
+│   │   └── evidence-loader.ts        # Load + validate at build time
 │   ├── content/           # Markdown content collections (blog/, digest/)
 │   ├── i18n/              # Translation strings and helpers
-│   └── styles/            # Global CSS
+│   └── styles/            # Global CSS (includes print styles)
 ├── public/                # Static assets
 └── .github/workflows/     # GitHub Actions deploy
 ```

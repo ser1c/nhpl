@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+  variant?: 'default' | 'green' | 'amber' | 'red';
+}
+
+const { label, variant = 'default' } = Astro.props;
+
+const colorClasses = {
+  default: 'bg-teal-light text-teal border-teal/20',
+  green: 'bg-green-50 text-green-800 border-green-800/20',
+  amber: 'bg-amber-50 text-amber-800 border-amber-800/20',
+  red: 'bg-red-50 text-red-800 border-red-800/20',
+};
+---
+
+<span class={`text-xs px-2 py-0.5 rounded-md font-medium border print-badge print-badge-${variant} ${colorClasses[variant]}`}>
+  {label}
+</span>

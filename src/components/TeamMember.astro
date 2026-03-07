@@ -3,13 +3,29 @@ interface Props {
   name: string;
   role: string;
   bio: string;
+  image?: string;
 }
 
-const { name, role, bio } = Astro.props;
+const { name, role, bio, image } = Astro.props;
+const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2);
 ---
 
-<div class="border border-gray-light rounded-lg p-5">
-  <h3 class="font-bold text-gray-dark">{name}</h3>
-  <p class="text-sm text-teal font-medium mt-1">{role}</p>
-  <p class="text-sm text-gray-mid mt-2 leading-relaxed">{bio}</p>
+<div class="bg-white border border-border rounded-xl p-6 flex gap-4">
+  {image ? (
+    <img
+      src={image}
+      alt={name}
+      class="w-16 h-16 rounded-full object-cover flex-shrink-0"
+      loading="lazy"
+    />
+  ) : (
+    <div class="w-16 h-16 rounded-full bg-teal text-white flex items-center justify-center text-lg font-bold flex-shrink-0">
+      {initials}
+    </div>
+  )}
+  <div>
+    <h3 class="font-semibold text-gray-dark text-lg">{name}</h3>
+    <p class="text-xs uppercase tracking-wider text-teal font-semibold mt-0.5">{role}</p>
+    <p class="text-sm text-gray-mid mt-2 leading-relaxed">{bio}</p>
+  </div>
 </div>

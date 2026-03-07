@@ -1,0 +1,26 @@
+---
+import Page from '../../../layouts/Page.astro';
+import EvidenceBriefBuilder from '../../../components/EvidenceBriefBuilder';
+import { getEvidence, getTopics } from '../../../data/evidence-loader';
+import { t } from '../../../i18n/utils';
+
+const lang = 'en';
+const papers = getEvidence();
+const topics = getTopics();
+---
+
+<Page title={`${t(lang, 'evidence.buildBrief')} — ${t(lang, 'evidence.title')}`}>
+  <div class="mb-6 no-print" data-no-print>
+    <a href={`/${lang}/evidence`} class="text-sm text-teal hover:text-teal-dark">
+      &larr; {t(lang, 'evidence.backToPortal')}
+    </a>
+  </div>
+
+  <EvidenceBriefBuilder
+    client:load
+    papers={papers}
+    topics={topics}
+    lang={lang}
+    basePath={`/${lang}/evidence`}
+  />
+</Page>

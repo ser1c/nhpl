@@ -1,5 +1,6 @@
 ---
 import Page from '../../../layouts/Page.astro';
+import NewsletterSignup from '../../../components/NewsletterSignup.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../../../i18n/utils';
 
@@ -15,21 +16,91 @@ try {
 ---
 
 <Page title={t(lang, 'nav.digest')}>
-  <h1 class="text-3xl font-bold text-teal mb-2">{t(lang, 'nav.digest')}</h1>
-  <p class="text-gray-mid mb-6">A monthly summary of the most relevant new global health research for Nepal.</p>
+  <section class="mb-10">
+    <p class="text-xs uppercase tracking-widest text-teal font-semibold mb-3">Monthly Newsletter</p>
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-dark tracking-tight mb-3">Nepal Health Policy Digest</h1>
+    <p class="text-lg text-gray-mid">
+      A monthly summary of the most relevant new global health research for Nepal's policymakers,
+      curated and contextualised by our team.
+    </p>
+  </section>
 
-  {issues.length === 0 ? (
-    <p class="text-gray-mid">{t(lang, 'digest.noIssues')}</p>
-  ) : (
-    <div class="grid gap-4">
-      {issues.map((issue) => (
-        <div class="border border-gray-light rounded-lg p-5">
-          <h3 class="font-bold text-gray-dark">Issue #{issue.data.issue}: {issue.data.title}</h3>
-          <p class="text-xs text-gray-mid mt-1">
-            {issue.data.date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}
-          </p>
+  <!-- What to expect -->
+  <section class="bg-surface-alt rounded-2xl p-8 mb-10">
+    <h2 class="text-xl font-bold text-gray-dark tracking-tight mb-6">What's in each issue?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="flex gap-3">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-teal font-bold text-sm">1</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">Curated Papers</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">3-5 newly published papers relevant to Nepal's health policy landscape, summarised in plain language.</p>
         </div>
-      ))}
+      </div>
+      <div class="flex gap-3">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-teal font-bold text-sm">2</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">Nepal Context</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">Each paper comes with analysis of what it means for Nepal's specific challenges and programmes.</p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-teal font-bold text-sm">3</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">Policy Implications</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">Actionable takeaways for policymakers, practitioners, and researchers working in Nepal.</p>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- Issues Archive -->
+  {issues.length === 0 ? (
+    <div class="text-center py-20 bg-surface-alt rounded-2xl mb-10">
+      <p class="text-gray-dark font-semibold text-lg mb-2">First issue coming soon</p>
+      <p class="text-sm text-gray-mid max-w-sm mx-auto">
+        Subscribe to be the first to receive the Nepal Health Policy Digest when it launches.
+      </p>
+    </div>
+  ) : (
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-dark tracking-tight mb-6">Archive</h2>
+      <div class="grid gap-4">
+        {issues.map((issue) => (
+          <div class="bg-white border border-border rounded-xl p-6 hover:shadow-md hover:border-teal transition-all">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="text-xs font-bold text-teal bg-teal-light px-2.5 py-1 rounded-md border border-teal/20">
+                  Issue #{issue.data.issue}
+                </span>
+                <h3 class="font-semibold text-gray-dark text-lg mt-3">{issue.data.title}</h3>
+                {issue.data.description && (
+                  <p class="text-sm text-gray-mid mt-1 leading-relaxed">{issue.data.description}</p>
+                )}
+                <div class="flex items-center gap-3 mt-3 text-sm text-gray-tertiary">
+                  <time datetime={issue.data.date.toISOString()}>
+                    {issue.data.date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}
+                  </time>
+                  {issue.data.papersCount && (
+                    <span>&middot; {issue.data.papersCount} papers reviewed</span>
+                  )}
+                </div>
+                {issue.data.topics && issue.data.topics.length > 0 && (
+                  <div class="flex gap-1.5 mt-3">
+                    {issue.data.topics.map((topic: string) => (
+                      <span class="text-xs bg-surface-alt text-gray-mid px-2 py-0.5 rounded-md">{topic}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   )}
+
+  <!-- Subscribe CTA -->
+  <section class="bg-amber-light rounded-2xl p-8 md:p-12">
+    <NewsletterSignup />
+  </section>
 </Page>

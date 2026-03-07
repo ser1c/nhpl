@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "health-financing",
+    "title": { "en": "Health Financing", "ne": "स्वास्थ्य वित्तपोषण" },
+    "description": {
+      "en": "Evidence on health insurance, out-of-pocket spending, universal health coverage, and financing mechanisms.",
+      "ne": "स्वास्थ्य बीमा, आफ्नै खल्तीबाट खर्च, सार्वभौमिक स्वास्थ्य कभरेज, र वित्तपोषण संयन्त्रहरूको प्रमाण।"
+    },
+    "overview": {
+      "en": "Health financing is one of Nepal's most pressing policy challenges. With out-of-pocket expenditure accounting for over 50% of total health spending, millions of Nepalis face catastrophic health costs each year. The government launched a Social Health Insurance scheme in 2016, but enrollment and implementation remain uneven. This collection brings together global evidence on what financing mechanisms work — from community-based health insurance to conditional cash transfers — with particular attention to what has succeeded in similar low-income, federal contexts.",
+      "ne": "स्वास्थ्य वित्तपोषण नेपालको सबैभन्दा चुनौतीपूर्ण नीति मध्ये एक हो। कुल स्वास्थ्य खर्चको ५०% भन्दा बढी आफ्नै खल्तीबाट हुने खर्चले लाखौं नेपालीहरू प्रत्येक वर्ष विनाशकारी स्वास्थ्य लागतको सामना गर्छन्। सरकारले २०१६ मा सामाजिक स्वास्थ्य बीमा योजना सुरु गर्यो, तर भर्ना र कार्यान्वयन अझै असमान छ। यस संग्रहले सामुदायिक स्वास्थ्य बीमादेखि सशर्त नगद हस्तान्तरणसम्म — कुन वित्तपोषण संयन्त्रहरू काम गर्छन् भन्ने बारेमा विश्वव्यापी प्रमाण एकत्र गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What health insurance models work best in low-income countries?",
+        "How can Nepal reduce catastrophic out-of-pocket health spending?",
+        "What drives enrollment in social health insurance schemes?",
+        "How do other federal countries manage health financing across provinces?"
+      ],
+      "ne": [
+        "कम आय भएका देशहरूमा कुन स्वास्थ्य बीमा मोडेलहरू सबैभन्दा राम्रो काम गर्छन्?",
+        "नेपालले विनाशकारी स्वास्थ्य खर्च कसरी घटाउन सक्छ?",
+        "सामाजिक स्वास्थ्य बीमा योजनामा भर्ना के कुराले बढाउँछ?",
+        "अन्य संघीय देशहरूले प्रदेशहरूमा स्वास्थ्य वित्तपोषण कसरी व्यवस्थापन गर्छन्?"
+      ]
+    },
+    "policyDomains": ["health-financing"],
+    "icon": "💰"
+  },
+  {
+    "slug": "maternal-and-child-health",
+    "title": { "en": "Maternal & Child Health", "ne": "मातृ तथा बाल स्वास्थ्य" },
+    "description": {
+      "en": "Evidence on reducing maternal and child mortality, antenatal care, safe delivery, and nutrition interventions.",
+      "ne": "मातृ तथा बाल मृत्युदर घटाउने, प्रसवपूर्व सेवा, सुरक्षित प्रसव, र पोषण हस्तक्षेपहरूको प्रमाण।"
+    },
+    "overview": {
+      "en": "Nepal has made remarkable progress in reducing maternal and child mortality over the past two decades, but significant disparities persist across provinces, wealth quintiles, and ethnic groups. This collection examines evidence on interventions that have worked in similar contexts — from community health worker programmes to facility-based quality improvement — and what they suggest for Nepal's next phase of progress.",
+      "ne": "नेपालले विगत दुई दशकमा मातृ तथा बाल मृत्युदर घटाउनमा उल्लेखनीय प्रगति गरेको छ, तर प्रदेश, सम्पत्ति क्विन्टाइल, र जातीय समूहहरूमा उल्लेखनीय असमानताहरू कायम छन्। यस संग्रहले सामुदायिक स्वास्थ्य कार्यकर्ता कार्यक्रमदेखि सुविधामा गुणस्तर सुधारसम्म — समान सन्दर्भहरूमा काम गरेका हस्तक्षेपहरूको प्रमाण जाँच गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What interventions most effectively reduce maternal mortality in rural settings?",
+        "How can community health workers improve neonatal outcomes?",
+        "What nutrition programmes have reduced childhood stunting in South Asia?",
+        "How do demand-side incentives affect institutional delivery rates?"
+      ],
+      "ne": [
+        "ग्रामीण क्षेत्रमा मातृ मृत्युदर घटाउन कुन हस्तक्षेपहरू सबैभन्दा प्रभावकारी छन्?",
+        "सामुदायिक स्वास्थ्य कार्यकर्ताहरूले नवजात शिशुको नतिजा कसरी सुधार गर्न सक्छन्?",
+        "दक्षिण एसियामा बाल स्टन्टिङ घटाउन कुन पोषण कार्यक्रमहरू सफल भएका छन्?",
+        "माग-पक्षीय प्रोत्साहनहरूले संस्थागत प्रसव दरलाई कसरी प्रभाव पार्छन्?"
+      ]
+    },
+    "policyDomains": ["maternal-health", "child-health", "nutrition"],
+    "icon": "🤱"
+  },
+  {
+    "slug": "primary-care-and-service-delivery",
+    "title": { "en": "Primary Care & Service Delivery", "ne": "प्राथमिक स्वास्थ्य सेवा" },
+    "description": {
+      "en": "Evidence on strengthening primary healthcare systems, community health workers, and service delivery models.",
+      "ne": "प्राथमिक स्वास्थ्य प्रणाली सुदृढीकरण, सामुदायिक स्वास्थ्य कार्यकर्ता, र सेवा प्रदान मोडेलहरूको प्रमाण।"
+    },
+    "overview": {
+      "en": "Nepal's health system relies heavily on a network of health posts, primary health care centres, and Female Community Health Volunteers (FCHVs). As the country federalises, local governments are taking on new responsibilities for primary care delivery. This collection examines global evidence on what makes primary care systems effective — from task-shifting and digital health tools to performance-based financing of health facilities.",
+      "ne": "नेपालको स्वास्थ्य प्रणाली स्वास्थ्य चौकी, प्राथमिक स्वास्थ्य सेवा केन्द्र, र महिला सामुदायिक स्वास्थ्य स्वयंसेविकाहरूको नेटवर्कमा धेरै निर्भर छ। देश संघीयता तर्फ अघि बढ्दा, स्थानीय सरकारहरूले प्राथमिक स्वास्थ्य सेवा प्रदानको नयाँ जिम्मेवारी लिइरहेका छन्।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What primary care models work best in decentralised health systems?",
+        "How can community health workers be better supported and retained?",
+        "What role can digital health play in strengthening primary care in rural Nepal?",
+        "How do performance-based financing schemes affect service quality?"
+      ],
+      "ne": [
+        "विकेन्द्रीकृत स्वास्थ्य प्रणालीमा कुन प्राथमिक स्वास्थ्य सेवा मोडेलहरू सबैभन्दा राम्रो काम गर्छन्?",
+        "सामुदायिक स्वास्थ्य कार्यकर्ताहरूलाई कसरी राम्रोसँग समर्थन र कायम राख्न सकिन्छ?",
+        "ग्रामीण नेपालमा प्राथमिक स्वास्थ्य सेवा सुदृढ गर्न डिजिटल स्वास्थ्यले कस्तो भूमिका खेल्न सक्छ?",
+        "प्रदर्शनमा आधारित वित्तपोषण योजनाहरूले सेवा गुणस्तरलाई कसरी प्रभाव पार्छन्?"
+      ]
+    },
+    "policyDomains": ["primary-care", "health-workforce"],
+    "icon": "🏥"
+  },
+  {
+    "slug": "infectious-disease",
+    "title": { "en": "Infectious Disease", "ne": "संक्रामक रोग" },
+    "description": {
+      "en": "Evidence on controlling infectious diseases including tuberculosis, malaria, dengue, and pandemic preparedness.",
+      "ne": "क्षयरोग, मलेरिया, डेंगु, र महामारी तयारी सहित संक्रामक रोग नियन्त्रणको प्रमाण।"
+    },
+    "overview": {
+      "en": "Nepal faces a complex infectious disease landscape — from persistent challenges with tuberculosis and neglected tropical diseases to emerging threats like dengue and antimicrobial resistance. The COVID-19 pandemic exposed both strengths and vulnerabilities in the health system. This collection brings together evidence on effective disease control strategies, surveillance systems, and outbreak response approaches relevant to Nepal's epidemiological context.",
+      "ne": "नेपालले जटिल संक्रामक रोगको परिदृश्यको सामना गरिरहेको छ — क्षयरोग र उपेक्षित उष्णकटिबन्धीय रोगहरूदेखि डेंगु र एन्टिमाइक्रोबियल प्रतिरोधजस्ता उदीयमान खतराहरूसम्म। COVID-19 महामारीले स्वास्थ्य प्रणालीका बलियो पक्ष र कमजोरी दुवै उजागर गर्यो।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What TB control strategies have worked in high-burden South Asian countries?",
+        "How should Nepal prepare for future pandemic threats?",
+        "What vector control approaches are most cost-effective for dengue prevention?",
+        "How can antimicrobial stewardship be implemented in resource-limited settings?"
+      ],
+      "ne": [
+        "उच्च भार भएका दक्षिण एसियाली देशहरूमा कुन क्षयरोग नियन्त्रण रणनीतिहरू सफल भएका छन्?",
+        "नेपालले भविष्यका महामारी खतराहरूको लागि कसरी तयारी गर्नुपर्छ?",
+        "डेंगु रोकथामका लागि कुन भेक्टर नियन्त्रण दृष्टिकोणहरू सबैभन्दा लागत-प्रभावी छन्?",
+        "सीमित स्रोत भएका सेटिङहरूमा एन्टिमाइक्रोबियल स्ट्युवार्डशिप कसरी लागू गर्न सकिन्छ?"
+      ]
+    },
+    "policyDomains": ["infectious-disease"],
+    "icon": "🦠"
+  },
+  {
+    "slug": "health-governance",
+    "title": { "en": "Health Governance & Systems", "ne": "स्वास्थ्य शासन र प्रणाली" },
+    "description": {
+      "en": "Evidence on health system governance, federalism, decentralisation, and health information systems.",
+      "ne": "स्वास्थ्य प्रणाली शासन, संघीयता, विकेन्द्रीकरण, र स्वास्थ्य सूचना प्रणालीहरूको प्रमाण।"
+    },
+    "overview": {
+      "en": "Nepal's transition to federalism since 2015 has fundamentally restructured health governance, with health service delivery responsibilities shifting to 753 local governments. This creates both opportunities and challenges — local governments can be more responsive to community needs, but may lack technical capacity and face coordination challenges with provincial and federal levels. This collection examines how other countries have managed health system decentralisation and what governance arrangements support better health outcomes.",
+      "ne": "२०१५ देखि नेपालको संघीयतामा परिवर्तनले स्वास्थ्य शासनलाई मौलिक रूपमा पुनर्संरचना गरेको छ, स्वास्थ्य सेवा प्रदानको जिम्मेवारी ७५३ स्थानीय सरकारहरूमा सरेको छ। यसले अवसर र चुनौती दुवै सिर्जना गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "How have other federal countries decentralised health services effectively?",
+        "What governance structures improve coordination between government levels?",
+        "How can health information systems support evidence-based local decision-making?",
+        "What accountability mechanisms improve health service delivery?"
+      ],
+      "ne": [
+        "अन्य संघीय देशहरूले स्वास्थ्य सेवाहरू प्रभावकारी रूपमा विकेन्द्रीकरण कसरी गरेका छन्?",
+        "कुन शासन संरचनाहरूले सरकारी तहहरूबीच समन्वय सुधार गर्छन्?",
+        "स्वास्थ्य सूचना प्रणालीहरूले प्रमाणमा आधारित स्थानीय निर्णय कसरी समर्थन गर्न सक्छन्?",
+        "कुन जवाफदेहिता संयन्त्रहरूले स्वास्थ्य सेवा प्रदान सुधार गर्छन्?"
+      ]
+    },
+    "policyDomains": ["health-governance", "health-information-systems"],
+    "icon": "⚖️"
+  }
+]

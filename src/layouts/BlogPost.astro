@@ -22,19 +22,19 @@ const formattedDate = date.toLocaleDateString(lang === 'ne' ? 'ne-NP' : 'en-GB',
 
 <Base title={title}>
   <Header />
-  <main class="flex-1 max-w-3xl mx-auto px-4 py-8 w-full">
+  <main id="main-content" class="flex-1 max-w-3xl mx-auto px-4 md:px-8 py-10 md:py-14 w-full">
     <article>
-      <header class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-dark mb-3">{title}</h1>
+      <header class="mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-dark tracking-tight mb-4">{title}</h1>
         <div class="text-sm text-gray-mid">
           {t(lang, 'blog.by')} <span class="font-medium text-teal">{author}</span>
           <span class="mx-2">&middot;</span>
           <time datetime={date.toISOString()}>{formattedDate}</time>
         </div>
         {tags && tags.length > 0 && (
-          <div class="flex gap-2 mt-3">
+          <div class="flex gap-2 mt-4">
             {tags.map((tag) => (
-              <span class="text-xs bg-teal-light text-teal px-2 py-1 rounded">{tag}</span>
+              <span class="text-xs bg-surface-alt text-gray-mid px-2.5 py-1 rounded-md">{tag}</span>
             ))}
           </div>
         )}

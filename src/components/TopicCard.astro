@@ -1,0 +1,32 @@
+---
+import { getLangFromUrl, t } from '../i18n/utils';
+import type { Topic } from '../data/evidence.schema';
+
+interface Props {
+  topic: Topic;
+  paperCount: number;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const { topic, paperCount } = Astro.props;
+---
+
+<a
+  href={`/${lang}/evidence/${topic.slug}`}
+  class="block bg-white border border-border border-l-4 border-l-teal rounded-xl p-6 hover:shadow-md transition-all group"
+>
+  <div class="flex items-start gap-3">
+    <span class="w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-xl flex-shrink-0" aria-hidden="true">{topic.icon}</span>
+    <div class="flex-1">
+      <h3 class="font-semibold text-gray-dark group-hover:text-teal transition-colors">
+        {topic.title[lang]}
+      </h3>
+      <p class="text-sm text-teal font-medium mt-1">
+        {paperCount} {t(lang, 'evidence.papers')}
+      </p>
+      <p class="text-sm text-gray-mid mt-2 leading-relaxed">
+        {topic.description[lang]}
+      </p>
+    </div>
+  </div>
+</a>

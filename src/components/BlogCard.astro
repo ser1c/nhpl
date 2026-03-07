@@ -3,6 +3,7 @@ import { getLangFromUrl, t, getLocalePath } from '../i18n/utils';
 
 interface Props {
   title: string;
+  description?: string;
   author: string;
   date: Date;
   slug: string;
@@ -10,7 +11,7 @@ interface Props {
 }
 
 const lang = getLangFromUrl(Astro.url);
-const { title, author, date, slug, tags } = Astro.props;
+const { title, description, author, date, slug, tags } = Astro.props;
 const formattedDate = date.toLocaleDateString(lang === 'ne' ? 'ne-NP' : 'en-GB', {
   year: 'numeric',
   month: 'short',
@@ -18,17 +19,20 @@ const formattedDate = date.toLocaleDateString(lang === 'ne' ? 'ne-NP' : 'en-GB',
 });
 ---
 
-<a href={getLocalePath(lang, `/blog/${slug}`)} class="block border border-gray-light rounded-lg p-5 hover:border-teal transition-colors group">
-  <h3 class="font-bold text-gray-dark group-hover:text-teal transition-colors">{title}</h3>
-  <div class="text-xs text-gray-mid mt-2">
-    {t(lang, 'blog.by')} <span class="font-medium">{author}</span>
-    <span class="mx-1">&middot;</span>
+<a href={getLocalePath(lang, `/blog/${slug}`)} class="block bg-white border border-border rounded-xl p-6 hover:shadow-md hover:border-teal transition-all group">
+  <h3 class="font-semibold text-gray-dark group-hover:text-teal transition-colors text-lg leading-snug">{title}</h3>
+  {description && (
+    <p class="text-sm text-gray-mid mt-2 line-clamp-2 leading-relaxed">{description}</p>
+  )}
+  <div class="flex items-center gap-3 text-sm text-gray-tertiary mt-3">
+    <span>{t(lang, 'blog.by')} <span class="font-medium text-gray-mid">{author}</span></span>
+    <span>&middot;</span>
     <time datetime={date.toISOString()}>{formattedDate}</time>
   </div>
   {tags && tags.length > 0 && (
-    <div class="flex gap-1.5 mt-2">
+    <div class="flex gap-1.5 mt-3">
       {tags.map((tag) => (
-        <span class="text-xs bg-teal-light text-teal px-1.5 py-0.5 rounded">{tag}</span>
+        <span class="text-xs bg-surface-alt text-gray-mid px-2 py-0.5 rounded-md">{tag}</span>
       ))}
     </div>
   )}

@@ -1,0 +1,25 @@
+---
+import EvidencePaper from '../../../../layouts/EvidencePaper.astro';
+import { getTopics, getEvidenceByTopic } from '../../../../data/evidence-loader';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  const topics = getTopics();
+  const paths: { params: { topic: string; slug: string }; props: { paper: any; topicSlug: string } }[] = [];
+
+  for (const topic of topics) {
+    const papers = getEvidenceByTopic(topic.slug);
+    for (const paper of papers) {
+      paths.push({
+        params: { topic: topic.slug, slug: paper.slug },
+        props: { paper, topicSlug: topic.slug },
+      });
+    }
+  }
+  return paths;
+};
+
+const { paper, topicSlug } = Astro.props;
+---
+
+<EvidencePaper paper={paper} topicSlug={topicSlug} />

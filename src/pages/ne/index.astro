@@ -1,36 +1,161 @@
 ---
 import Page from '../../layouts/Page.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+import { getTopics, getEvidenceByTopic, getEvidence } from '../../data/evidence-loader';
 import { t } from '../../i18n/utils';
 
-const lang = 'ne' as const;
+const lang = 'ne';
+const topics = getTopics();
+const allPapers = getEvidence();
+const posts = (await getCollection('blog', ({ data }) => data.lang === lang && !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+const countryCount = new Set(allPapers.flatMap(p => p.countries)).size;
 ---
 
 <Page>
-  <section class="text-center py-12">
-    <h1 class="text-4xl font-bold text-teal mb-4">{t(lang, 'site.name')}</h1>
-    <p class="text-lg text-gray-mid max-w-2xl mx-auto leading-relaxed">
-      {t(lang, 'site.tagline')}।
-      हामी विश्वव्यापी स्वास्थ्य अनुसन्धानलाई नेपालका नीति निर्माताहरू, अभ्यासकर्ताहरू र जनताको लागि पहुँचयोग्य र कार्ययोग्य बनाउँछौं।
+  <!-- Hero -->
+  <section class="py-16 md:py-24">
+    <p class="text-xs uppercase tracking-widest text-teal font-semibold mb-4">नेपालको लागि स्वास्थ्य नीति अनुसन्धान</p>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-dark tracking-tight leading-tight mb-6">
+      प्रमाणलाई <br class="hidden md:block" />
+      <span class="text-teal">पहुँचयोग्य र कार्ययोग्य</span> बनाउँदै
+    </h1>
+    <p class="text-xl text-gray-mid max-w-2xl leading-relaxed mb-8">
+      हामी कडा विश्वव्यापी स्वास्थ्य अनुसन्धान क्युरेट गर्छौं, नेपालको लागि सान्दर्भिक बनाउँछौं, र यसलाई आवश्यक नीति निर्माताहरूसम्म पुर्याउँछौं।
     </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="/ne/evidence" class="bg-teal text-white px-8 py-3 rounded-lg font-medium hover:bg-teal-dark transition-colors shadow-sm">
+        {t(lang, 'nav.evidence')}
+      </a>
+      <a href="/ne/evidence/brief" class="border border-teal text-teal px-8 py-3 rounded-lg font-medium hover:bg-teal-light transition-colors">
+        {t(lang, 'evidence.buildBrief')}
+      </a>
+    </div>
+
+    <!-- Stats inline -->
+    <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-border">
+      <div>
+        <p class="text-4xl font-bold text-teal tabular-nums">{allPapers.length}</p>
+        <p class="text-sm text-gray-tertiary mt-1">अनुसन्धान पत्रहरू</p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold text-teal tabular-nums">{topics.length}</p>
+        <p class="text-sm text-gray-tertiary mt-1">नीति विषयहरू</p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold text-teal tabular-nums">{countryCount}</p>
+        <p class="text-sm text-gray-tertiary mt-1">समावेश देशहरू</p>
+      </div>
+    </div>
   </section>
 
-  <section class="grid md:grid-cols-3 gap-6 py-8">
-    <div class="bg-teal-light rounded-lg p-5">
-      <h2 class="font-bold text-teal mb-2">{t(lang, 'nav.evidence')}</h2>
-      <p class="text-sm text-gray-mid">नेपालको लागि क्युरेट र सान्दर्भिक बनाइएको विश्वव्यापी स्वास्थ्य नीति अनुसन्धानको खोजयोग्य डाटाबेस।</p>
-    </div>
-    <div class="bg-teal-light rounded-lg p-5">
-      <h2 class="font-bold text-teal mb-2">{t(lang, 'nav.digest')}</h2>
-      <p class="text-sm text-gray-mid">नेपालका नीति निर्माताहरूको लागि सबैभन्दा सान्दर्भिक नयाँ विश्वव्यापी स्वास्थ्य अनुसन्धानको मासिक सारांश।</p>
-    </div>
-    <div class="bg-teal-light rounded-lg p-5">
-      <h2 class="font-bold text-teal mb-2">{t(lang, 'nav.blog')}</h2>
-      <p class="text-sm text-gray-mid">हाम्रो अनुसन्धानबाट मौलिक अन्तर्दृष्टि र निष्कर्षहरू, पहुँचयोग्य भाषामा लेखिएका।</p>
+  <!-- How It Works -->
+  <section class="bg-surface-alt rounded-2xl p-8 md:p-12 mb-14">
+    <h2 class="text-2xl font-bold text-gray-dark tracking-tight mb-8">यसले कसरी काम गर्छ</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">हामी क्युरेट गर्छौं</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">विश्वव्यापी स्वास्थ्य अनुसन्धानलाई छानिन्छ, छनोट गरिन्छ र हाम्रो प्रमाण डाटाबेसमा संरचित गरिन्छ।</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">हामी सान्दर्भिक बनाउँछौं</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">प्रत्येक पत्रलाई नेपालको विशिष्ट स्वास्थ्य चुनौती र कार्यक्रमहरूको लागि विश्लेषण गरिन्छ।</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+        <div>
+          <h3 class="font-semibold text-gray-dark mb-1">नीति निर्माताहरूले प्रयोग गर्छन्</h3>
+          <p class="text-sm text-gray-mid leading-relaxed">विषय अनुसार ब्राउज गर्नुहोस्, खोज्नुहोस्, वा तपाईंको नीति प्रश्नहरूको लागि अनुकूलन संक्षेप बनाउनुहोस्।</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="py-8">
+  <!-- Explore by Topic -->
+  <section class="mb-14">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold text-gray-dark tracking-tight">{t(lang, 'evidence.topics')}</h2>
+      <a href="/ne/evidence" class="text-sm text-teal hover:text-teal-dark font-medium">सबै हेर्नुहोस् &rarr;</a>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {topics.map((topic) => {
+        const count = getEvidenceByTopic(topic.slug).length;
+        return (
+          <a href={`/ne/evidence/${topic.slug}`} class="block bg-white border-l-4 border-l-teal border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+            <div class="flex items-start gap-3">
+              <span class="w-10 h-10 bg-teal-light rounded-full flex items-center justify-center text-xl flex-shrink-0">{topic.icon}</span>
+              <div>
+                <h3 class="font-semibold text-gray-dark group-hover:text-teal transition-colors">
+                  {topic.title.ne}
+                </h3>
+                <p class="text-sm text-gray-mid mt-1 line-clamp-2">{topic.description.ne}</p>
+                <p class="text-sm text-teal mt-2 font-medium">{count} {t(lang, 'evidence.papers')}</p>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- What We Offer -->
+  <section class="grid md:grid-cols-3 gap-6 mb-14">
+    <a href="/ne/evidence" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">{t(lang, 'nav.evidence')}</h2>
+      <p class="text-sm text-gray-mid leading-relaxed">नेपालको लागि क्युरेट र सान्दर्भिक बनाइएको विश्वव्यापी स्वास्थ्य नीति अनुसन्धान खोज्नुहोस्। अनुकूलन प्रमाण संक्षेप बनाउनुहोस्।</p>
+      <span class="text-sm text-teal mt-4 inline-block font-medium">{allPapers.length} {t(lang, 'evidence.papers')} &rarr;</span>
+    </a>
+    <a href="/ne/digest" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">{t(lang, 'nav.digest')}</h2>
+      <p class="text-sm text-gray-mid leading-relaxed">नेपालका नीति निर्माताहरूको लागि सबैभन्दा सान्दर्भिक नयाँ विश्वव्यापी स्वास्थ्य अनुसन्धानको मासिक सारांश।</p>
+      <span class="text-sm text-teal mt-4 inline-block font-medium">मासिक &rarr;</span>
+    </a>
+    <a href="/ne/blog" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">{t(lang, 'nav.blog')}</h2>
+      <p class="text-sm text-gray-mid leading-relaxed">हाम्रो टोलीबाट मौलिक विश्लेषण र टिप्पणी, पहुँचयोग्य भाषामा लेखिएका।</p>
+      <span class="text-sm text-teal mt-4 inline-block font-medium">पढ्नुहोस् &rarr;</span>
+    </a>
+  </section>
+
+  <!-- Credibility -->
+  <section class="text-center mb-14 py-8 border-t border-b border-border">
+    <p class="text-sm text-gray-tertiary mb-2">अनुसन्धानकर्ताहरूद्वारा स्थापित</p>
+    <p class="text-gray-mid font-medium">स्ट्र्याथक्लाइड विश्वविद्यालय &middot; UNC गिलिंग्स स्कुल अफ ग्लोबल पब्लिक हेल्थ</p>
+  </section>
+
+  <!-- Latest from Blog -->
+  {posts.length > 0 && (
+    <section class="mb-14">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-dark tracking-tight">नवीनतम लेखहरू</h2>
+        <a href="/ne/blog" class="text-sm text-teal hover:text-teal-dark font-medium">सबै लेखहरू &rarr;</a>
+      </div>
+      <div class="grid gap-4">
+        {posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            author={post.data.author}
+            date={post.data.date}
+            slug={post.id.replace('ne/', '')}
+            tags={post.data.tags}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Newsletter -->
+  <section class="bg-amber-light rounded-2xl p-8 md:p-12">
     <NewsletterSignup />
-  </div>
+  </section>
 </Page>

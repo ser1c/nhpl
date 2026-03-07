@@ -1,0 +1,42 @@
+---
+import Page from '../../../layouts/Page.astro';
+import EvidenceSearch from '../../../components/EvidenceSearch';
+import { getEvidence } from '../../../data/evidence-loader';
+import { t } from '../../../i18n/utils';
+
+const lang = 'ne';
+const papers = getEvidence();
+---
+
+<Page title={t(lang, 'evidence.browse')}>
+  <div class="mb-6">
+    <a href={`/${lang}/evidence`} class="text-sm text-teal hover:text-teal-dark transition-colors">
+      &larr; {t(lang, 'evidence.backToPortal')}
+    </a>
+  </div>
+
+  <h1 class="text-2xl font-bold text-gray-dark mb-2">{t(lang, 'evidence.browse')}</h1>
+  <p class="text-gray-mid mb-6">{t(lang, 'evidence.subtitle')}</p>
+
+  <!-- No-JS fallback -->
+  <noscript>
+    <div class="space-y-4">
+      {papers.map((paper) => (
+        <div class="border border-gray-200 rounded-lg p-4">
+          <h3 class="font-bold text-sm">{paper.title}</h3>
+          <p class="text-xs text-gray-500 mt-1">{paper.authors.join(', ')} &middot; {paper.year}</p>
+          <a href={`/${lang}/evidence/browse/${paper.slug}`} class="text-xs text-teal mt-2 inline-block">
+            {t(lang, 'blog.readMore')} &rarr;
+          </a>
+        </div>
+      ))}
+    </div>
+  </noscript>
+
+  <EvidenceSearch
+    client:load
+    papers={papers}
+    lang={lang}
+    basePath={`/${lang}/evidence`}
+  />
+</Page>

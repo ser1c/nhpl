@@ -1,0 +1,155 @@
+---
+import Page from './Page.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import RelevanceScore from '../components/RelevanceScore.astro';
+import { getLangFromUrl, t } from '../i18n/utils';
+import { policyDomainLabels, studyDesignLabels, evidenceStrengthLabels, verificationStatusLabels } from '../data/taxonomy';
+import type { EvidenceEntry } from '../data/evidence.schema';
+
+interface Props {
+  paper: EvidenceEntry;
+  topicSlug?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const { paper, topicSlug } = Astro.props;
+
+const strengthVariant = {
+  high: 'green' as const,
+  moderate: 'amber' as const,
+  low: 'red' as const,
+};
+
+const backLink = topicSlug
+  ? `/${lang}/evidence/${topicSlug}`
+  : `/${lang}/evidence`;
+const backLabel = topicSlug
+  ? t(lang, 'evidence.backToTopic')
+  : t(lang, 'evidence.backToPortal');
+---
+
+<Page title={paper.title}>
+  <article class="max-w-3xl mx-auto evidence-paper">
+    <!-- Print-only header (hidden on screen) -->
+    <div class="print-header hidden">
+      <h1>Nepal Health Policy Lab</h1>
+      <p>nepalhealthpolicylab.org &middot; Evidence Portal</p>
+    </div>
+
+    <!-- Back link -->
+    <a href={backLink} class="text-sm text-teal hover:text-teal-dark transition-colors mb-8 inline-block no-print font-medium">
+      &larr; {backLabel}
+    </a>
+
+    <!-- Verification banner -->
+    {paper.status === 'auto-processed' && (
+      <div class="bg-amber-50 border border-amber-800/20 rounded-xl p-4 mb-8">
+        <p class="text-sm text-amber-800">
+          {lang === 'ne'
+            ? 'यो प्रविष्टि एआई-उत्पन्न हो र मानव समीक्षाको प्रतीक्षामा छ।'
+            : 'This entry was AI-generated and is awaiting human review.'}
+        </p>
+      </div>
+    )}
+
+    <!-- Paper bibliographic info -->
+    <div class="mb-10 paper-header">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-dark leading-tight tracking-tight mb-4">{paper.title}</h1>
+      <p class="text-sm text-gray-mid font-medium">{paper.authors.join(', ')}</p>
+      <p class="text-sm text-gray-tertiary mt-1">
+        {paper.journal} &middot; {paper.year}
+        {paper.doi && (
+          <span> &middot; DOI: {paper.doi}</span>
+        )}
+      </p>
+
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-1.5 mt-5">
+        {paper.policyDomain.map((d) => (
+          <EvidenceBadge label={policyDomainLabels[d][lang]} />
+        ))}
+        <EvidenceBadge label={studyDesignLabels[paper.studyDesign][lang]} />
+        <EvidenceBadge
+          label={evidenceStrengthLabels[paper.evidenceStrength][lang]}
+          variant={strengthVariant[paper.evidenceStrength]}
+        />
+        <EvidenceBadge
+          label={verificationStatusLabels[paper.status][lang]}
+          variant={paper.status === 'verified' ? 'green' : 'amber'}
+        />
+      </div>
+
+      <!-- Nepal Relevance -->
+      <div class="mt-4 flex items-center gap-3">
+        <RelevanceScore score={paper.nepalRelevanceScore} showLabel={true} lang={lang} />
+        <span class="text-sm text-gray-tertiary font-medium">{paper.nepalRelevanceScore}/5</span>
+      </div>
+
+      <!-- Countries -->
+      <p class="text-sm text-gray-tertiary mt-2">
+        {lang === 'ne' ? 'देशहरू' : 'Countries'}: {paper.countries.join(', ')}
+      </p>
+    </div>
+
+    <!-- 1-Pager Sections -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-gray-dark tracking-tight mb-4 border-b border-border pb-3">
+        {t(lang, 'evidence.whatWasStudied')}
+      </h2>
+      <p class="text-gray-mid leading-7">{paper.onePager.whatWasStudied[lang]}</p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-gray-dark tracking-tight mb-4 border-b border-border pb-3">
+        {t(lang, 'evidence.whatTheyFound')}
+      </h2>
+      <div class="border-l-4 border-l-teal pl-5">
+        <p class="text-gray-mid leading-7">{paper.onePager.whatTheyFound[lang]}</p>
+      </div>
+    </section>
+
+    <section class="mb-10 bg-teal-light rounded-2xl p-8 nepal-section">
+      <h2 class="text-xl font-bold text-teal tracking-tight mb-4">
+        {t(lang, 'evidence.whatItMeansForNepal')}
+      </h2>
+      <p class="text-gray-dark leading-7">{paper.onePager.whatItMeansForNepal[lang]}</p>
+    </section>
+
+    <!-- Contextualisation -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-gray-dark tracking-tight mb-4 border-b border-border pb-3">
+        {lang === 'ne' ? 'सन्दर्भीकरण' : 'Contextualisation'}
+      </h2>
+      <p class="text-gray-mid leading-7">{paper.contextualisation[lang]}</p>
+    </section>
+
+    <!-- Actions -->
+    <div class="flex flex-wrap gap-3 mt-10 pt-8 border-t border-border no-print">
+      <a
+        href={paper.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 bg-teal text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-dark transition-colors"
+      >
+        {t(lang, 'evidence.viewPaper')} &nearr;
+      </a>
+      <button
+        onclick="window.print()"
+        class="inline-flex items-center gap-1.5 border border-teal text-teal px-6 py-3 rounded-lg font-medium hover:bg-teal hover:text-white transition-colors cursor-pointer"
+      >
+        {lang === 'ne' ? 'PDF सुरक्षित गर्नुहोस्' : 'Save as PDF'}
+      </button>
+      <a
+        href={backLink}
+        class="inline-flex items-center gap-1.5 border border-border text-gray-mid px-6 py-3 rounded-lg font-medium hover:border-teal hover:text-teal transition-colors"
+      >
+        {backLabel}
+      </a>
+    </div>
+
+    <!-- Print-only footer -->
+    <div class="print-footer hidden">
+      Nepal Health Policy Lab &middot; nepalhealthpolicylab.org &middot; {paper.dateAdded}
+    </div>
+  </article>
+</Page>

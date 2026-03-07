@@ -5,6 +5,7 @@ const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
+    description: z.string().optional(),
     author: z.string(),
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
@@ -18,8 +19,11 @@ const digest = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/digest' }),
   schema: z.object({
     title: z.string(),
+    description: z.string().optional(),
     issue: z.number(),
     date: z.coerce.date(),
+    papersCount: z.number().optional(),
+    topics: z.array(z.string()).default([]),
     lang: z.enum(['en', 'ne']),
     translationSlug: z.string().optional(),
     draft: z.boolean().default(false),

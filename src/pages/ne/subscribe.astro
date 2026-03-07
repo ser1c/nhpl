@@ -6,23 +6,42 @@ const lang = 'ne' as const;
 ---
 
 <Page title={t(lang, 'nav.subscribe')}>
-  <div class="max-w-xl mx-auto text-center py-12">
-    <h1 class="text-3xl font-bold text-teal mb-4">{t(lang, 'subscribe.heading')}</h1>
-    <p class="text-gray-mid mb-8 leading-relaxed">
+  <div class="max-w-lg mx-auto text-center py-12 md:py-20">
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-dark tracking-tight mb-4">{t(lang, 'subscribe.heading')}</h1>
+    <p class="text-lg text-gray-mid mb-8 leading-relaxed">
       {t(lang, 'subscribe.description')}
     </p>
 
-    <div class="bg-teal-light rounded-lg p-8">
-      <p class="text-sm text-gray-mid mb-4">
-        नेपाल स्वास्थ्य नीति डाइजेस्ट सिधै तपाईंको इमेलमा प्राप्त गर्न हाम्रो Substack मा सदस्यता लिनुहोस्।
+    <!-- What you'll receive -->
+    <div class="text-left bg-surface-alt rounded-xl p-6 mb-8">
+      <h2 class="font-semibold text-gray-dark mb-3">तपाईंले के प्राप्त गर्नुहुनेछ</h2>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-sm text-gray-mid">
+          <span class="text-teal font-bold">&#10003;</span>
+          मासिक क्युरेट गरिएको स्वास्थ्य अनुसन्धान सारांश
+        </li>
+        <li class="flex gap-2 text-sm text-gray-mid">
+          <span class="text-teal font-bold">&#10003;</span>
+          प्रत्येक पत्र नेपालको लागि सान्दर्भिक बनाइएको
+        </li>
+        <li class="flex gap-2 text-sm text-gray-mid">
+          <span class="text-teal font-bold">&#10003;</span>
+          कार्ययोग्य नीति प्रभावहरू
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-amber-light rounded-xl p-8">
+      <p class="text-sm text-gray-mid mb-5">
+        नेपालभरका स्वास्थ्य नीति पेशेवरहरूसँग जोडिनुहोस्। नेपाल स्वास्थ्य नीति डाइजेस्ट प्राप्त गर्न Substack मा सदस्यता लिनुहोस्।
       </p>
       <a
         href="#"
-        class="inline-block bg-teal text-white px-6 py-3 rounded font-medium hover:bg-teal-dark transition-colors"
+        class="inline-block bg-amber text-white px-8 py-3 rounded-lg font-medium hover:bg-amber-dark transition-colors shadow-sm"
       >
         Substack मा सदस्यता लिनुहोस्
       </a>
-      <p class="text-xs text-gray-mid mt-3">Substack लिंक छिट्टै आउँदैछ।</p>
+      <p class="text-xs text-gray-tertiary mt-4">निःशुल्क। महिनामा एक पटक भन्दा बढी कहिल्यै छैन। जुनसुकै बेला सदस्यता रद्द गर्नुहोस्।</p>
     </div>
   </div>
 </Page>

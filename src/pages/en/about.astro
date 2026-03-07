@@ -4,45 +4,74 @@ import TeamMember from '../../components/TeamMember.astro';
 ---
 
 <Page title="About">
-  <h1 class="text-3xl font-bold text-teal mb-6">About</h1>
-
-  <div class="prose max-w-none mb-10">
-    <p>
-      The <strong>Nepal Health Policy Lab</strong> is a health policy research initiative dedicated
-      to making rigorous evidence accessible and actionable for Nepal's health policymakers,
-      practitioners, and public.
+  <!-- Mission hero -->
+  <section class="bg-teal-light rounded-2xl p-8 md:p-12 mb-12">
+    <p class="text-xs uppercase tracking-widest text-teal font-semibold mb-3">Our Mission</p>
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-dark tracking-tight mb-4">About Nepal Health Policy Lab</h1>
+    <p class="text-lg text-gray-mid leading-relaxed max-w-3xl">
+      We are a health policy research initiative dedicated to making rigorous evidence accessible and actionable for Nepal's health policymakers, practitioners, and public.
     </p>
-    <p>
+  </section>
+
+  <div class="max-w-3xl mb-12">
+    <p class="text-gray-mid leading-7 mb-4">
       We focus exclusively on health. By going deep rather than broad, we aim to become the
       definitive resource for health policy evidence in Nepal. Our core work is
-      <strong>translation</strong>: synthesising, contextualising, and making accessible the
+      <strong class="text-gray-dark">translation</strong>: synthesising, contextualising, and making accessible the
       thousands of high-quality health economics studies published every year that never
       reach Nepali policymakers.
     </p>
   </div>
 
-  <h2 class="text-xl font-bold text-gray-dark mb-4">Team</h2>
+  <!-- Values -->
+  <section class="grid md:grid-cols-3 gap-6 mb-14">
+    <div class="bg-white border border-border rounded-xl p-6">
+      <h3 class="font-semibold text-gray-dark mb-2">Open Access</h3>
+      <p class="text-sm text-gray-mid leading-relaxed">All our evidence summaries and tools are freely available. Knowledge should not be behind paywalls.</p>
+    </div>
+    <div class="bg-white border border-border rounded-xl p-6">
+      <h3 class="font-semibold text-gray-dark mb-2">Rigorous & Transparent</h3>
+      <p class="text-sm text-gray-mid leading-relaxed">Every paper is critically reviewed. Our methods and data are open for scrutiny.</p>
+    </div>
+    <div class="bg-white border border-border rounded-xl p-6">
+      <h3 class="font-semibold text-gray-dark mb-2">Nepal-Centred</h3>
+      <p class="text-sm text-gray-mid leading-relaxed">Global research is valuable only when contextualised. We always ask: what does this mean for Nepal?</p>
+    </div>
+  </section>
 
-  <div class="grid md:grid-cols-2 gap-4">
-    <TeamMember
-      name="Sabin Subedi"
-      role="Co-founder"
-      bio="PhD candidate in Economics at the University of Strathclyde, specialising in health economics and causal inference. Leads the technical research agenda and the AI-assisted database build."
-    />
-    <TeamMember
-      name="Mukesh Adhikari"
-      role="Co-founder"
-      bio="PhD student in Health Policy and Management at UNC Gillings School of Global Public Health. Co-leads the evidence synthesis and content strategy."
-    />
-    <TeamMember
-      name="Prajjwal Dhungana"
-      role="Field Coordinator"
-      bio="Based in Kathmandu, responsible for government liaison, consultation attendance, and on-the-ground institutional relationship management."
-    />
-    <TeamMember
-      name="Suresh Tinkari"
-      role="Advisor"
-      bio="IT Manager at the Health Insurance Board of Nepal. Provides institutional knowledge of Nepal's health insurance system and bridges the initiative with the HIB."
-    />
-  </div>
+  <!-- Team -->
+  <section class="mb-14">
+    <h2 class="text-2xl font-bold text-gray-dark tracking-tight mb-6">Team</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <TeamMember
+        name="Sabin Subedi"
+        role="Co-founder"
+        image="/team/sabin.jpg"
+        bio="PhD candidate in Economics at the University of Strathclyde, specialising in health economics and causal inference. Leads the technical research agenda and the AI-assisted database build."
+      />
+      <TeamMember
+        name="Mukesh Adhikari"
+        role="Co-founder"
+        image="/team/mukesh.jpg"
+        bio="PhD student in Health Policy and Management at UNC Gillings School of Global Public Health. Co-leads the evidence synthesis and content strategy."
+      />
+      <TeamMember
+        name="Prajjwal Dhungana"
+        role="Field Coordinator"
+        bio="Based in Kathmandu, responsible for government liaison, consultation attendance, and on-the-ground institutional relationship management."
+      />
+      <TeamMember
+        name="Suresh Tinkari"
+        role="Advisor"
+        image="/team/suresh.jpg"
+        bio="IT Manager at the Health Insurance Board of Nepal. Provides institutional knowledge of Nepal's health insurance system and bridges the initiative with the HIB."
+      />
+    </div>
+  </section>
+
+  <!-- Affiliations -->
+  <section class="text-center py-8 border-t border-border">
+    <p class="text-sm text-gray-tertiary mb-2">Institutional Affiliations</p>
+    <p class="text-gray-mid font-medium">University of Strathclyde &middot; UNC Gillings School of Global Public Health</p>
+  </section>
 </Page>

@@ -10,15 +10,28 @@ const posts = (await getCollection('blog', ({ data }) => data.lang === lang && !
 ---
 
 <Page title={t(lang, 'nav.blog')}>
-  <h1 class="text-3xl font-bold text-teal mb-6">{t(lang, 'nav.blog')}</h1>
+  <section class="mb-10">
+    <p class="text-xs uppercase tracking-widest text-teal font-semibold mb-3">अनुसन्धान ब्लग</p>
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-dark tracking-tight mb-3">{t(lang, 'nav.blog')}</h1>
+    <p class="text-lg text-gray-mid">नेपालसँग सम्बन्धित स्वास्थ्य नीति प्रमाणमा हाम्रो टोलीको मौलिक विश्लेषण र टिप्पणी।</p>
+  </section>
 
   {posts.length === 0 ? (
-    <p class="text-gray-mid">{t(lang, 'blog.noPosts')}</p>
+    <div class="text-center py-20 bg-surface-alt rounded-2xl">
+      <p class="text-gray-dark font-semibold text-lg mb-2">हाम्रा पहिला लेखहरू तयारीमा छन्</p>
+      <p class="text-sm text-gray-mid max-w-sm mx-auto mb-4">
+        प्रकाशित हुँदा सूचना प्राप्त गर्न सदस्यता लिनुहोस्, वा हाम्रो प्रमाण पोर्टलमा क्युरेट गरिएको स्वास्थ्य अनुसन्धान हेर्नुहोस्।
+      </p>
+      <a href="/ne/evidence" class="inline-block bg-teal text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-teal-dark transition-colors">
+        {t(lang, 'nav.evidence')}
+      </a>
+    </div>
   ) : (
     <div class="grid gap-4">
       {posts.map((post) => (
         <BlogCard
           title={post.data.title}
+          description={post.data.description}
           author={post.data.author}
           date={post.data.date}
           slug={post.id.replace('ne/', '')}

@@ -4,7 +4,7 @@
 Build the Nepal Health Policy Lab website -- bilingual, rigorous, accessible.
 
 ## Current Status
-Core site live at https://nepalhealthpolicylab.org. All base pages built and deployed.
+Core site live at https://nepalhealthpolicylab.org. All base pages and evidence portal built.
 
 ## Priorities (ordered)
 
@@ -13,20 +13,10 @@ Core site live at https://nepalhealthpolicylab.org. All base pages built and dep
 3. Blog infrastructure (content collection, listing, post template) -- done
 4. Subscribe page (Substack embed) -- done (placeholder, needs Substack URL)
 5. Digest archive page -- done (empty, ready for content)
-6. Evidence portal -- next priority (see architecture below)
-7. Visual polish (typography, favicon, responsive refinement) -- not started
-
-## Evidence Portal Architecture
-
-The evidence portal is the next major build:
-
-- **Data**: Static JSON dataset (`src/data/evidence.json`) of parsed papers
-- **Fields per entry**: title, authors, year, journal, policy domain, intervention type, study design, evidence strength, country, Nepal relevance score, contextualisation note, URL
-- **Search**: Client-side via Astro island (React/Svelte) with Fuse.js
-- **Filters**: policy domain, study design, evidence strength, country
-- **Routes**: `/en/evidence`, `/ne/evidence`
-- **Future**: Migrate to API/database if dataset outgrows client-side
-- **Data pipeline**: AI-assisted parsing (Claude API) is a separate project -- feeds data into this portal
+6. Evidence portal -- done (see `_plans/evidence-portal.md`)
+7. Build a Brief tool -- done (interactive topic + country selection, PDF export)
+8. Visual polish (typography, favicon, responsive refinement) -- not started
+9. Multi-agent paper processing pipeline (`scripts/`) -- not started
 
 ## Decisions & Reasoning
 
@@ -36,9 +26,11 @@ The evidence portal is the next major build:
 - `redirectToDefaultLocale: false` in astro config
 - Content as Markdown in repo (no CMS yet -- add later if non-technical contributors need it)
 - Blog posts linked across languages via `translationSlug` in frontmatter
+- Preact (3KB) chosen over React for interactive islands -- better for Nepal bandwidth
+- PDF export via browser print dialog with custom print CSS (no server needed)
 
 ## Open Questions
 
 - Substack account URL for newsletter embed?
-- Any specific design references or visual inspirations?
 - Nepali translations review needed
+- When to build the multi-agent pipeline scripts?

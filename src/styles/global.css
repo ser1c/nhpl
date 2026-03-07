@@ -1,12 +1,206 @@
 @import "tailwindcss";
 
 @theme {
+  /* Primary */
   --color-teal: #1A6B6B;
   --color-teal-light: #E8F4F4;
   --color-teal-dark: #115454;
+
+  /* Accent -- warm amber for CTAs and highlights */
+  --color-amber: #C4841D;
+  --color-amber-light: #FFF8ED;
+  --color-amber-dark: #9A6815;
+
+  /* Surfaces */
+  --color-surface: #FAFAF8;
+  --color-surface-alt: #F5F3F0;
+  --color-border: #E5E3DF;
+
+  /* Text */
   --color-gray-dark: #1C1C1C;
   --color-gray-mid: #555555;
   --color-gray-light: #CCCCCC;
+  --color-gray-tertiary: #888888;
+
+  /* Status colors */
+  --color-green-50: #dcfce7;
+  --color-green-800: #166534;
+  --color-amber-50: #fef3c7;
+  --color-amber-800: #92400e;
+  --color-red-50: #fee2e2;
+  --color-red-800: #991b1b;
 
   --font-sans: "Inter", "Noto Sans Devanagari", system-ui, sans-serif;
+}
+
+/* Global focus styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Prose customization */
+.prose h1,
+.prose h2,
+.prose h3 {
+  letter-spacing: -0.025em;
+}
+
+.prose p {
+  line-height: 1.75;
+}
+
+.prose a {
+  color: var(--color-teal);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-teal) 30%, transparent);
+  transition: border-color 0.2s;
+}
+
+.prose a:hover {
+  border-bottom-color: var(--color-teal);
+}
+
+.prose blockquote {
+  border-left-color: var(--color-teal);
+  background: color-mix(in srgb, var(--color-teal-light) 50%, transparent);
+  padding: 0.25rem 1rem;
+}
+
+/* Print styles for evidence 1-pager PDF export */
+@media print {
+  header, footer, nav,
+  .no-print,
+  [data-no-print] {
+    display: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Show branding in print */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    border-bottom: 2px solid #1A6B6B;
+    padding-bottom: 8pt;
+    margin-bottom: 16pt;
+  }
+
+  .print-header h1 {
+    font-size: 10pt;
+    color: #1A6B6B;
+    margin: 0;
+  }
+
+  .print-header p {
+    font-size: 8pt;
+    color: #555;
+    margin: 2pt 0 0 0;
+  }
+
+  /* Evidence paper sections */
+  .evidence-paper h1 {
+    font-size: 16pt;
+    line-height: 1.3;
+  }
+
+  .evidence-paper h2 {
+    font-size: 12pt;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4pt;
+    margin-top: 16pt;
+  }
+
+  .evidence-paper section {
+    page-break-inside: avoid;
+  }
+
+  /* Keep Nepal section background visible in print */
+  .nepal-section {
+    background: #E8F4F4 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 12pt !important;
+    border-radius: 4pt;
+  }
+
+  /* Badge styles for print */
+  .print-badge {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border: 1px solid #aaa !important;
+  }
+  .print-badge-default {
+    background: #E8F4F4 !important;
+    color: #1A6B6B !important;
+  }
+  .print-badge-green {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+  }
+  .print-badge-amber {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+  }
+  .print-badge-red {
+    background: #fee2e2 !important;
+    color: #991b1b !important;
+  }
+
+  /* Brief paper sections */
+  .evidence-brief .brief-paper-section {
+    page-break-inside: avoid;
+    border: 1px solid #ccc !important;
+    padding: 12pt !important;
+    margin-bottom: 12pt !important;
+    border-radius: 4pt;
+  }
+
+  /* Relevance dots */
+  .evidence-brief .relevance-dot-filled,
+  .evidence-paper .relevance-dot-filled {
+    background: #1A6B6B !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .evidence-brief .relevance-dot-empty,
+  .evidence-paper .relevance-dot-empty {
+    background: #ddd !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Footer with URL */
+  .print-footer {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 8pt;
+    color: #999;
+    border-top: 1px solid #ccc;
+    padding-top: 4pt;
+  }
+
+  a[href]::after {
+    content: none;
+  }
 }

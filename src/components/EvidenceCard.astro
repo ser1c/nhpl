@@ -1,0 +1,69 @@
+---
+import EvidenceBadge from './EvidenceBadge.astro';
+import RelevanceScore from './RelevanceScore.astro';
+import { getLangFromUrl } from '../i18n/utils';
+import { policyDomainLabels, studyDesignLabels, evidenceStrengthLabels } from '../data/taxonomy';
+import type { EvidenceEntry } from '../data/evidence.schema';
+
+interface Props {
+  paper: EvidenceEntry;
+  topicSlug?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const { paper, topicSlug } = Astro.props;
+
+const strengthVariant = {
+  high: 'green' as const,
+  moderate: 'amber' as const,
+  low: 'red' as const,
+};
+
+const authorDisplay = paper.authors.length > 3
+  ? `${paper.authors.slice(0, 3).join(', ')} et al.`
+  : paper.authors.join(', ');
+
+const basePath = topicSlug
+  ? `/${lang}/evidence/${topicSlug}/${paper.slug}`
+  : `/${lang}/evidence/browse/${paper.slug}`;
+---
+
+<a href={basePath} class="block bg-white border border-border border-l-4 border-l-teal rounded-xl p-6 hover:shadow-md transition-all group">
+  <div class="flex items-start justify-between gap-3">
+    <h3 class="font-semibold text-gray-dark group-hover:text-teal transition-colors leading-snug flex-1">
+      {paper.title}
+    </h3>
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <span class="text-xs text-gray-tertiary font-medium">{paper.nepalRelevanceScore}/5</span>
+      <RelevanceScore score={paper.nepalRelevanceScore} lang={lang} />
+    </div>
+  </div>
+
+  <p class="text-sm text-gray-tertiary mt-2">
+    {authorDisplay} | {paper.year} | {paper.journal}
+  </p>
+
+  <div class="flex flex-wrap gap-1.5 mt-3">
+    {paper.policyDomain.map((d) => (
+      <EvidenceBadge label={policyDomainLabels[d][lang]} />
+    ))}
+    <EvidenceBadge
+      label={studyDesignLabels[paper.studyDesign][lang]}
+      variant="default"
+    />
+    <EvidenceBadge
+      label={evidenceStrengthLabels[paper.evidenceStrength][lang]}
+      variant={strengthVariant[paper.evidenceStrength]}
+    />
+  </div>
+
+  <p class="text-sm text-gray-mid mt-3 line-clamp-2 leading-relaxed">
+    {paper.contextualisation[lang]}
+  </p>
+
+  {paper.status === 'auto-processed' && (
+    <p class="text-xs text-amber-800 mt-2 italic">
+      {lang === 'ne' ? 'एआई-प्रशोधित — मानव समीक्षा बाँकी' : 'AI-Processed — awaiting human review'}
+    </p>
+  )}
+</a>

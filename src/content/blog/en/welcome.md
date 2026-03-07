@@ -1,5 +1,6 @@
 ---
 title: "Welcome to Nepal Health Policy Lab"
+description: "Introducing our initiative to make rigorous global health evidence accessible and actionable for Nepal's policymakers."
 author: "Sabin Subedi"
 date: 2026-03-07
 tags: ["announcement"]
