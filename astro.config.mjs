@@ -3,8 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://ser1c.github.io',
-  base: '/nhpl',
+  site: 'https://nepalhealthpolicylab.org',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ne'],
