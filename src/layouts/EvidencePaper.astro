@@ -22,10 +22,14 @@ const strengthVariant = {
 
 const backLink = topicSlug
   ? `/${lang}/evidence/${topicSlug}`
-  : `/${lang}/evidence`;
+  : `/${lang}/evidence/browse`;
 const backLabel = topicSlug
   ? t(lang, 'evidence.backToTopic')
   : t(lang, 'evidence.backToPortal');
+
+const pageUrl = `https://nepalhealthpolicylab.org/${lang}/evidence/${topicSlug ? `${topicSlug}/` : 'browse/'}${paper.slug}`;
+const whatsappText = encodeURIComponent(`${paper.title} — ${pageUrl}`);
+const whatsappUrl = `https://wa.me/?text=${whatsappText}`;
 ---
 
 <Page title={paper.title}>
@@ -137,8 +141,16 @@ const backLabel = topicSlug
         onclick="window.print()"
         class="inline-flex items-center gap-1.5 border border-teal text-teal px-6 py-3 rounded-lg font-medium hover:bg-teal hover:text-white transition-colors cursor-pointer"
       >
-        {lang === 'ne' ? 'PDF सुरक्षित गर्नुहोस्' : 'Save as PDF'}
+        {lang === 'ne' ? 'प्रिन्ट / PDF सुरक्षित गर्नुहोस्' : 'Print / Save as PDF'}
       </button>
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 border border-border text-gray-mid px-6 py-3 rounded-lg font-medium hover:border-teal hover:text-teal transition-colors"
+      >
+        {lang === 'ne' ? 'WhatsApp मा शेयर गर्नुहोस्' : 'Share on WhatsApp'}
+      </a>
       <a
         href={backLink}
         class="inline-flex items-center gap-1.5 border border-border text-gray-mid px-6 py-3 rounded-lg font-medium hover:border-teal hover:text-teal transition-colors"

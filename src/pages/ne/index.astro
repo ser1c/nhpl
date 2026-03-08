@@ -38,16 +38,16 @@ const countryCount = new Set(allPapers.flatMap(p => p.countries)).size;
     <!-- Stats inline -->
     <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-border">
       <div>
-        <p class="text-4xl font-bold text-teal tabular-nums">{allPapers.length}</p>
-        <p class="text-sm text-gray-tertiary mt-1">अनुसन्धान पत्रहरू</p>
+        <p class="text-2xl font-semibold text-gray-dark tabular-nums">{allPapers.length}</p>
+        <p class="text-sm text-gray-tertiary mt-1">पत्रहरू अहिलेसम्म क्युरेट</p>
       </div>
       <div>
-        <p class="text-4xl font-bold text-teal tabular-nums">{topics.length}</p>
-        <p class="text-sm text-gray-tertiary mt-1">नीति विषयहरू</p>
+        <p class="text-2xl font-semibold text-gray-dark tabular-nums">{topics.length}</p>
+        <p class="text-sm text-gray-tertiary mt-1">नीति क्षेत्रहरू समावेश</p>
       </div>
       <div>
-        <p class="text-4xl font-bold text-teal tabular-nums">{countryCount}</p>
-        <p class="text-sm text-gray-tertiary mt-1">समावेश देशहरू</p>
+        <p class="text-2xl font-semibold text-gray-dark tabular-nums">{countryCount}</p>
+        <p class="text-sm text-gray-tertiary mt-1">देशहरू प्रतिनिधित्व</p>
       </div>
     </div>
   </section>
@@ -60,21 +60,21 @@ const countryCount = new Set(allPapers.flatMap(p => p.countries)).size;
         <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
         <div>
           <h3 class="font-semibold text-gray-dark mb-1">हामी क्युरेट गर्छौं</h3>
-          <p class="text-sm text-gray-mid leading-relaxed">विश्वव्यापी स्वास्थ्य अनुसन्धानलाई छानिन्छ, छनोट गरिन्छ र हाम्रो प्रमाण डाटाबेसमा संरचित गरिन्छ।</p>
+          <p class="text-base text-gray-mid leading-relaxed">विश्वव्यापी स्वास्थ्य अनुसन्धानलाई छानिन्छ, छनोट गरिन्छ र हाम्रो प्रमाण डाटाबेसमा संरचित गरिन्छ।</p>
         </div>
       </div>
       <div class="flex gap-4">
         <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
         <div>
           <h3 class="font-semibold text-gray-dark mb-1">हामी सान्दर्भिक बनाउँछौं</h3>
-          <p class="text-sm text-gray-mid leading-relaxed">प्रत्येक पत्रलाई नेपालको विशिष्ट स्वास्थ्य चुनौती र कार्यक्रमहरूको लागि विश्लेषण गरिन्छ।</p>
+          <p class="text-base text-gray-mid leading-relaxed">प्रत्येक पत्रलाई नेपालको विशिष्ट स्वास्थ्य चुनौती र कार्यक्रमहरूको लागि विश्लेषण गरिन्छ।</p>
         </div>
       </div>
       <div class="flex gap-4">
         <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
         <div>
           <h3 class="font-semibold text-gray-dark mb-1">नीति निर्माताहरूले प्रयोग गर्छन्</h3>
-          <p class="text-sm text-gray-mid leading-relaxed">विषय अनुसार ब्राउज गर्नुहोस्, खोज्नुहोस्, वा तपाईंको नीति प्रश्नहरूको लागि अनुकूलन संक्षेप बनाउनुहोस्।</p>
+          <p class="text-base text-gray-mid leading-relaxed">विषय अनुसार ब्राउज गर्नुहोस्, खोज्नुहोस्, वा तपाईंको नीति प्रश्नहरूको लागि अनुकूलन संक्षेप बनाउनुहोस्।</p>
         </div>
       </div>
     </div>
@@ -108,21 +108,11 @@ const countryCount = new Set(allPapers.flatMap(p => p.countries)).size;
   </section>
 
   <!-- What We Offer -->
-  <section class="grid md:grid-cols-3 gap-6 mb-14">
-    <a href="/ne/evidence" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+  <section class="mb-14">
+    <a href="/ne/evidence" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group max-w-xl">
       <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">{t(lang, 'nav.evidence')}</h2>
-      <p class="text-sm text-gray-mid leading-relaxed">नेपालको लागि क्युरेट र सान्दर्भिक बनाइएको विश्वव्यापी स्वास्थ्य नीति अनुसन्धान खोज्नुहोस्। अनुकूलन प्रमाण संक्षेप बनाउनुहोस्।</p>
+      <p class="text-base text-gray-mid leading-relaxed">नेपालको लागि क्युरेट र सान्दर्भिक बनाइएको विश्वव्यापी स्वास्थ्य नीति अनुसन्धान खोज्नुहोस्। अनुकूलन प्रमाण संक्षेप बनाउनुहोस्।</p>
       <span class="text-sm text-teal mt-4 inline-block font-medium">{allPapers.length} {t(lang, 'evidence.papers')} &rarr;</span>
-    </a>
-    <a href="/ne/digest" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
-      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">{t(lang, 'nav.digest')}</h2>
-      <p class="text-sm text-gray-mid leading-relaxed">नेपालका नीति निर्माताहरूको लागि सबैभन्दा सान्दर्भिक नयाँ विश्वव्यापी स्वास्थ्य अनुसन्धानको मासिक सारांश।</p>
-      <span class="text-sm text-teal mt-4 inline-block font-medium">मासिक &rarr;</span>
-    </a>
-    <a href="/ne/blog" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
-      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">{t(lang, 'nav.blog')}</h2>
-      <p class="text-sm text-gray-mid leading-relaxed">हाम्रो टोलीबाट मौलिक विश्लेषण र टिप्पणी, पहुँचयोग्य भाषामा लेखिएका।</p>
-      <span class="text-sm text-teal mt-4 inline-block font-medium">पढ्नुहोस् &rarr;</span>
     </a>
   </section>
 

@@ -2,14 +2,14 @@
 
 @theme {
   /* Primary */
-  --color-teal: #1A6B6B;
-  --color-teal-light: #E8F4F4;
-  --color-teal-dark: #115454;
+  --color-teal: #0F5B5B;
+  --color-teal-light: #E6F0F0;
+  --color-teal-dark: #0A4040;
 
-  /* Accent -- warm amber for CTAs and highlights */
-  --color-amber: #C4841D;
-  --color-amber-light: #FFF8ED;
-  --color-amber-dark: #9A6815;
+  /* Accent */
+  --color-amber: #A37B1C;
+  --color-amber-light: #FAF6EB;
+  --color-amber-dark: #7D5E15;
 
   /* Surfaces */
   --color-surface: #FAFAF8;
@@ -18,17 +18,17 @@
 
   /* Text */
   --color-gray-dark: #1C1C1C;
-  --color-gray-mid: #555555;
+  --color-gray-mid: #4A4A4A;
   --color-gray-light: #CCCCCC;
-  --color-gray-tertiary: #888888;
+  --color-gray-tertiary: #7D7D7D;
 
-  /* Status colors */
-  --color-green-50: #dcfce7;
+  /* Status colors (distinct from accent) */
+  --color-green-50: #DCFCE7;
   --color-green-800: #166534;
-  --color-amber-50: #fef3c7;
-  --color-amber-800: #92400e;
-  --color-red-50: #fee2e2;
-  --color-red-800: #991b1b;
+  --color-amber-50: #FEF3C7;
+  --color-amber-800: #92400E;
+  --color-red-50: #FEE2E2;
+  --color-red-800: #991B1B;
 
   --font-sans: "Inter", "Noto Sans Devanagari", system-ui, sans-serif;
 }
@@ -66,6 +66,18 @@ textarea:focus-visible {
   border-bottom-color: var(--color-teal);
 }
 
+/* Devanagari script spacing adjustments */
+html[lang="ne"] h1,
+html[lang="ne"] h2,
+html[lang="ne"] h3,
+html[lang="ne"] .tracking-tight {
+  letter-spacing: normal;
+}
+
+html[lang="ne"] .tracking-widest {
+  letter-spacing: 0.05em;
+}
+
 .prose blockquote {
   border-left-color: var(--color-teal);
   background: color-mix(in srgb, var(--color-teal-light) 50%, transparent);
@@ -97,20 +109,20 @@ textarea:focus-visible {
   .print-header {
     display: block !important;
     text-align: center;
-    border-bottom: 2px solid #1A6B6B;
+    border-bottom: 2px solid #0F5B5B;
     padding-bottom: 8pt;
     margin-bottom: 16pt;
   }
 
   .print-header h1 {
     font-size: 10pt;
-    color: #1A6B6B;
+    color: #0F5B5B;
     margin: 0;
   }
 
   .print-header p {
     font-size: 8pt;
-    color: #555;
+    color: #4A4A4A;
     margin: 2pt 0 0 0;
   }
 
@@ -133,7 +145,7 @@ textarea:focus-visible {
 
   /* Keep Nepal section background visible in print */
   .nepal-section {
-    background: #E8F4F4 !important;
+    background: #E6F0F0 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     padding: 12pt !important;
@@ -147,8 +159,8 @@ textarea:focus-visible {
     border: 1px solid #aaa !important;
   }
   .print-badge-default {
-    background: #E8F4F4 !important;
-    color: #1A6B6B !important;
+    background: #E6F0F0 !important;
+    color: #0F5B5B !important;
   }
   .print-badge-green {
     background: #dcfce7 !important;
@@ -175,7 +187,7 @@ textarea:focus-visible {
   /* Relevance dots */
   .evidence-brief .relevance-dot-filled,
   .evidence-paper .relevance-dot-filled {
-    background: #1A6B6B !important;
+    background: #0F5B5B !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

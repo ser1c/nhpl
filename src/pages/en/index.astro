@@ -37,16 +37,16 @@ const countryCount = new Set(allPapers.flatMap(p => p.countries)).size;
     <!-- Stats inline -->
     <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-border">
       <div>
-        <p class="text-4xl font-bold text-teal tabular-nums">{allPapers.length}</p>
-        <p class="text-sm text-gray-tertiary mt-1">Research Papers</p>
+        <p class="text-2xl font-semibold text-gray-dark tabular-nums">{allPapers.length}</p>
+        <p class="text-sm text-gray-tertiary mt-1">papers curated so far</p>
       </div>
       <div>
-        <p class="text-4xl font-bold text-teal tabular-nums">{topics.length}</p>
-        <p class="text-sm text-gray-tertiary mt-1">Policy Topics</p>
+        <p class="text-2xl font-semibold text-gray-dark tabular-nums">{topics.length}</p>
+        <p class="text-sm text-gray-tertiary mt-1">policy areas covered</p>
       </div>
       <div>
-        <p class="text-4xl font-bold text-teal tabular-nums">{countryCount}</p>
-        <p class="text-sm text-gray-tertiary mt-1">Countries Covered</p>
+        <p class="text-2xl font-semibold text-gray-dark tabular-nums">{countryCount}</p>
+        <p class="text-sm text-gray-tertiary mt-1">countries represented</p>
       </div>
     </div>
   </section>
@@ -59,21 +59,21 @@ const countryCount = new Set(allPapers.flatMap(p => p.countries)).size;
         <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
         <div>
           <h3 class="font-semibold text-gray-dark mb-1">We Curate</h3>
-          <p class="text-sm text-gray-mid leading-relaxed">Global health research is screened, selected, and structured into our evidence database.</p>
+          <p class="text-base text-gray-mid leading-relaxed">Global health research is screened, selected, and structured into our evidence database.</p>
         </div>
       </div>
       <div class="flex gap-4">
         <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
         <div>
           <h3 class="font-semibold text-gray-dark mb-1">We Contextualise</h3>
-          <p class="text-sm text-gray-mid leading-relaxed">Each paper is analysed for its relevance to Nepal's specific health challenges and programmes.</p>
+          <p class="text-base text-gray-mid leading-relaxed">Each paper is analysed for its relevance to Nepal's specific health challenges and programmes.</p>
         </div>
       </div>
       <div class="flex gap-4">
         <span class="flex-shrink-0 w-10 h-10 bg-teal text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
         <div>
           <h3 class="font-semibold text-gray-dark mb-1">Policymakers Use It</h3>
-          <p class="text-sm text-gray-mid leading-relaxed">Browse by topic, search, or build custom briefs tailored to your policy questions.</p>
+          <p class="text-base text-gray-mid leading-relaxed">Browse by topic, search, or build custom briefs tailored to your policy questions.</p>
         </div>
       </div>
     </div>
@@ -107,21 +107,11 @@ const countryCount = new Set(allPapers.flatMap(p => p.countries)).size;
   </section>
 
   <!-- What We Offer -->
-  <section class="grid md:grid-cols-3 gap-6 mb-14">
-    <a href="/en/evidence" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
+  <section class="mb-14">
+    <a href="/en/evidence" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group max-w-xl">
       <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">Evidence Portal</h2>
-      <p class="text-sm text-gray-mid leading-relaxed">Search and filter global health research, curated and contextualised for Nepal. Build custom evidence briefs.</p>
+      <p class="text-base text-gray-mid leading-relaxed">Search and filter global health research, curated and contextualised for Nepal. Build custom evidence briefs.</p>
       <span class="text-sm text-teal mt-4 inline-block font-medium">{allPapers.length} papers &rarr;</span>
-    </a>
-    <a href="/en/digest" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
-      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">Policy Digest</h2>
-      <p class="text-sm text-gray-mid leading-relaxed">A monthly summary of the most relevant new global health research for Nepal's policymakers.</p>
-      <span class="text-sm text-teal mt-4 inline-block font-medium">Monthly &rarr;</span>
-    </a>
-    <a href="/en/blog" class="block bg-white border border-border rounded-xl p-6 hover:shadow-md transition-all group">
-      <h2 class="text-lg font-semibold text-teal mb-2 group-hover:text-teal-dark transition-colors">Research Blog</h2>
-      <p class="text-sm text-gray-mid leading-relaxed">Original analysis and commentary from our team, written in accessible language with named authors.</p>
-      <span class="text-sm text-teal mt-4 inline-block font-medium">Read &rarr;</span>
     </a>
   </section>
 

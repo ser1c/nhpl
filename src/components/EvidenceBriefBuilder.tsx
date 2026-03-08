@@ -30,7 +30,7 @@ const labels = {
     generate: 'Generate Brief',
     back: 'Back',
     reset: 'Start Over',
-    savePdf: 'Save as PDF',
+    savePdf: 'Print / Save as PDF',
     papers: 'papers',
     paper: 'paper',
     noResults: 'No papers found for this combination. Try selecting more countries.',
@@ -58,7 +58,7 @@ const labels = {
     generate: 'संक्षेप बनाउनुहोस्',
     back: 'पछाडि',
     reset: 'पुन: सुरु',
-    savePdf: 'PDF बचत गर्नुहोस्',
+    savePdf: 'प्रिन्ट / PDF बचत गर्नुहोस्',
     papers: 'पत्रहरू',
     paper: 'पत्र',
     noResults: 'यो संयोजनको लागि कुनै पत्र भेटिएन। थप देशहरू छान्नुहोस्।',
@@ -79,9 +79,9 @@ const labels = {
 };
 
 const strengthVariant: Record<string, string> = {
-  high: 'bg-green-100 text-green-800',
-  moderate: 'bg-amber-100 text-amber-800',
-  low: 'bg-red-100 text-red-800',
+  high: 'bg-green-50 text-green-800',
+  moderate: 'bg-amber-50 text-amber-800',
+  low: 'bg-red-50 text-red-800',
 };
 
 export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }: Props) {
@@ -122,6 +122,7 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
     setSelectedCountries([]);
     setAllSelected(true);
     setStep(2);
+    window.scrollTo(0, 0);
   };
 
   const toggleCountry = (country: string) => {
@@ -138,6 +139,7 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
 
   const handleGenerate = () => {
     setStep(3);
+    window.scrollTo(0, 0);
   };
 
   const handleReset = () => {
@@ -145,6 +147,7 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
     setSelectedTopic(null);
     setSelectedCountries([]);
     setAllSelected(true);
+    window.scrollTo(0, 0);
   };
 
   // Step 1: Topic Selection
@@ -156,12 +159,12 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
             <span class="text-xs font-bold text-teal bg-teal-light px-2 py-0.5 rounded-full">
               {t.step} 1/3
             </span>
-            <h2 class="text-lg font-bold text-gray-800">{t.step1}</h2>
+            <h2 class="text-lg font-bold text-gray-dark">{t.step1}</h2>
           </div>
-          <p class="text-sm text-gray-500">{t.selectTopic}</p>
+          <p class="text-sm text-gray-tertiary">{t.selectTopic}</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-3">
+        <div class="grid md:grid-cols-2 gap-4">
           {topics.map((topic) => {
             const count = papers.filter((p) =>
               p.policyDomain.some((d) => topic.policyDomains.includes(d))
@@ -169,15 +172,15 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
             return (
               <button
                 onClick={() => handleSelectTopic(topic)}
-                class="text-left border border-gray-200 rounded-lg p-4 hover:border-teal transition-colors group"
+                class="text-left border border-border rounded-xl p-4 hover:border-teal transition-colors group"
               >
                 <div class="flex items-start gap-3">
                   <span class="text-2xl">{topic.icon}</span>
                   <div>
-                    <h3 class="font-bold text-gray-800 group-hover:text-teal transition-colors">
+                    <h3 class="font-bold text-gray-dark group-hover:text-teal transition-colors">
                       {topic.title[lang]}
                     </h3>
-                    <p class="text-xs text-gray-500 mt-1">{topic.description[lang]}</p>
+                    <p class="text-xs text-gray-tertiary mt-1">{topic.description[lang]}</p>
                     <p class="text-xs text-teal mt-2 font-medium">
                       {count} {count === 1 ? t.paper : t.papers}
                     </p>
@@ -200,23 +203,24 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
             <span class="text-xs font-bold text-teal bg-teal-light px-2 py-0.5 rounded-full">
               {t.step} 2/3
             </span>
-            <h2 class="text-lg font-bold text-gray-800">{t.step2}</h2>
+            <h2 class="text-lg font-bold text-gray-dark">{t.step2}</h2>
           </div>
-          <p class="text-sm text-gray-500">{t.selectCountries}</p>
+          <p class="text-sm text-gray-tertiary">{t.selectCountries}</p>
           <div class="flex items-center gap-2 mt-2">
             <span class="text-2xl">{selectedTopic.icon}</span>
             <span class="font-medium text-teal">{selectedTopic.title[lang]}</span>
-            <span class="text-xs text-gray-400">({topicPapers.length} {t.papers})</span>
+            <span class="text-xs text-gray-tertiary">({topicPapers.length} {t.papers})</span>
           </div>
         </div>
 
         <div class="flex flex-wrap gap-2 mb-6">
           <button
             onClick={handleSelectAll}
+            aria-pressed={allSelected}
             class={`text-sm px-4 py-2 rounded-lg border transition-colors ${
               allSelected
                 ? 'bg-teal text-white border-teal'
-                : 'border-gray-300 text-gray-600 hover:border-teal'
+                : 'border-border text-gray-mid hover:border-teal'
             }`}
           >
             {t.allCountries} ({topicPapers.length})
@@ -227,10 +231,11 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
             return (
               <button
                 onClick={() => toggleCountry(country)}
+                aria-pressed={isSelected}
                 class={`text-sm px-4 py-2 rounded-lg border transition-colors ${
                   isSelected
                     ? 'bg-teal text-white border-teal'
-                    : 'border-gray-300 text-gray-600 hover:border-teal'
+                    : 'border-border text-gray-mid hover:border-teal'
                 }`}
               >
                 {country} ({countryCount})
@@ -240,17 +245,17 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
         </div>
 
         {/* Preview count */}
-        <div class="bg-gray-50 rounded-lg p-4 mb-6">
-          <p class="text-sm text-gray-600">
+        <div class="bg-surface-alt rounded-lg p-4 mb-6">
+          <p class="text-sm text-gray-mid">
             {briefPapers.length} {briefPapers.length === 1 ? t.paper : t.papers}{' '}
             {lang === 'en' ? 'will be included in your brief' : 'तपाईंको संक्षेपमा समावेश हुनेछ'}
           </p>
         </div>
 
-        <div class="flex gap-3">
+        <div class="flex gap-4">
           <button
-            onClick={() => setStep(1)}
-            class="text-sm px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:border-teal transition-colors"
+            onClick={() => { setStep(1); window.scrollTo(0, 0); }}
+            class="text-sm px-4 py-2 border border-border rounded-lg text-gray-mid hover:border-teal transition-colors"
           >
             {t.back}
           </button>
@@ -278,7 +283,7 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
         <div class="flex items-center justify-between mb-6 no-print" data-no-print>
           <button
             onClick={handleReset}
-            class="text-sm px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:border-teal transition-colors"
+            class="text-sm px-4 py-2 border border-border rounded-lg text-gray-mid hover:border-teal transition-colors"
           >
             {t.reset}
           </button>
@@ -299,16 +304,16 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
           </div>
 
           {/* Brief Header */}
-          <div class="mb-8 border-b border-gray-200 pb-6">
+          <div class="mb-8 border-b border-border pb-6">
             <div class="flex items-center gap-3 mb-3">
               <span class="text-3xl">{selectedTopic.icon}</span>
               <div>
                 <p class="text-xs text-teal font-medium uppercase tracking-wide">{t.briefFor}</p>
-                <h1 class="text-2xl font-bold text-gray-800">{selectedTopic.title[lang]}</h1>
+                <h1 class="text-2xl font-bold text-gray-dark">{selectedTopic.title[lang]}</h1>
               </div>
             </div>
-            <p class="text-sm text-gray-500">
-              {t.selectedCountries}: <span class="font-medium text-gray-700">{countryLabel}</span>
+            <p class="text-sm text-gray-tertiary">
+              {t.selectedCountries}: <span class="font-medium text-gray-mid">{countryLabel}</span>
               {' '}&middot;{' '}
               {briefPapers.length} {briefPapers.length === 1 ? t.paper : t.papers}
             </p>
@@ -316,37 +321,37 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
 
           {/* Topic Overview */}
           <section class="mb-8">
-            <h2 class="text-lg font-bold text-gray-800 mb-3 border-b border-gray-200 pb-2">
+            <h2 class="text-lg font-bold text-gray-dark mb-3 border-b border-border pb-2">
               {t.topicOverview}
             </h2>
-            <p class="text-sm text-gray-600 leading-relaxed">{selectedTopic.overview[lang]}</p>
+            <p class="text-sm text-gray-mid leading-relaxed">{selectedTopic.overview[lang]}</p>
           </section>
 
           {/* Papers */}
           {briefPapers.length === 0 ? (
-            <p class="text-center text-gray-500 py-8">{t.noResults}</p>
+            <p class="text-center text-gray-tertiary py-8">{t.noResults}</p>
           ) : (
             briefPapers
               .sort((a, b) => b.nepalRelevanceScore - a.nepalRelevanceScore)
               .map((paper, index) => (
-                <section class="mb-8 border border-gray-200 rounded-lg p-5 brief-paper-section">
+                <section class="mb-8 border border-border rounded-xl p-5 brief-paper-section">
                   {/* Paper Header */}
-                  <div class="mb-4 pb-3 border-b border-gray-100">
+                  <div class="mb-4 pb-3 border-b border-surface-alt">
                     <div class="flex items-start justify-between gap-3">
-                      <h3 class="font-bold text-gray-800 text-sm leading-snug flex-1">
+                      <h3 class="font-bold text-gray-dark text-sm leading-snug flex-1">
                         {index + 1}. {paper.title}
                       </h3>
                       <div class="flex items-center gap-1 shrink-0" title={`${t.nepalRelevance}: ${paper.nepalRelevanceScore}/5`}>
                         {[1, 2, 3, 4, 5].map((i) => (
                           <span
                             class={`w-2 h-2 rounded-full relevance-dot-${i <= paper.nepalRelevanceScore ? 'filled' : 'empty'} ${
-                              i <= paper.nepalRelevanceScore ? 'bg-teal' : 'bg-gray-200'
+                              i <= paper.nepalRelevanceScore ? 'bg-teal' : 'bg-gray-light'
                             }`}
                           />
                         ))}
                       </div>
                     </div>
-                    <p class="text-xs text-gray-500 mt-1">
+                    <p class="text-xs text-gray-tertiary mt-1">
                       {paper.authors.length > 3
                         ? `${paper.authors.slice(0, 3).join(', ')} et al.`
                         : paper.authors.join(', ')}
@@ -363,7 +368,7 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
                       } ${strengthVariant[paper.evidenceStrength]}`}>
                         {evidenceStrengthLabels[paper.evidenceStrength][lang]}
                       </span>
-                      <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 print-badge">
+                      <span class="text-xs px-2 py-0.5 rounded-full bg-surface-alt text-gray-mid print-badge">
                         {studyDesignLabels[paper.studyDesign][lang]}
                       </span>
                     </div>
@@ -371,14 +376,14 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
 
                   {/* What Was Studied */}
                   <div class="mb-3">
-                    <h4 class="text-xs font-bold text-gray-600 uppercase mb-1">{t.whatWasStudied}</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">{paper.onePager.whatWasStudied[lang]}</p>
+                    <h4 class="text-xs font-bold text-gray-mid uppercase mb-1">{t.whatWasStudied}</h4>
+                    <p class="text-sm text-gray-mid leading-relaxed">{paper.onePager.whatWasStudied[lang]}</p>
                   </div>
 
                   {/* What They Found */}
                   <div class="mb-3">
-                    <h4 class="text-xs font-bold text-gray-600 uppercase mb-1">{t.whatTheyFound}</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">{paper.onePager.whatTheyFound[lang]}</p>
+                    <h4 class="text-xs font-bold text-gray-mid uppercase mb-1">{t.whatTheyFound}</h4>
+                    <p class="text-sm text-gray-mid leading-relaxed">{paper.onePager.whatTheyFound[lang]}</p>
                   </div>
 
                   {/* What It Means for Nepal */}
@@ -388,7 +393,7 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
                   </div>
 
                   {/* Countries */}
-                  <p class="text-xs text-gray-400 mt-3">
+                  <p class="text-xs text-gray-tertiary mt-3">
                     {t.countriesLabel}: {paper.countries.join(', ')}
                   </p>
                 </section>

@@ -28,7 +28,7 @@ const basePath = topicSlug
   : `/${lang}/evidence/browse/${paper.slug}`;
 ---
 
-<a href={basePath} class="block bg-white border border-border border-l-4 border-l-teal rounded-xl p-6 hover:shadow-md transition-all group">
+<a href={basePath} class="block bg-white border border-border border-l-4 border-l-teal rounded-xl p-4 md:p-6 hover:shadow-md transition-all group">
   <div class="flex items-start justify-between gap-3">
     <h3 class="font-semibold text-gray-dark group-hover:text-teal transition-colors leading-snug flex-1">
       {paper.title}
@@ -40,7 +40,7 @@ const basePath = topicSlug
   </div>
 
   <p class="text-sm text-gray-tertiary mt-2">
-    {authorDisplay} | {paper.year} | {paper.journal}
+    {authorDisplay} &middot; {paper.year} &middot; {paper.journal}
   </p>
 
   <div class="flex flex-wrap gap-1.5 mt-3">

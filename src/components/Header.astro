@@ -9,8 +9,6 @@ const navItems = [
   { key: 'nav.home' as const, path: '/' },
   { key: 'nav.evidence' as const, path: '/evidence' },
   { key: 'nav.about' as const, path: '/about' },
-  { key: 'nav.blog' as const, path: '/blog' },
-  { key: 'nav.digest' as const, path: '/digest' },
   { key: 'nav.subscribe' as const, path: '/subscribe' },
 ];
 
@@ -110,6 +108,12 @@ function isActive(itemPath: string): boolean {
       const isOpen = !menu.classList.contains('hidden');
       menu.classList.toggle('hidden');
       btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 </script>

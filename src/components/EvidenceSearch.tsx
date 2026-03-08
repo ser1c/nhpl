@@ -82,9 +82,9 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
   };
 
   const strengthVariant: Record<string, string> = {
-    high: 'bg-green-100 text-green-800',
-    moderate: 'bg-amber-100 text-amber-800',
-    low: 'bg-red-100 text-red-800',
+    high: 'bg-green-50 text-green-800',
+    moderate: 'bg-amber-50 text-amber-800',
+    low: 'bg-red-50 text-red-800',
   };
 
   return (
@@ -96,7 +96,7 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
           placeholder={lang === 'ne' ? 'पत्रहरू खोज्नुहोस्...' : 'Search papers...'}
           value={query}
           onInput={(e) => setQuery((e.target as HTMLInputElement).value)}
-          class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-teal"
+          class="w-full border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-teal"
         />
       </div>
 
@@ -109,11 +109,11 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
           {lang === 'ne' ? 'फिल्टरहरू' : 'Filters'} {showFilters ? '▲' : '▼'}
         </button>
         <div class="flex items-center gap-2">
-          <span class="text-xs text-gray-500">{lang === 'ne' ? 'क्रमबद्ध' : 'Sort'}:</span>
+          <span class="text-xs text-gray-tertiary">{lang === 'ne' ? 'क्रमबद्ध' : 'Sort'}:</span>
           <select
             value={sortBy}
             onChange={(e) => setSortBy((e.target as HTMLSelectElement).value as SortKey)}
-            class="text-sm border border-gray-300 rounded px-2 py-1 focus:outline-none focus:border-teal"
+            class="text-sm border border-border rounded px-2 py-1 focus:outline-none focus:border-teal"
           >
             {(Object.keys(sortLabels) as SortKey[]).map((key) => (
               <option value={key}>{sortLabels[key][lang]}</option>
@@ -124,20 +124,21 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
 
       {/* Filters */}
       {showFilters && (
-        <div class="border border-gray-200 rounded-lg p-4 mb-4 space-y-4">
+        <div class="border border-border rounded-xl p-4 mb-4 space-y-4">
           {/* Policy Domain */}
           <div>
-            <h4 class="text-xs font-bold text-gray-600 uppercase mb-2">
+            <h4 class="text-xs font-bold text-gray-mid uppercase mb-2">
               {lang === 'ne' ? 'नीति क्षेत्र' : 'Policy Domain'}
             </h4>
             <div class="flex flex-wrap gap-1.5">
               {availableDomains.map((d) => (
                 <button
                   onClick={() => toggleDomain(d)}
+                  aria-pressed={selectedDomains.includes(d)}
                   class={`text-xs px-2 py-1 rounded-full border transition-colors ${
                     selectedDomains.includes(d)
                       ? 'bg-teal text-white border-teal'
-                      : 'border-gray-300 text-gray-600 hover:border-teal'
+                      : 'border-border text-gray-mid hover:border-teal'
                   }`}
                 >
                   {policyDomainLabels[d][lang]}
@@ -148,13 +149,13 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
 
           {/* Study Design */}
           <div>
-            <h4 class="text-xs font-bold text-gray-600 uppercase mb-2">
+            <h4 class="text-xs font-bold text-gray-mid uppercase mb-2">
               {lang === 'ne' ? 'अध्ययन डिजाइन' : 'Study Design'}
             </h4>
             <select
               value={selectedDesign}
               onChange={(e) => setSelectedDesign((e.target as HTMLSelectElement).value as StudyDesign | '')}
-              class="text-sm border border-gray-300 rounded px-2 py-1 w-full focus:outline-none focus:border-teal"
+              class="text-sm border border-border rounded px-2 py-1 w-full focus:outline-none focus:border-teal"
             >
               <option value="">{lang === 'ne' ? 'सबै' : 'All'}</option>
               {Object.entries(studyDesignLabels).map(([key, label]) => (
@@ -165,7 +166,7 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
 
           {/* Evidence Strength */}
           <div>
-            <h4 class="text-xs font-bold text-gray-600 uppercase mb-2">
+            <h4 class="text-xs font-bold text-gray-mid uppercase mb-2">
               {lang === 'ne' ? 'प्रमाण बल' : 'Evidence Strength'}
             </h4>
             <div class="flex gap-2">
@@ -173,10 +174,11 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
                 ([key, label]) => (
                   <button
                     onClick={() => setSelectedStrength(selectedStrength === key ? '' : key)}
+                    aria-pressed={selectedStrength === key}
                     class={`text-xs px-3 py-1 rounded-full border transition-colors ${
                       selectedStrength === key
                         ? strengthVariant[key]
-                        : 'border-gray-300 text-gray-600 hover:border-teal'
+                        : 'border-border text-gray-mid hover:border-teal'
                     }`}
                   >
                     {label[lang]}
@@ -194,7 +196,7 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
                 setSelectedDesign('');
                 setSelectedStrength('');
               }}
-              class="text-xs text-red-600 hover:text-red-800"
+              class="text-xs text-red-800 hover:text-red-800/80"
             >
               {lang === 'ne' ? 'फिल्टरहरू हटाउनुहोस्' : 'Clear filters'}
             </button>
@@ -203,7 +205,7 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
       )}
 
       {/* Results Count */}
-      <p class="text-sm text-gray-500 mb-4">
+      <p class="text-sm text-gray-tertiary mb-4">
         {filtered.length} {lang === 'ne' ? 'पत्रहरू' : 'papers'}
         {query && (
           <span>
@@ -227,24 +229,24 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
           return (
             <a
               href={href}
-              class="block border border-gray-200 rounded-lg p-5 hover:border-teal transition-colors group"
+              class="block bg-white border border-border border-l-4 border-l-teal rounded-xl p-4 md:p-6 hover:shadow-md transition-all group"
             >
               <div class="flex items-start justify-between gap-3">
-                <h3 class="font-bold text-gray-800 group-hover:text-teal transition-colors text-sm leading-snug flex-1">
+                <h3 class="font-semibold text-gray-dark group-hover:text-teal transition-colors text-base leading-snug flex-1">
                   {paper.title}
                 </h3>
                 <div class="flex items-center gap-1 shrink-0">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <span
                       class={`w-2 h-2 rounded-full ${
-                        i <= paper.nepalRelevanceScore ? 'bg-teal' : 'bg-gray-200'
+                        i <= paper.nepalRelevanceScore ? 'bg-teal' : 'bg-gray-light'
                       }`}
                     />
                   ))}
                 </div>
               </div>
 
-              <p class="text-xs text-gray-500 mt-2">
+              <p class="text-xs text-gray-tertiary mt-2">
                 {authorDisplay} &middot; {paper.year} &middot; {paper.journal}
               </p>
 
@@ -259,7 +261,7 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
                 </span>
               </div>
 
-              <p class="text-xs text-gray-500 mt-3 line-clamp-2">
+              <p class="text-xs text-gray-tertiary mt-3 line-clamp-2">
                 {paper.contextualisation[lang]}
               </p>
             </a>
@@ -267,7 +269,7 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
         })}
 
         {filtered.length === 0 && (
-          <p class="text-center text-gray-500 py-8">
+          <p class="text-center text-gray-tertiary py-8">
             {lang === 'ne'
               ? 'तपाईंको मापदण्ड अनुरूप कुनै पत्र भेटिएन।'
               : 'No papers found matching your criteria.'}

@@ -13,11 +13,11 @@ This file governs every Claude Code session on this project. Read it fully befor
 
 ## Brand
 
-- Teal: `#1A6B6B`, Light Teal: `#E8F4F4`, Dark Teal: `#115454`
-- Amber: `#C4841D`, Light Amber: `#FFF8ED`, Dark Amber: `#9A6815`
+- Teal: `#0F5B5B`, Light Teal: `#E6F0F0`, Dark Teal: `#0A4040`
+- Amber: `#A37B1C`, Light Amber: `#FAF6EB`, Dark Amber: `#7D5E15`
 - Surface: `#FAFAF8`, Surface Alt: `#F5F3F0`
 - Border: `#E5E3DF`
-- Dark Gray: `#1C1C1C`, Mid Gray: `#555555`, Tertiary: `#888888`, Light Gray: `#CCCCCC`
+- Dark Gray: `#1C1C1C`, Mid Gray: `#4A4A4A`, Tertiary: `#7D7D7D`, Light Gray: `#CCCCCC`
 - Fonts: Inter (Latin), Noto Sans Devanagari (Nepali) via Google Fonts
 
 ## Tech Stack

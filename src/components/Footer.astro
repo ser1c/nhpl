@@ -29,8 +29,6 @@ const year = new Date().getFullYear();
         </h3>
         <nav class="flex flex-col gap-2.5">
           <a href={getLocalePath(lang, '/evidence')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.evidence')}</a>
-          <a href={getLocalePath(lang, '/blog')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.blog')}</a>
-          <a href={getLocalePath(lang, '/digest')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.digest')}</a>
           <a href={getLocalePath(lang, '/about')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.about')}</a>
           <a href={getLocalePath(lang, '/subscribe')} class="text-sm text-gray-300 hover:text-white transition-colors">{t(lang, 'nav.subscribe')}</a>
         </nav>
@@ -42,6 +40,9 @@ const year = new Date().getFullYear();
           {lang === 'ne' ? 'सम्पर्क' : 'Connect'}
         </h3>
         <div class="flex flex-col gap-2.5">
+          <a href="mailto:info@nepalhealthpolicylab.org" class="text-sm text-gray-300 hover:text-white transition-colors">
+            info@nepalhealthpolicylab.org
+          </a>
           <a href="https://github.com/ser1c/nhpl" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-300 hover:text-white transition-colors">
             GitHub
           </a>

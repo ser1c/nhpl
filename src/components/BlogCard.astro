@@ -19,7 +19,7 @@ const formattedDate = date.toLocaleDateString(lang === 'ne' ? 'ne-NP' : 'en-GB',
 });
 ---
 
-<a href={getLocalePath(lang, `/blog/${slug}`)} class="block bg-white border border-border rounded-xl p-6 hover:shadow-md hover:border-teal transition-all group">
+<a href={getLocalePath(lang, `/blog/${slug}`)} class="block bg-white border border-border rounded-xl p-4 md:p-6 hover:shadow-md hover:border-teal transition-all group">
   <h3 class="font-semibold text-gray-dark group-hover:text-teal transition-colors text-lg leading-snug">{title}</h3>
   {description && (
     <p class="text-sm text-gray-mid mt-2 line-clamp-2 leading-relaxed">{description}</p>
