@@ -10,8 +10,10 @@ Fully deployed. Site live at https://nepalhealthpolicylab.org.
 
 1. GitHub Actions workflow for auto-deploy to GitHub Pages -- done
 2. Custom domain setup (nepalhealthpolicylab.org via Cloudflare DNS) -- done
-3. SEO basics (sitemap, Open Graph meta tags) -- not started
-4. Branded favicon -- not started
+3. Google Fonts (Inter + Noto Sans Devanagari) with preconnect -- done
+4. Skip-to-content accessibility link -- done
+5. SEO basics (sitemap, Open Graph meta tags) -- not started
+6. Branded favicon -- not started
 
 ## Decisions & Reasoning
 

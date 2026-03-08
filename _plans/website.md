@@ -4,7 +4,7 @@
 Build the Nepal Health Policy Lab website -- bilingual, rigorous, accessible.
 
 ## Current Status
-Core site live at https://nepalhealthpolicylab.org. All base pages and evidence portal built.
+Core site live at https://nepalhealthpolicylab.org. All base pages and evidence portal built. Full UI/UX redesign completed (expanded color palette, sticky header, hamburger menu, editorial hero, team photos).
 
 ## Priorities (ordered)
 
@@ -15,7 +15,10 @@ Core site live at https://nepalhealthpolicylab.org. All base pages and evidence 
 5. Digest archive page -- done (empty, ready for content)
 6. Evidence portal -- done (see `_plans/evidence-portal.md`)
 7. Build a Brief tool -- done (interactive topic + country selection, PDF export)
-8. Visual polish (typography, favicon, responsive refinement) -- not started
+8. Visual polish (typography, Google Fonts, responsive redesign) -- done
+   - Full UI/UX redesign: expanded color palette (amber accent, warm surfaces), sticky header, hamburger mobile menu, editorial hero, team photos
+   - Remaining: branded favicon, Open Graph meta tags
+9. Team photos -- done (Sabin, Mukesh, Suresh; Prajjwal pending)
 9. Multi-agent paper processing pipeline (`scripts/`) -- not started
 
 ## Decisions & Reasoning
