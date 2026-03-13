@@ -2,3 +2,11 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+
+# Private / internal files
+_sessions/
+_plans/
+_drafts/
+proposal.tex
+prompt.md
+NHPL_Meeting_Agenda*
