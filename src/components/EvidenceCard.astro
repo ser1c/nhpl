@@ -2,7 +2,7 @@
 import EvidenceBadge from './EvidenceBadge.astro';
 import RelevanceScore from './RelevanceScore.astro';
 import { getLangFromUrl } from '../i18n/utils';
-import { policyDomainLabels, studyDesignLabels, evidenceStrengthLabels } from '../data/taxonomy';
+import { policyDomainLabels, studyDesignLabels, rigourLabels } from '../data/taxonomy';
 import type { EvidenceEntry } from '../data/evidence.schema';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 const lang = getLangFromUrl(Astro.url);
 const { paper, topicSlug } = Astro.props;
 
-const strengthVariant = {
+const rigourVariant = {
   high: 'green' as const,
   moderate: 'amber' as const,
   low: 'red' as const,
@@ -52,8 +52,8 @@ const basePath = topicSlug
       variant="default"
     />
     <EvidenceBadge
-      label={evidenceStrengthLabels[paper.evidenceStrength][lang]}
-      variant={strengthVariant[paper.evidenceStrength]}
+      label={rigourLabels[paper.methodologicalRigour][lang]}
+      variant={rigourVariant[paper.methodologicalRigour]}
     />
   </div>
 
@@ -61,9 +61,9 @@ const basePath = topicSlug
     {paper.contextualisation[lang]}
   </p>
 
-  {paper.status === 'auto-processed' && (
+  {paper.status === 'draft' && (
     <p class="text-xs text-amber-800 mt-2 italic">
-      {lang === 'ne' ? 'एआई-प्रशोधित — मानव समीक्षा बाँकी' : 'AI-Processed — awaiting human review'}
+      {lang === 'ne' ? 'मस्यौदा — मानव समीक्षा बाँकी' : 'Draft — awaiting human review'}
     </p>
   )}
 </a>

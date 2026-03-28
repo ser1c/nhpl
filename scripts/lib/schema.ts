@@ -1,4 +1,8 @@
-import { z } from 'astro:content';
+// Standalone mirror of src/data/evidence.schema.ts — keep in sync
+// This file uses plain 'zod' instead of 'astro:content' so scripts
+// can run outside Astro's build pipeline.
+
+import { z } from 'zod';
 
 // ── Policy Domains (aligned with 10 methodology topics + health equity) ──
 export const policyDomains = [

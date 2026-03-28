@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'preact/hooks';
 import Fuse from 'fuse.js';
-import type { EvidenceEntry, PolicyDomain, StudyDesign, EvidenceStrength } from '../data/evidence.schema';
-import { policyDomainLabels, studyDesignLabels, evidenceStrengthLabels } from '../data/taxonomy';
+import type { EvidenceEntry, PolicyDomain, StudyDesign, RigourLevel } from '../data/evidence.schema';
+import { policyDomainLabels, studyDesignLabels, rigourLabels } from '../data/taxonomy';
 
 interface Props {
   papers: EvidenceEntry[];
@@ -22,7 +22,7 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
   const [query, setQuery] = useState('');
   const [selectedDomains, setSelectedDomains] = useState<PolicyDomain[]>([]);
   const [selectedDesign, setSelectedDesign] = useState<StudyDesign | ''>('');
-  const [selectedStrength, setSelectedStrength] = useState<EvidenceStrength | ''>('');
+  const [selectedStrength, setSelectedStrength] = useState<RigourLevel | ''>('');
   const [sortBy, setSortBy] = useState<SortKey>('relevance');
   const [showFilters, setShowFilters] = useState(false);
 
@@ -55,7 +55,7 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
       results = results.filter((p) => p.studyDesign === selectedDesign);
     }
     if (selectedStrength) {
-      results = results.filter((p) => p.evidenceStrength === selectedStrength);
+      results = results.filter((p) => p.methodologicalRigour === selectedStrength);
     }
 
     if (!query) {
@@ -167,10 +167,10 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
           {/* Evidence Strength */}
           <div>
             <h4 class="text-xs font-bold text-gray-mid uppercase mb-2">
-              {lang === 'ne' ? 'प्रमाण बल' : 'Evidence Strength'}
+              {lang === 'ne' ? 'विधिगत कठोरता' : 'Methodological Rigour'}
             </h4>
             <div class="flex gap-2">
-              {(Object.entries(evidenceStrengthLabels) as [EvidenceStrength, { en: string; ne: string }][]).map(
+              {(Object.entries(rigourLabels) as [RigourLevel, { en: string; ne: string }][]).map(
                 ([key, label]) => (
                   <button
                     onClick={() => setSelectedStrength(selectedStrength === key ? '' : key)}
@@ -256,8 +256,8 @@ export default function EvidenceSearch({ papers, lang, basePath, topicSlug }: Pr
                     {policyDomainLabels[d][lang]}
                   </span>
                 ))}
-                <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${strengthVariant[paper.evidenceStrength]}`}>
-                  {evidenceStrengthLabels[paper.evidenceStrength][lang]}
+                <span class={`text-xs px-2 py-0.5 rounded-full font-medium ${strengthVariant[paper.methodologicalRigour]}`}>
+                  {rigourLabels[paper.methodologicalRigour][lang]}
                 </span>
               </div>
 

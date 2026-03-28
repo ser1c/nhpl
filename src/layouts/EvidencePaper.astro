@@ -3,7 +3,7 @@ import Page from './Page.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import RelevanceScore from '../components/RelevanceScore.astro';
 import { getLangFromUrl, t } from '../i18n/utils';
-import { policyDomainLabels, studyDesignLabels, evidenceStrengthLabels, verificationStatusLabels } from '../data/taxonomy';
+import { policyDomainLabels, studyDesignLabels, rigourLabels, verificationStatusLabels } from '../data/taxonomy';
 import type { EvidenceEntry } from '../data/evidence.schema';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 const lang = getLangFromUrl(Astro.url);
 const { paper, topicSlug } = Astro.props;
 
-const strengthVariant = {
+const rigourVariant = {
   high: 'green' as const,
   moderate: 'amber' as const,
   low: 'red' as const,
@@ -46,12 +46,12 @@ const whatsappUrl = `https://wa.me/?text=${whatsappText}`;
     </a>
 
     <!-- Verification banner -->
-    {paper.status === 'auto-processed' && (
+    {paper.status === 'draft' && (
       <div class="bg-amber-50 border border-amber-800/20 rounded-xl p-4 mb-8">
         <p class="text-sm text-amber-800">
           {lang === 'ne'
-            ? 'यो प्रविष्टि एआई-उत्पन्न हो र मानव समीक्षाको प्रतीक्षामा छ।'
-            : 'This entry was AI-generated and is awaiting human review.'}
+            ? 'यो प्रविष्टि मस्यौदा अवस्थामा छ र मानव समीक्षाको प्रतीक्षामा छ।'
+            : 'This entry is in draft status and is awaiting human review.'}
         </p>
       </div>
     )}
@@ -74,8 +74,8 @@ const whatsappUrl = `https://wa.me/?text=${whatsappText}`;
         ))}
         <EvidenceBadge label={studyDesignLabels[paper.studyDesign][lang]} />
         <EvidenceBadge
-          label={evidenceStrengthLabels[paper.evidenceStrength][lang]}
-          variant={strengthVariant[paper.evidenceStrength]}
+          label={rigourLabels[paper.methodologicalRigour][lang]}
+          variant={rigourVariant[paper.methodologicalRigour]}
         />
         <EvidenceBadge
           label={verificationStatusLabels[paper.status][lang]}

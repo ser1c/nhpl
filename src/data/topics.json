@@ -28,32 +28,60 @@
     "icon": "💰"
   },
   {
-    "slug": "maternal-and-child-health",
-    "title": { "en": "Maternal & Child Health", "ne": "मातृ तथा बाल स्वास्थ्य" },
+    "slug": "maternal-newborn-health",
+    "title": { "en": "Maternal & Newborn Health", "ne": "मातृ तथा नवजात स्वास्थ्य" },
     "description": {
-      "en": "Evidence on reducing maternal and child mortality, antenatal care, safe delivery, and nutrition interventions.",
-      "ne": "मातृ तथा बाल मृत्युदर घटाउने, प्रसवपूर्व सेवा, सुरक्षित प्रसव, र पोषण हस्तक्षेपहरूको प्रमाण।"
+      "en": "Evidence on maternal mortality, neonatal care, family planning, and adolescent reproductive health.",
+      "ne": "मातृ मृत्युदर, नवजात शिशु हेरचाह, परिवार नियोजन, र किशोर प्रजनन स्वास्थ्यको प्रमाण।"
     },
     "overview": {
-      "en": "Nepal has made remarkable progress in reducing maternal and child mortality over the past two decades, but significant disparities persist across provinces, wealth quintiles, and ethnic groups. This collection examines evidence on interventions that have worked in similar contexts — from community health worker programmes to facility-based quality improvement — and what they suggest for Nepal's next phase of progress.",
-      "ne": "नेपालले विगत दुई दशकमा मातृ तथा बाल मृत्युदर घटाउनमा उल्लेखनीय प्रगति गरेको छ, तर प्रदेश, सम्पत्ति क्विन्टाइल, र जातीय समूहहरूमा उल्लेखनीय असमानताहरू कायम छन्। यस संग्रहले सामुदायिक स्वास्थ्य कार्यकर्ता कार्यक्रमदेखि सुविधामा गुणस्तर सुधारसम्म — समान सन्दर्भहरूमा काम गरेका हस्तक्षेपहरूको प्रमाण जाँच गर्दछ।"
+      "en": "Nepal has made remarkable progress in reducing maternal and child mortality over the past two decades, but significant disparities persist across provinces, wealth quintiles, and ethnic groups. Maternal mortality remains high in remote areas, neonatal deaths account for a growing share of under-five mortality, and adolescent reproductive health needs remain underserved. This collection examines evidence on interventions that have worked in similar contexts — from safe motherhood programmes and skilled birth attendance to neonatal care packages and family planning access — and what they suggest for Nepal's next phase of progress.",
+      "ne": "नेपालले विगत दुई दशकमा मातृ तथा बाल मृत्युदर घटाउनमा उल्लेखनीय प्रगति गरेको छ, तर प्रदेश, सम्पत्ति क्विन्टाइल, र जातीय समूहहरूमा उल्लेखनीय असमानताहरू कायम छन्। दुर्गम क्षेत्रमा मातृ मृत्युदर अझै उच्च छ, पाँच वर्षमुनिका बालबालिकाको मृत्युमा नवजात शिशुको मृत्युको अनुपात बढ्दै गएको छ, र किशोर प्रजनन स्वास्थ्यका आवश्यकताहरू अपर्याप्त छन्। यस संग्रहले सुरक्षित मातृत्व कार्यक्रम, दक्ष प्रसव सेवा, नवजात शिशु हेरचाह प्याकेज, र परिवार नियोजन पहुँचसम्म — समान सन्दर्भहरूमा काम गरेका हस्तक्षेपहरूको प्रमाण जाँच गर्दछ।"
     },
     "keyQuestions": {
       "en": [
         "What interventions most effectively reduce maternal mortality in rural settings?",
-        "How can community health workers improve neonatal outcomes?",
-        "What nutrition programmes have reduced childhood stunting in South Asia?",
+        "How can neonatal care be strengthened at primary health care facilities?",
+        "What approaches improve adolescent reproductive health outcomes in South Asia?",
         "How do demand-side incentives affect institutional delivery rates?"
       ],
       "ne": [
         "ग्रामीण क्षेत्रमा मातृ मृत्युदर घटाउन कुन हस्तक्षेपहरू सबैभन्दा प्रभावकारी छन्?",
-        "सामुदायिक स्वास्थ्य कार्यकर्ताहरूले नवजात शिशुको नतिजा कसरी सुधार गर्न सक्छन्?",
-        "दक्षिण एसियामा बाल स्टन्टिङ घटाउन कुन पोषण कार्यक्रमहरू सफल भएका छन्?",
+        "प्राथमिक स्वास्थ्य सेवा केन्द्रहरूमा नवजात शिशु हेरचाह कसरी सुदृढ गर्न सकिन्छ?",
+        "दक्षिण एसियामा किशोर प्रजनन स्वास्थ्यका नतिजाहरू सुधार गर्न कुन दृष्टिकोणहरू प्रभावकारी छन्?",
         "माग-पक्षीय प्रोत्साहनहरूले संस्थागत प्रसव दरलाई कसरी प्रभाव पार्छन्?"
       ]
     },
-    "policyDomains": ["maternal-health", "child-health", "nutrition"],
+    "policyDomains": ["maternal-newborn-health"],
     "icon": "🤱"
+  },
+  {
+    "slug": "health-workforce",
+    "title": { "en": "Health Workforce", "ne": "स्वास्थ्य जनशक्ति" },
+    "description": {
+      "en": "Evidence on health workforce challenges including brain drain, FCHV programme, task-shifting, training quality, and retention strategies.",
+      "ne": "मस्तिष्क पलायन, महिला सामुदायिक स्वास्थ्य स्वयंसेविका कार्यक्रम, कार्य हस्तान्तरण, तालिमको गुणस्तर, र स्वास्थ्य जनशक्ति टिकाइराख्ने रणनीतिहरूको प्रमाण।"
+    },
+    "overview": {
+      "en": "Nepal faces severe health workforce challenges. With a physician density of just 0.17 per 1,000 population and heavy reliance on 52,000+ Female Community Health Volunteers, the country struggles with brain drain, maldistribution between urban and rural areas, and insufficient specialist capacity. This collection examines global evidence on workforce retention, task-shifting, community health worker effectiveness, and training approaches relevant to Nepal's context.",
+      "ne": "नेपालले गम्भीर स्वास्थ्य जनशक्ति चुनौतीहरूको सामना गरिरहेको छ। प्रति १,००० जनसंख्यामा मात्र ०.१७ चिकित्सक घनत्व र ५२,०००+ महिला सामुदायिक स्वास्थ्य स्वयंसेविकाहरूमा भारी निर्भरतासहित, देशले मस्तिष्क पलायन, सहरी र ग्रामीण क्षेत्रबीच असमान वितरण, र अपर्याप्त विशेषज्ञ क्षमताको समस्या भोगिरहेको छ। यस संग्रहले जनशक्ति टिकाइराख्ने, कार्य हस्तान्तरण, सामुदायिक स्वास्थ्य कार्यकर्ताको प्रभावकारिता, र नेपालको सन्दर्भमा प्रासंगिक तालिम दृष्टिकोणहरूको विश्वव्यापी प्रमाण जाँच गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What retention strategies reduce health worker brain drain in low-income countries?",
+        "How can community health volunteer programmes be sustained and strengthened?",
+        "What task-shifting models have safely expanded service coverage in rural areas?",
+        "How can medical and nursing education quality be improved in resource-limited settings?"
+      ],
+      "ne": [
+        "कम आय भएका देशहरूमा स्वास्थ्य कर्मचारीको मस्तिष्क पलायन घटाउन कुन टिकाइराख्ने रणनीतिहरू प्रभावकारी छन्?",
+        "सामुदायिक स्वास्थ्य स्वयंसेविका कार्यक्रमहरूलाई कसरी दिगो र सुदृढ बनाउन सकिन्छ?",
+        "ग्रामीण क्षेत्रमा सेवा कभरेज सुरक्षित रूपमा विस्तार गर्ने कुन कार्य हस्तान्तरण मोडेलहरू छन्?",
+        "सीमित स्रोत भएका सेटिङहरूमा चिकित्सा र नर्सिङ शिक्षाको गुणस्तर कसरी सुधार गर्न सकिन्छ?"
+      ]
+    },
+    "policyDomains": ["health-workforce"],
+    "icon": "👩‍⚕️"
   },
   {
     "slug": "primary-care-and-service-delivery",
@@ -84,15 +112,99 @@
     "icon": "🏥"
   },
   {
+    "slug": "noncommunicable-diseases",
+    "title": { "en": "Noncommunicable Diseases", "ne": "असंक्रामक रोग" },
+    "description": {
+      "en": "Evidence on prevention and management of cardiovascular disease, diabetes, COPD, cancer, and chronic kidney disease.",
+      "ne": "हृदय रोग, मधुमेह, सीओपीडी, क्यान्सर, र दीर्घकालीन मिर्गौला रोगको रोकथाम र व्यवस्थापनको प्रमाण।"
+    },
+    "overview": {
+      "en": "Noncommunicable diseases (NCDs) now account for over 60% of deaths in Nepal, yet the health system remains oriented toward infectious diseases and maternal-child health. Cardiovascular disease, diabetes, chronic respiratory disease, cancer, and kidney disease are rising rapidly — driven by urbanisation, dietary shifts, tobacco use, and air pollution. With limited NCD screening capacity and treatment access concentrated in urban tertiary hospitals, most patients are diagnosed late. This collection examines evidence on NCD prevention, primary care-based management, and cost-effective interventions relevant to Nepal's epidemiological transition.",
+      "ne": "असंक्रामक रोगहरू (एनसीडी) ले अब नेपालमा ६०% भन्दा बढी मृत्युको कारण बनेका छन्, तर स्वास्थ्य प्रणाली अझै संक्रामक रोग र मातृ-शिशु स्वास्थ्यमा केन्द्रित छ। हृदय रोग, मधुमेह, दीर्घकालीन श्वासप्रश्वास रोग, क्यान्सर, र मिर्गौला रोग तीव्र रूपमा बढ्दै छन् — सहरीकरण, खानपानमा परिवर्तन, सुर्तीजन्य पदार्थको प्रयोग, र वायु प्रदूषणले प्रेरित। सीमित एनसीडी जाँच क्षमता र सहरी तृतीय अस्पतालमा मात्र उपचार पहुँच हुँदा, अधिकांश बिरामीको ढिलो निदान हुन्छ। यस संग्रहले नेपालको महामारीविज्ञानात्मक संक्रमणसँग सम्बन्धित एनसीडी रोकथाम, प्राथमिक स्वास्थ्य सेवामा आधारित व्यवस्थापन, र लागत-प्रभावी हस्तक्षेपहरूको प्रमाण जाँच गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What NCD screening and management models work at primary care level in low-income countries?",
+        "How can hypertension and diabetes be effectively managed in community settings?",
+        "What tobacco control policies have the greatest impact on NCD burden?",
+        "How should Nepal integrate NCD services into its existing primary care infrastructure?"
+      ],
+      "ne": [
+        "कम आय भएका देशहरूमा प्राथमिक स्वास्थ्य सेवा तहमा कुन एनसीडी जाँच र व्यवस्थापन मोडेलहरू काम गर्छन्?",
+        "सामुदायिक सेटिङमा उच्च रक्तचाप र मधुमेहको प्रभावकारी व्यवस्थापन कसरी गर्न सकिन्छ?",
+        "कुन सुर्तीजन्य पदार्थ नियन्त्रण नीतिहरूले एनसीडी भारमा सबैभन्दा ठूलो प्रभाव पार्छन्?",
+        "नेपालले आफ्नो विद्यमान प्राथमिक स्वास्थ्य सेवा पूर्वाधारमा एनसीडी सेवाहरू कसरी एकीकृत गर्नुपर्छ?"
+      ]
+    },
+    "policyDomains": ["noncommunicable-diseases"],
+    "icon": "❤️‍🩹"
+  },
+  {
+    "slug": "mental-health",
+    "title": { "en": "Mental Health", "ne": "मानसिक स्वास्थ्य" },
+    "description": {
+      "en": "Evidence on mental health service delivery, suicide prevention, substance use, and psychosocial support in low-resource settings.",
+      "ne": "मानसिक स्वास्थ्य सेवा प्रदान, आत्महत्या रोकथाम, लागूपदार्थ प्रयोग, र न्यून स्रोत सेटिङमा मनोसामाजिक सहयोगको प्रमाण।"
+    },
+    "overview": {
+      "en": "Mental health remains one of Nepal's most neglected health priorities. With fewer than 0.5 psychiatrists per 100,000 population and deep-rooted stigma, the treatment gap for mental disorders exceeds 90%. Suicide is a leading cause of death among women of reproductive age, substance use disorders are rising, and post-disaster psychosocial needs remain largely unmet. The 2017 Mental Health Act provides a legal framework, but implementation has been slow. This collection examines evidence on integrating mental health into primary care, community-based psychosocial interventions, task-shifting to non-specialist providers, and scalable approaches for low-resource settings.",
+      "ne": "मानसिक स्वास्थ्य नेपालको सबैभन्दा उपेक्षित स्वास्थ्य प्राथमिकता मध्ये एक हो। प्रति १,००,००० जनसंख्यामा ०.५ भन्दा कम मनोचिकित्सक र गहिरो कलंकका कारण मानसिक विकारको उपचार अन्तर ९०% भन्दा बढी छ। प्रजनन उमेरका महिलामा आत्महत्या मृत्युको प्रमुख कारण हो, लागूपदार्थ प्रयोग सम्बन्धी विकार बढ्दै छन्, र विपद्-पछिको मनोसामाजिक आवश्यकता अधिकांश पूरा भइरहेको छैन। २०१७ को मानसिक स्वास्थ्य ऐनले कानूनी ढाँचा प्रदान गर्दछ, तर कार्यान्वयन ढिलो भएको छ। यस संग्रहले प्राथमिक स्वास्थ्य सेवामा मानसिक स्वास्थ्य एकीकरण, सामुदायिक मनोसामाजिक हस्तक्षेप, गैर-विशेषज्ञ प्रदायकहरूमा कार्य हस्तान्तरण, र न्यून स्रोत सेटिङका लागि स्केलेबल दृष्टिकोणहरूको प्रमाण जाँच गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "How can mental health services be effectively integrated into primary care in low-resource settings?",
+        "What community-based interventions reduce suicide rates in South Asia?",
+        "How can task-shifting to non-specialist providers address the mental health treatment gap?",
+        "What psychosocial support models work for post-disaster and conflict-affected populations?"
+      ],
+      "ne": [
+        "न्यून स्रोत सेटिङमा प्राथमिक स्वास्थ्य सेवामा मानसिक स्वास्थ्य सेवाहरू कसरी प्रभावकारी रूपमा एकीकृत गर्न सकिन्छ?",
+        "दक्षिण एसियामा आत्महत्या दर घटाउन कुन सामुदायिक हस्तक्षेपहरू प्रभावकारी छन्?",
+        "मानसिक स्वास्थ्य उपचार अन्तर घटाउन गैर-विशेषज्ञ प्रदायकहरूमा कार्य हस्तान्तरण कसरी गर्न सकिन्छ?",
+        "विपद्-पछि र द्वन्द्व प्रभावित जनसंख्याका लागि कुन मनोसामाजिक सहयोग मोडेलहरू प्रभावकारी छन्?"
+      ]
+    },
+    "policyDomains": ["mental-health"],
+    "icon": "🧠"
+  },
+  {
+    "slug": "nutrition",
+    "title": { "en": "Nutrition", "ne": "पोषण" },
+    "description": {
+      "en": "Evidence on stunting, wasting, micronutrient deficiencies, food security, and nutrition programme effectiveness.",
+      "ne": "स्टन्टिङ, वेस्टिङ, सूक्ष्म पोषक तत्वको कमी, खाद्य सुरक्षा, र पोषण कार्यक्रमको प्रभावकारिताको प्रमाण।"
+    },
+    "overview": {
+      "en": "Despite significant progress, malnutrition remains a critical challenge in Nepal. Stunting affects over 30% of children under five, wasting rates remain stubbornly high in some provinces, and micronutrient deficiencies — including iron, zinc, and vitamin A — are widespread. The Multi-Sector Nutrition Plan (MSNP) provides a policy framework, but implementation across 753 local governments is uneven. Maternal undernutrition perpetuates intergenerational cycles of poor health. This collection examines evidence on nutrition-specific and nutrition-sensitive interventions, from supplementary feeding programmes and micronutrient supplementation to agricultural diversification and social protection approaches that have worked in comparable contexts.",
+      "ne": "उल्लेखनीय प्रगतिका बावजुद, कुपोषण नेपालमा एक गम्भीर चुनौती बनिरहेको छ। पाँच वर्षमुनिका ३०% भन्दा बढी बालबालिकामा स्टन्टिङ छ, केही प्रदेशमा वेस्टिङ दर उच्च छ, र फलाम, जस्ता, र भिटामिन ए लगायत सूक्ष्म पोषक तत्वको कमी व्यापक छ। बहुक्षेत्रीय पोषण योजना (एमएसएनपी) ले नीतिगत ढाँचा प्रदान गर्दछ, तर ७५३ स्थानीय सरकारहरूमा कार्यान्वयन असमान छ। मातृ कुपोषणले खराब स्वास्थ्यको अन्तरपुस्ता चक्रलाई निरन्तरता दिन्छ। यस संग्रहले पूरक आहार कार्यक्रम र सूक्ष्म पोषक तत्व पूरकदेखि कृषि विविधीकरण र सामाजिक संरक्षणसम्म — पोषण-विशिष्ट र पोषण-संवेदनशील हस्तक्षेपहरूको प्रमाण जाँच गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What nutrition interventions most effectively reduce childhood stunting in South Asia?",
+        "How can Nepal's Multi-Sector Nutrition Plan be strengthened at the local government level?",
+        "What micronutrient supplementation strategies have the strongest evidence of impact?",
+        "How do social protection programmes affect household food security and child nutrition?"
+      ],
+      "ne": [
+        "दक्षिण एसियामा बाल स्टन्टिङ घटाउन कुन पोषण हस्तक्षेपहरू सबैभन्दा प्रभावकारी छन्?",
+        "स्थानीय सरकार तहमा नेपालको बहुक्षेत्रीय पोषण योजना कसरी सुदृढ गर्न सकिन्छ?",
+        "कुन सूक्ष्म पोषक तत्व पूरक रणनीतिहरूमा प्रभावको सबैभन्दा बलियो प्रमाण छ?",
+        "सामाजिक संरक्षण कार्यक्रमहरूले घरपरिवारको खाद्य सुरक्षा र बाल पोषणलाई कसरी प्रभाव पार्छन्?"
+      ]
+    },
+    "policyDomains": ["nutrition"],
+    "icon": "🥗"
+  },
+  {
     "slug": "infectious-disease",
     "title": { "en": "Infectious Disease", "ne": "संक्रामक रोग" },
     "description": {
-      "en": "Evidence on controlling infectious diseases including tuberculosis, malaria, dengue, and pandemic preparedness.",
-      "ne": "क्षयरोग, मलेरिया, डेंगु, र महामारी तयारी सहित संक्रामक रोग नियन्त्रणको प्रमाण।"
+      "en": "Evidence on controlling infectious diseases including tuberculosis, malaria, dengue, antimicrobial resistance, and pandemic preparedness.",
+      "ne": "क्षयरोग, मलेरिया, डेंगु, एन्टिमाइक्रोबियल प्रतिरोध, र महामारी तयारी सहित संक्रामक रोग नियन्त्रणको प्रमाण।"
     },
     "overview": {
-      "en": "Nepal faces a complex infectious disease landscape — from persistent challenges with tuberculosis and neglected tropical diseases to emerging threats like dengue and antimicrobial resistance. The COVID-19 pandemic exposed both strengths and vulnerabilities in the health system. This collection brings together evidence on effective disease control strategies, surveillance systems, and outbreak response approaches relevant to Nepal's epidemiological context.",
-      "ne": "नेपालले जटिल संक्रामक रोगको परिदृश्यको सामना गरिरहेको छ — क्षयरोग र उपेक्षित उष्णकटिबन्धीय रोगहरूदेखि डेंगु र एन्टिमाइक्रोबियल प्रतिरोधजस्ता उदीयमान खतराहरूसम्म। COVID-19 महामारीले स्वास्थ्य प्रणालीका बलियो पक्ष र कमजोरी दुवै उजागर गर्यो।"
+      "en": "Nepal faces a complex infectious disease landscape — from persistent challenges with tuberculosis and neglected tropical diseases to emerging threats like dengue and antimicrobial resistance. The COVID-19 pandemic exposed both strengths and vulnerabilities in the health system. Antimicrobial resistance is a growing concern, with widespread antibiotic misuse in both human and veterinary medicine. This collection brings together evidence on effective disease control strategies, surveillance systems, antimicrobial stewardship, and outbreak response approaches relevant to Nepal's epidemiological context.",
+      "ne": "नेपालले जटिल संक्रामक रोगको परिदृश्यको सामना गरिरहेको छ — क्षयरोग र उपेक्षित उष्णकटिबन्धीय रोगहरूदेखि डेंगु र एन्टिमाइक्रोबियल प्रतिरोधजस्ता उदीयमान खतराहरूसम्म। COVID-19 महामारीले स्वास्थ्य प्रणालीका बलियो पक्ष र कमजोरी दुवै उजागर गर्यो। मानव र पशु चिकित्सा दुवैमा एन्टिबायोटिकको व्यापक दुरुपयोगसँगै एन्टिमाइक्रोबियल प्रतिरोध बढ्दो चिन्ताको विषय हो।"
     },
     "keyQuestions": {
       "en": [
@@ -112,8 +224,36 @@
     "icon": "🦠"
   },
   {
+    "slug": "environmental-health",
+    "title": { "en": "Air Pollution & Environmental Health", "ne": "वायु प्रदूषण र वातावरणीय स्वास्थ्य" },
+    "description": {
+      "en": "Evidence on air quality, climate-health linkages, water and sanitation, and disaster-related health impacts.",
+      "ne": "वायुको गुणस्तर, जलवायु-स्वास्थ्य सम्बन्ध, पानी तथा सरसफाइ, र विपद् सम्बन्धी स्वास्थ्य प्रभावहरूको प्रमाण।"
+    },
+    "overview": {
+      "en": "Environmental health risks are among Nepal's fastest-growing threats. Kathmandu Valley consistently ranks among the world's most polluted cities, household air pollution from solid fuel use causes tens of thousands of premature deaths annually, and climate change is altering disease patterns and threatening water security in mountain communities. Nepal's geography makes it highly vulnerable to earthquakes, floods, and landslides, with cascading health consequences. WASH (water, sanitation, and hygiene) coverage has improved but remains inadequate in many rural areas. This collection examines evidence on air quality interventions, climate-health adaptation, WASH programmes, and disaster health preparedness relevant to Nepal's environmental context.",
+      "ne": "वातावरणीय स्वास्थ्य जोखिमहरू नेपालको सबैभन्दा द्रुत रूपमा बढ्दो खतराहरूमध्ये छन्। काठमाडौं उपत्यका विश्वका सबैभन्दा प्रदूषित शहरहरूमा निरन्तर पर्दछ, ठोस इन्धन प्रयोगबाट हुने घरभित्रको वायु प्रदूषणले वार्षिक हजारौं अकाल मृत्यु गराउँछ, र जलवायु परिवर्तनले रोगको ढाँचा बदलिरहेको छ र पहाडी समुदायमा पानीको सुरक्षालाई खतरामा पारिरहेको छ। नेपालको भूगोलले भूकम्प, बाढी, र पहिरोप्रति अत्यधिक जोखिम राख्छ। पानी, सरसफाइ, र स्वच्छता (WASH) कभरेजमा सुधार भए पनि धेरै ग्रामीण क्षेत्रमा अपर्याप्त छ। यस संग्रहले वायुको गुणस्तर हस्तक्षेप, जलवायु-स्वास्थ्य अनुकूलन, WASH कार्यक्रम, र विपद् स्वास्थ्य तयारीको प्रमाण जाँच गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What interventions most effectively reduce health impacts of household air pollution?",
+        "How should Nepal's health system adapt to climate change-driven disease shifts?",
+        "What WASH interventions have the greatest impact on child health in South Asia?",
+        "How can health systems prepare for and respond to disaster-related health emergencies?"
+      ],
+      "ne": [
+        "घरभित्रको वायु प्रदूषणको स्वास्थ्य प्रभाव घटाउन कुन हस्तक्षेपहरू सबैभन्दा प्रभावकारी छन्?",
+        "जलवायु परिवर्तनबाट हुने रोग परिवर्तनका लागि नेपालको स्वास्थ्य प्रणालीले कसरी अनुकूलन गर्नुपर्छ?",
+        "दक्षिण एसियामा बाल स्वास्थ्यमा सबैभन्दा ठूलो प्रभाव पार्ने WASH हस्तक्षेपहरू कुन हुन्?",
+        "विपद् सम्बन्धी स्वास्थ्य आपतकालका लागि स्वास्थ्य प्रणालीहरू कसरी तयार र प्रतिक्रिया गर्न सक्छन्?"
+      ]
+    },
+    "policyDomains": ["environmental-health"],
+    "icon": "🌍"
+  },
+  {
     "slug": "health-governance",
-    "title": { "en": "Health Governance & Systems", "ne": "स्वास्थ्य शासन र प्रणाली" },
+    "title": { "en": "Health Governance & Federalism", "ne": "स्वास्थ्य शासन र संघीयता" },
     "description": {
       "en": "Evidence on health system governance, federalism, decentralisation, and health information systems.",
       "ne": "स्वास्थ्य प्रणाली शासन, संघीयता, विकेन्द्रीकरण, र स्वास्थ्य सूचना प्रणालीहरूको प्रमाण।"
@@ -136,7 +276,35 @@
         "कुन जवाफदेहिता संयन्त्रहरूले स्वास्थ्य सेवा प्रदान सुधार गर्छन्?"
       ]
     },
-    "policyDomains": ["health-governance", "health-information-systems"],
-    "icon": "⚖️"
+    "policyDomains": ["health-governance"],
+    "icon": "🏛️"
+  },
+  {
+    "slug": "health-equity",
+    "title": { "en": "Health Equity & Disparities", "ne": "स्वास्थ्य समानता र असमानता" },
+    "description": {
+      "en": "Evidence on health disparities across caste/ethnicity, gender, geography, and wealth in Nepal and comparable contexts.",
+      "ne": "नेपाल र तुलनात्मक सन्दर्भहरूमा जात/जातीयता, लिङ्ग, भूगोल, र सम्पत्ति अनुसार स्वास्थ्य असमानताको प्रमाण।"
+    },
+    "overview": {
+      "en": "Health equity is both a cross-cutting lens applied across all NHPL topics and a standalone collection. Nepal's health outcomes vary dramatically by caste/ethnicity, gender, geography, and wealth. Dalit and Janajati communities, women in remote districts, and the poorest quintiles consistently face worse health outcomes across every indicator — from maternal mortality to NCD prevalence. Federalism offers new opportunities to address local disparities, but also risks widening gaps if capacity and resources are unevenly distributed. This collection aggregates evidence on health disparities and interventions to reduce inequity, drawing from all domains.",
+      "ne": "स्वास्थ्य समानता NHPL का सबै विषयहरूमा लागू हुने एक क्रस-कटिङ दृष्टिकोण र एक स्वतन्त्र संग्रह दुवै हो। नेपालको स्वास्थ्य परिणामहरू जात/जातीयता, लिङ्ग, भूगोल, र सम्पत्ति अनुसार नाटकीय रूपमा फरक छन्। दलित र जनजाति समुदायहरू, दुर्गम जिल्लाका महिलाहरू, र सबैभन्दा गरिब क्विन्टाइलहरूले मातृ मृत्युदरदेखि एनसीडी प्रचलनसम्म — प्रत्येक सूचकमा खराब स्वास्थ्य परिणामको सामना गर्छन्। संघीयताले स्थानीय असमानताहरू सम्बोधन गर्ने नयाँ अवसर प्रदान गर्दछ, तर क्षमता र स्रोत असमान रूपमा वितरण भएमा अन्तर बढाउने जोखिम पनि छ। यस संग्रहले सबै क्षेत्रबाट स्वास्थ्य असमानता र असमानता घटाउने हस्तक्षेपहरूको प्रमाण एकत्र गर्दछ।"
+    },
+    "keyQuestions": {
+      "en": [
+        "What interventions most effectively reduce caste- and ethnicity-based health disparities?",
+        "How can health programmes be designed to reach the most marginalised populations?",
+        "What role does gender equity play in improving health outcomes across South Asia?",
+        "How do social protection schemes affect health equity in federal systems?"
+      ],
+      "ne": [
+        "जात र जातीयतामा आधारित स्वास्थ्य असमानता घटाउन कुन हस्तक्षेपहरू सबैभन्दा प्रभावकारी छन्?",
+        "सबैभन्दा सीमान्तकृत जनसंख्यासम्म पुग्न स्वास्थ्य कार्यक्रमहरू कसरी डिजाइन गर्न सकिन्छ?",
+        "दक्षिण एसियाभरि स्वास्थ्य परिणामहरू सुधार गर्न लैंगिक समानताले कस्तो भूमिका खेल्छ?",
+        "संघीय प्रणालीमा सामाजिक संरक्षण योजनाहरूले स्वास्थ्य समानतालाई कसरी प्रभाव पार्छन्?"
+      ]
+    },
+    "policyDomains": ["health-equity"],
+    "icon": "🤝"
   }
 ]

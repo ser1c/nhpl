@@ -9,8 +9,8 @@ let _topics: Topic[] | null = null;
 export function getEvidence(): EvidenceEntry[] {
   if (!_evidence) {
     const parsed = evidenceData.map((entry: unknown) => evidenceEntrySchema.parse(entry));
-    // Only show verified and auto-processed (not rejected)
-    _evidence = parsed.filter((e) => e.status !== 'rejected');
+    // Only show verified papers on the portal
+    _evidence = parsed.filter((e) => e.status === 'verified');
   }
   return _evidence;
 }

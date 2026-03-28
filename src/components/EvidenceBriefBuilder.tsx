@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'preact/hooks';
 import type { EvidenceEntry } from '../data/evidence.schema';
-import { policyDomainLabels, studyDesignLabels, evidenceStrengthLabels } from '../data/taxonomy';
+import { policyDomainLabels, studyDesignLabels, rigourLabels } from '../data/taxonomy';
 
 interface TopicData {
   slug: string;
@@ -40,7 +40,7 @@ const labels = {
     evidenceSummary: 'Evidence Summary',
     nepalRelevance: 'Nepal Relevance',
     studyDesign: 'Study Design',
-    evidenceStrength: 'Evidence Strength',
+    methodologicalRigour: 'Methodological Rigour',
     source: 'Source',
     countriesLabel: 'Countries',
     topicOverview: 'Topic Overview',
@@ -68,7 +68,7 @@ const labels = {
     evidenceSummary: 'प्रमाण सारांश',
     nepalRelevance: 'नेपाल सान्दर्भिकता',
     studyDesign: 'अध्ययन डिजाइन',
-    evidenceStrength: 'प्रमाण बल',
+    methodologicalRigour: 'विधिगत कठोरता',
     source: 'स्रोत',
     countriesLabel: 'देशहरू',
     topicOverview: 'विषय अवलोकन',
@@ -364,9 +364,9 @@ export default function EvidenceBriefBuilder({ papers, topics, lang, basePath }:
                         </span>
                       ))}
                       <span class={`text-xs px-2 py-0.5 rounded-full font-medium print-badge print-badge-${
-                        paper.evidenceStrength === 'high' ? 'green' : paper.evidenceStrength === 'moderate' ? 'amber' : 'red'
-                      } ${strengthVariant[paper.evidenceStrength]}`}>
-                        {evidenceStrengthLabels[paper.evidenceStrength][lang]}
+                        paper.methodologicalRigour === 'high' ? 'green' : paper.methodologicalRigour === 'moderate' ? 'amber' : 'red'
+                      } ${strengthVariant[paper.methodologicalRigour]}`}>
+                        {rigourLabels[paper.methodologicalRigour][lang]}
                       </span>
                       <span class="text-xs px-2 py-0.5 rounded-full bg-surface-alt text-gray-mid print-badge">
                         {studyDesignLabels[paper.studyDesign][lang]}
