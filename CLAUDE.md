@@ -4,12 +4,24 @@ This file governs every Claude Code session on this project. Read it fully befor
 
 ## Project Identity
 
-- **Name**: Nepal Health Policy Lab
+- **Name**: Nepal Health Policy Lab (NHPL)
+- **Parent Organisation**: Policy Evidence and Research Lab (PERL) — NHPL is an initiative under PERL
 - **Domain**: nepalhealthpolicylab.org
 - **Repo**: https://github.com/ser1c/nhpl.git
 - **Mission**: Making rigorous global health evidence accessible and actionable for Nepal's policymakers, practitioners, and public
 - **Languages**: English (en) and Nepali (ne) -- all content is bilingual
 - **Proposal**: `proposal.tex` is the founding document. It is a living document and will evolve. Treat it as best-available direction, not final spec.
+
+## Team (as of 2026-04-07)
+
+| Name | Role | Background |
+|------|------|------------|
+| Sabin Subedi | Co-founder | PhD candidate, Economics, University of Strathclyde |
+| Mukesh Adhikari | Co-founder | PhD student, Health Policy & Management, UNC Gillings |
+| Sadiksha Sharma | Field Coordinator & Policy Translation Lead | Masters in Economics student, Tribhuvan University |
+| Prashant Bhandari | Research Fellow | PhD candidate, Economics, University of Pittsburgh |
+| Ayushi Bista | GEDSI Lead & Head of Communications | Masters in Applied Gender Studies (Research Methods) |
+| Suresh Tinkari | Advisor | IT Manager, Health Insurance Board of Nepal |
 
 ## Brand
 
