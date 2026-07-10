@@ -12,3 +12,6 @@ prompt.md
 NHPL_Meeting_Agenda*
 _papers/
 methodology-overview-for-feedback.pdf
+
+# Claude Code transient worktrees
+.claude/worktrees/

@@ -51,7 +51,7 @@ This file governs every Claude Code session on this project. Read it fully befor
    - What we committed to (current plans and priorities)
    - What this session should focus on
 4. Surface any unresolved questions, blockers, or decisions needed
-5. If no session logs exist, state that this is the first session and proceed with the plans
+5. If `_sessions/` is empty or missing, do NOT assume it is the first session — `_sessions/` (and `_plans/`, `_papers/`, etc.) are **gitignored / local-only** and do not sync between machines (see "Working Across Machines"). It may just be that the logs live on another machine. State the ambiguity ("no session logs on *this* machine — either the first session, or logs are local to another machine") and proceed with whatever plans/tracked files are present.
 
 ## End-of-Session Ritual (MANDATORY -- do this before closing)
 
@@ -102,13 +102,14 @@ The evidence portal is the flagship feature. Architecture details in `_plans/evi
 
 - **Topic-first navigation**: policymakers browse by topic (Health Financing, Maternal & Child Health, etc.), not by paper
 - **Data layer**: Static JSON (`src/data/evidence.json`, `src/data/topics.json`) validated by Zod schemas (`src/data/evidence.schema.ts`)
+- **RAG grounding**: `src/data/nepal-context.md` — a verified, sourced Nepal health-system knowledge base. The pipeline grounds ALL Nepal contextualisation in it, not in LLM parametric memory. (Contains an INTERNAL/not-for-circulation section — never surface it in public paper summaries.)
 - **Interactive search**: Preact island with Fuse.js fuzzy search, filters (policy domain, study design, evidence strength), sorting
 - **Paper 1-pagers**: Structured summaries with "What Was Studied", "What They Found", "What This Means for Nepal"
 - **Build a Brief**: Interactive tool where users select topic + countries to generate a custom evidence report with PDF export
 - **PDF export**: Browser print with custom print styles (branded header/footer, forced colors)
 - **No runtime AI costs**: Everything is static, pre-computed at build time
-- **Verification workflow**: Papers marked as `auto-processed` or `verified` by humans
-- **Multi-agent pipeline**: 4-pass local pipeline (in `scripts/`, not yet built) for processing new papers
+- **Verification workflow**: Two fields track verification. `status` gates *rendering* — **only `status: 'verified'` entries render** (the loader filters `status === 'verified'`). `verifiedBy` (+ `verifiedDate`, `reviewers`) records the *human reviewer* — a genuinely reviewed entry has a **non-null `verifiedBy`**; provisional entries keep it `null`. **Current state (2026-07-10):** the 30 pipeline papers were promoted to `status: 'verified'` (with a `team-review-pending` tag, `verifiedBy: null`) so the team can review them on the *live* site — published-for-review, **not yet human-verified**. Only the MICS paper (`verifiedBy: "sabin-subedi"`) is truly verified. As reviewers sign off, set `verifiedBy`/`verifiedDate`/`reviewers` and drop the tag.
+- **Multi-agent pipeline** (BUILT — v2.0): 5-pass pipeline (Pass 0–4) run per-paper by subagents via the `process-paper` skill (`.claude/commands/process-paper.md`); metadata helpers in `scripts/` (fetch-paper.ts, validate-entry.ts, lib/ for CrossRef / Semantic Scholar / Unpaywall). Local PDFs live in `_papers/` (gitignored).
 
 ## File Structure
 
@@ -137,11 +138,12 @@ nhpl_website/
 │   │       ├── [topic]/[slug].astro  # Paper via topic route
 │   │       └── browse/[slug].astro   # Paper via browse route
 │   ├── data/              # Evidence portal data layer
-│   │   ├── evidence.json             # Paper dataset (10 seed papers)
-│   │   ├── topics.json               # 5 topic definitions
+│   │   ├── evidence.json             # Paper dataset (31 verified-status: 1 human-verified + 30 provisional/team-review-pending)
+│   │   ├── topics.json               # 10 topic definitions
+│   │   ├── nepal-context.md          # RAG knowledge base (verified Nepal health-system facts)
 │   │   ├── evidence.schema.ts        # Zod schemas + TypeScript types
 │   │   ├── taxonomy.ts               # Bilingual display labels
-│   │   └── evidence-loader.ts        # Load + validate at build time
+│   │   └── evidence-loader.ts        # Load + validate at build time (filters to verified)
 │   ├── content/           # Markdown content collections (blog/, digest/)
 │   ├── i18n/              # Translation strings and helpers
 │   └── styles/            # Global CSS (includes print styles)
@@ -149,3 +151,24 @@ nhpl_website/
 │   └── team/              # Team photos (sabin.jpg, mukesh.jpg, suresh.jpg)
 └── .github/workflows/     # GitHub Actions deploy
 ```
+
+## Working Across Machines (sync map — READ if a file seems missing)
+
+This repo is edited from more than one machine. **Only Git-tracked files sync via GitHub.** Everything in `.gitignore` lives **only on the machine where it was created**. So if a file/folder below is absent, it is almost certainly **local to another machine — not lost, not broken, not "never existed."** Say that to the user instead of recreating it from scratch.
+
+**Tracked in Git (present on every clone):**
+- `src/**` — site source (layouts, components, pages, i18n, styles)
+- `src/data/**` — `evidence.json`, `topics.json`, **`nepal-context.md` (the RAG — now tracked & synced)**, `evidence.schema.ts`, `evidence-loader.ts`, `taxonomy.ts`
+- `scripts/**` — pipeline helpers + `paper-queue.md`
+- `.claude/commands/**` (e.g. `process-paper.md`), `CLAUDE.md`, `public/**`, `.github/workflows/**`, config files
+- `_plans/methodology-draft.md` — tracked (added before the `_plans/` ignore rule)
+
+**Local-only (gitignored — do NOT sync; expect ABSENT on another machine):**
+- `_papers/` — downloaded source PDFs (`author-year.pdf`). Large/copyright; never committed. A paper missing here lives on the machine that downloaded it.
+- `_sessions/` — session logs. The Startup Ritual reads these, so **on a machine that didn't write them `_sessions/` is empty** — expected (see Ritual step 5).
+- `_plans/` — planning docs **except** `methodology-draft.md` (which is tracked).
+- `proposal.tex`, `prompt.md`, `NHPL_Meeting_Agenda*`, `methodology-overview-for-feedback.pdf`, `_drafts/` — founding/internal docs.
+- `.claude/worktrees/` — Claude Code scratch worktrees.
+- `node_modules/`, `dist/`, `.astro/`, `.DS_Store` — regenerable (`npm install`, `npm run build`).
+
+**To move a local-only file to another machine:** copy it manually (it won't come via `git pull`), or — once the repo is private (GitHub Pro) — un-ignore and commit it. Until then, treat gitignored paths as machine-specific.

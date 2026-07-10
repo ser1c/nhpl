@@ -450,6 +450,8 @@ A paper is **excluded** if ANY of:
 
 **Phase 1a is explicitly expert-led purposive curation, not systematic search.** Both are legitimate methodologies — but they are different things and should not be conflated.
 
+> **Status (2026-07-10):** Phase 1a curation done — **30 papers processed as `draft`** (3 per topic × 10 topics, breadth-first) awaiting human verification; **1 verified** (MICS insurance, live). Breadth-first means no single topic yet clears the 10-paper activation threshold, so topic pages stay hidden until priority topics are deepened. See session `2026-07-09-001` and `scripts/paper-queue.md`.
+
 ---
 
 ## Supporting Documents
@@ -496,7 +498,7 @@ A paper is **excluded** if ANY of:
 
 - **Search string templates** — for 3 priority topics (Health Financing, Primary Care, Maternal & Newborn Health)
 - **Policy brief template** — structure and format
-- **Nepal RAG knowledge base** — compile Nepal health system facts document
+- ~~**Nepal RAG knowledge base** — compile Nepal health system facts document~~ ✅ **Built & expanded** (`src/data/nepal-context.md`; 10 domains, sourced/verified, Fast-Facts index; typhoid + environmental gaps filled; NHIP causal evidence added internal-only). Keep updating as Nepal's system evolves. See session 2026-07-09-001.
 - **CAFE-HE worked examples** — apply to 2-3 well-known papers as validation pilot
 - **Demand validation** — structured interviews with 5-10 Nepali policymakers
 - **Dissemination strategy** — push delivery model (WhatsApp, targeted briefs, verbal briefings to MP advisors) alongside the portal
