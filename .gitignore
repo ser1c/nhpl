@@ -15,3 +15,9 @@ methodology-overview-for-feedback.pdf
 
 # Claude Code transient worktrees
 .claude/worktrees/
+
+# Temporary paper-review distribution (copyrighted PDFs — delete after reviews)
+_review-groups/
+
+# FABLE validation reports + inputs (local-only QA artifacts)
+_validation/

@@ -68,6 +68,8 @@ Topics are demand-driven for Phase 1. As the portal matures, topic selection wil
 
 Tier 3 papers require stronger contextualisation explaining why findings transfer despite different context. This is where PhD reviewers add most value.
 
+**External review (2026-07-11) — prioritise Nepal-conducted studies.** An external reviewer, after seeing the first summaries, cautioned against being *too prescriptive from non-Nepal studies, even South Asian ones*, and advised prioritising studies **conducted in Nepal** — to keep recommendations grounded and because the gaps then reveal **where more Nepal research is needed**. → Weight discovery/inclusion toward **Tier 1 (Nepal)**; use Tier 2–3 more sparingly and, when used, frame findings as *indirect/transferable evidence*, not direct prescriptions, and flag thin areas as explicit **research gaps**. Converges with the Fable-validation finding that the generator over-states Nepal applicability (see §18).
+
 ---
 
 ## 5. Sources
@@ -491,6 +493,35 @@ A paper is **excluded** if ANY of:
 - `lastStatusCheck`: date of last automated check
 - `sourceStatus`: "active" | "erratum" | "retracted" | "superseded"
 - `withdrawnDate`, `withdrawnReason`: for withdrawn papers
+
+---
+
+## 18. Review & Validation Log (living)
+
+Dated record of external feedback and independent validation that shape selection and the generation pipeline. **Keep appending — this is the durable, synced home for these findings (the `_validation/` reports are local-only).**
+
+### 2026-07-11 — External reviewer feedback (selection & framing)
+> "I would caution against being too prescriptive from studies in other countries, even if they are in South Asia. Perhaps prioritize studies conducted in Nepal. That way we will also know where more research is needed."
+
+**Implications (adopted — see also §4):**
+- **Selection:** prioritise Nepal-conducted studies (Tier 1); use South Asia / other-LMIC studies more sparingly.
+- **Framing:** when evidence is non-Nepal, present it as *indirect/transferable*, not a direct prescription; hedge "what this means for Nepal."
+- **Research agenda:** treat topics thin on Nepal evidence as explicit **research gaps** — NHPL's own where-more-research-is-needed map.
+
+### 2026-07-11 — Fable independent validation of Group D (7 papers)
+7 Fable subagents each validated one Group-D entry given ONLY the paper PDF + our generated output (no RAG), web-checking every Nepal stat. Result: **1 PASS, 6 PASS-WITH-FIXES, 0 FAIL; 0 critical, 9 major, ~34 minor.** Full reports: `_validation/Group-D/` (local-only) + `_SUMMARY.md`.
+
+**Finding — reliable at the paper, weak at the country.** ~99% of paper-derived numbers exact; no hallucinated findings; RCT causal framing correct; Nepali clean. **All 9 major issues are in the Nepal-context layer**, in two systemic tics:
+1. **Overstated/fabricated "current government reform priority"** (5 of 9 majors) — e.g. a non-existent "MoHP 2026 reform priority" (MH-1, PC-3); "MoHP-led trial" when externally funded (MN-4); "current priority: PEN via FCHVs" when still piloted (NCD-2).
+2. **Wrong-source attribution of Nepal stats** — usually a default to "NDHS 2022": MMR mis-cited (NDHS doesn't measure MMR; it's the 2021 Census study); wrong worst-stunting province (Karnali 36.2%, not Madhesh/Lumbini).
+
+**Prompt/RAG rules to adopt (will recur in Groups A/B/C — fix at prompt level):**
+1. Never assert a *current/2026* government reform priority, ownership, or adoption without a named source + year — else hedge or omit.
+2. Every Nepal statistic must carry its exact source + year; ban defaulting to "NDHS 2022" (esp. MMR & provincial breakdowns).
+3. Separate "government developed/owns" from "external trial of a government package," and "adopted policy" from "pilot/proposal."
+4. Re-derive net effects from interaction terms; don't echo loose sentences.
+
+*The two entries converge:* the reviewer's "don't over-prescribe from abroad" and Fable's "don't over-state Nepal applicability/current policy" are the same caution from two directions.
 
 ---
 
