@@ -10,16 +10,16 @@ const { name, role, bio, image } = Astro.props;
 const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2);
 ---
 
-<div class="bg-white border border-border rounded-xl p-6 flex gap-4">
+<div class="bg-white border border-border rounded-xl p-6 flex gap-5">
   {image ? (
     <img
       src={image}
       alt={name}
-      class="w-16 h-16 rounded-full object-cover flex-shrink-0"
+      class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-top flex-shrink-0"
       loading="lazy"
     />
   ) : (
-    <div class="w-16 h-16 rounded-full bg-teal text-white flex items-center justify-center text-lg font-bold flex-shrink-0">
+    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-teal text-white flex items-center justify-center text-2xl font-bold flex-shrink-0">
       {initials}
     </div>
   )}
