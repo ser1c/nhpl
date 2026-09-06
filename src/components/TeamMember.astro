@@ -1,4 +1,7 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
+
 interface Props {
   name: string;
   role: string;
@@ -8,10 +11,14 @@ interface Props {
 
 const { name, role, bio, image } = Astro.props;
 const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2);
+
+// Only render an <img> if the file actually exists in public/ — otherwise a
+// not-yet-supplied photo shows a broken-image icon instead of the initials.
+const hasImage = !!image && fs.existsSync(path.join(process.cwd(), 'public', image));
 ---
 
 <div class="bg-white border border-border rounded-xl p-6 flex gap-5">
-  {image ? (
+  {hasImage ? (
     <img
       src={image}
       alt={name}

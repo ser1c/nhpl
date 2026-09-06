@@ -18,7 +18,7 @@ This file governs every Claude Code session on this project. Read it fully befor
 |------|------|------------|
 | Sabin Subedi | Co-founder | PhD candidate, Economics, University of Strathclyde |
 | Mukesh Adhikari | Co-founder | PhD (Health Policy & Management, UNC Gillings), MPH, MPA |
-| Sadiksha Sharma | Field Coordinator & Policy Translation Lead | Masters in Economics student, Tribhuvan University |
+| Dhiren Pradhan | Field Coordinator | Founder, Ednep Abhiyan (research workshops & mentorship cohorts) |
 | Prashant Bhandari | Research Fellow | PhD candidate, Economics, University of Pittsburgh |
 | Ayushi Bista | GEDSI Lead & Head of Communications | Masters in Applied Gender Studies (Research Methods) |
 | Suresh Tinkari | Advisor | IT Manager, Health Insurance Board of Nepal |
